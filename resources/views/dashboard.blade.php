@@ -28,6 +28,12 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/adminlte.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('js/priceFormat.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+
 </head>
 
 <body>
@@ -53,14 +59,14 @@
                     aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-cogs"></i></a>
                 <ul aria-labelledby="dropdownSubMenu-info" class="dropdown-menu dropdown-menu-right border-0 shadow">
                     <li>
-                        <a href="index.php?com=user&act=admin_edit" class="dropdown-item">
+                        <a href="" class="dropdown-item">
                             <i class="fas fa-user-cog"></i>
                             <span>Thông tin admin</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=user&act=admin_edit&changepass=1" class="dropdown-item">
+                        <a href="&changepass=1" class="dropdown-item">
                             <i class="fas fa-key"></i>
                             <span>Đổi mật khẩu</span>
                         </a>
@@ -116,7 +122,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -133,16 +139,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -161,19 +167,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tin tức"><i
+                                <a class="nav-link " href="/posts/news" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/posts/procedure" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tư vấn"><i
+                                <a class="nav-link " href="/posts/advise" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -196,13 +202,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thư liên hệ"><i
+                                <a class="nav-link " href="/mail/contact" title="Thư liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thư liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Đăng ký tư vấn"><i
+                                <a class="nav-link " href="/mail/register-advise" title="Đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Đăng ký tư vấn</p>
                                 </a>
@@ -221,31 +227,33 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/contact" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -264,31 +272,31 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Slideshow"><i
+                                <a class="nav-link " href="/image-video/slideshow" title="Slideshow"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Slideshow</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Mạng xã hội"><i
+                                <a class="nav-link " href="/image-video/social_network" title="Mạng xã hội"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Mạng xã hội</p>
                                 </a>
@@ -380,7 +388,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
-                        <a class="my-info-box info-box" href="index.php?com=user&act=admin_edit" title="Tài khoản">
+                        <a class="my-info-box info-box" href="" title="Tài khoản">
                             <span class="my-info-box-icon info-box-icon bg-danger"><i
                                     class="fas fa-user-cog"></i></span>
                             <div class="info-box-content text-dark">
@@ -391,8 +399,7 @@
                     </div>
                     <div class="clearfix hidden-md-up"></div>
                     <div class="col-12 col-sm-6 col-md-3">
-                        <a class="my-info-box info-box" href="index.php?com=user&act=admin_edit&changepass=1"
-                            title="Đổi mật khẩu">
+                        <a class="my-info-box info-box" href="" title="Đổi mật khẩu">
                             <span class="my-info-box-icon info-box-icon bg-success"><i class="fas fa-key"></i></span>
                             <div class="info-box-content text-dark">
                                 <span class="info-box-text text-capitalize">Đổi mật khẩu</span>

@@ -352,7 +352,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Quản lý Sản phẩm cấp 1</li>
                     </ol>
@@ -361,12 +361,10 @@
         </section>
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_list&type=san-pham&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_list&type=san-pham&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level1/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
@@ -416,15 +414,11 @@
                                         min="0" value="1" data-id="17" data-table="product_list">
                                 </td>
                                 <td class="align-middle">
-                                    <a href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=17"
-                                        title="Nhà 72m2 một lầu đúc cần tiền bán gấp "><img
-                                            class="rounded img-preview" onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x100x1/upload/product/248215d0-94e6-4ab6-a6fe-b2ca30c4f0dc-3024.jpeg"
-                                            alt="Nhà 72m2 một lầu đúc cần tiền bán gấp "></a>
+                                    <a href="" title="Nhà 72m2 một lầu đúc cần tiền bán gấp "><img
+                                            class="rounded img-preview" src="" alt=""></a>
                                 </td>
                                 <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=17"
+                                    <a class="text-dark" href=""
                                         title="Nhà 72m2 một lầu đúc cần tiền bán gấp ">Nhà 72m2 một lầu đúc cần tiền
                                         bán
                                         gấp </a>
@@ -461,7 +455,6 @@
                                 <td class="align-middle">
                                     <a href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=6"
                                         title="NHÀ ĐẤT BÁN"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
                                             src="../thumbs/100x100x1/upload/product/img2980-8519350x225-4413.jpg"
                                             alt="NHÀ ĐẤT BÁN"></a>
                                 </td>
@@ -502,7 +495,6 @@
                                 <td class="align-middle">
                                     <a href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=7"
                                         title="NHÀ ĐẤT CHO THUÊ"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
                                             src="../thumbs/100x100x1/upload/product/img0000layer38-1855350x225-5938.png"
                                             alt="NHÀ ĐẤT CHO THUÊ"></a>
                                 </td>

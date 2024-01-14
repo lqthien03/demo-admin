@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Category_level1Controller;
+use App\Http\Controllers\Category_level2Controller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,15 +21,25 @@ Route::get('/', function () {
 });
 
 //quản lý nhà đất
-Route::get('/real_estate/category-level1', function () {
-    return view('real_estate.category_level1');
+Route::controller(Category_level1Controller::class)->group(function () {
+    Route::get('/real_estate/category-level1', 'show')->name('show.category1');
+    Route::get('/real_estate/category-level1/create', 'create')->name('create.category1');
+    Route::post('/real_estate/category-level1/create', 'store')->name('store.category1');
+    Route::get('/real_estate/category-level1/edit{category_level1}', 'edit')->name('edit.category1');
+    Route::put('/real_estate/category-level1/edit{category_level1}', 'update')->name('update.category1');
+    Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
 });
-Route::get('/real_estate/category-level1/create', function () {
-    return view('real_estate.category_level1_create');
+
+Route::controller(Category_level2Controller::class)->group(function () {
+    Route::get('/real_estate/category-level2', 'show')->name('show.category2');
+    Route::get('/real_estate/category-level2/create', 'create')->name('create.category2');
+    Route::post('/real_estate/category-level2/create', 'store')->name('store.category2');
+    Route::get('/real_estate/category-level2/edit{category_level2}', 'edit')->name('edit.category2');
+    Route::put('/real_estate/category-level2/edit{category_level2}', 'update')->name('update.category2');
+    Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
 });
-Route::get('/real_estate/category-level1/edit', function () {
-    return view('real_estate.category_level1_edit');
-});
+
+
 ///
 Route::get('/real_estate/category-level2', function () {
     return view('real_estate.category_level2');

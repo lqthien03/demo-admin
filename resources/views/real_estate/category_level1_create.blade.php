@@ -348,9 +348,11 @@
             </nav>
     </aside>
     <div class="content-wrapper">
+
         <section class="content">
-            <form class="validation-form" novalidate method="post"
-                action="index.php?com=product&act=save_list&type=san-pham&p=1" enctype="multipart/form-data">
+            <form class="validation-form" novalidate method="post" action="{{ route('store.category1') }}"
+                enctype="multipart/form-data">
+                @csrf
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -370,8 +372,8 @@
                             </div>
                             <div class="card-body card-slug">
 
-                                <input type="hidden" class="slug-id" value="">
-                                <input type="hidden" class="slug-copy" value="0">
+                                {{-- <input type="hidden" class="slug-id" value="">
+                                    <input type="hidden" class="slug-copy" value="0"> --}}
 
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -394,13 +396,14 @@
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
                                                                 class="text-info"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
-                                                        name="slugvi" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
                                                         value="">
                                                     <input type="hidden" id="slug-defaultvi" value="">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
                                                         <i class="fas fa-exclamation-triangle mr-1"></i>
-                                                        <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có thể bị
+                                                        <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có
+                                                            thể bị
                                                             trùng lặp.</span>
                                                     </p>
                                                     <p class="alert-slugvi text-success d-none mt-2 mb-0"
@@ -429,7 +432,7 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox" checked>
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -438,7 +441,7 @@
                                         tự:</label>
                                     <input type="number"
                                         class="form-control form-control-mini d-inline-block align-middle"
-                                        min="0" name="data[stt]" id="stt" placeholder="Số thứ tự"
+                                        min="0" name="number" id="stt" placeholder="Số thứ tự"
                                         value="1">
                                 </div>
                                 <div class="card card-primary card-outline card-outline-tabs">
@@ -447,7 +450,8 @@
                                             <li class="nav-item">
                                                 <a class="nav-link active" id="tabs-lang" data-toggle="pill"
                                                     href="#tabs-lang-vi" role="tab" aria-controls="tabs-lang-vi"
-                                                    aria-selected="true">Tiếng Việt</a>
+                                                    aria-selected="true">Tiếng
+                                                    Việt</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -457,13 +461,13 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="tenvi">Tiêu đề (vi):</label>
-                                                    <input type="text" class="form-control for-seo"
-                                                        name="data[tenvi]" id="tenvi" placeholder="Tiêu đề (vi)"
-                                                        value="" required>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)" value=""
+                                                        required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)"></textarea>
                                                 </div>
                                             </div>
@@ -487,8 +491,7 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/product/" onerror="src='assets/images/noimage.png'"
-                                            alt="Alt Photo" /></div>
+                                            src="../upload/product/" alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="file" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
@@ -576,6 +579,12 @@
                 </div>
             </form>
         </section>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        @endif
+
     </div>
 
 </body>
