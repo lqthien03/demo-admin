@@ -401,7 +401,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            {{-- <tr>
                                 <td class="align-middle">
                                     <div class="custom-control custom-checkbox my-checkbox">
                                         <input type="checkbox" class="custom-control-input select-checkbox"
@@ -439,87 +439,48 @@
                                         data-url="index.php?com=product&act=delete_list&type=san-pham&p=1&id=17"
                                         title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-6" value="6">
-                                        <label for="select-checkbox-6" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="6" data-table="product_list">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=6"
-                                        title="NHÀ ĐẤT BÁN"><img class="rounded img-preview"
-                                            src="../thumbs/100x100x1/upload/product/img2980-8519350x225-4413.jpg"
-                                            alt="NHÀ ĐẤT BÁN"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=6"
-                                        title="NHÀ ĐẤT BÁN">NHÀ ĐẤT BÁN</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-6" data-table="product_list" data-id="6"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-6" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=6"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_list&type=san-pham&p=1&id=6"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-7" value="7">
-                                        <label for="select-checkbox-7" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="2" data-id="7" data-table="product_list">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=7"
-                                        title="NHÀ ĐẤT CHO THUÊ"><img class="rounded img-preview"
-                                            src="../thumbs/100x100x1/upload/product/img0000layer38-1855350x225-5938.png"
-                                            alt="NHÀ ĐẤT CHO THUÊ"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=7"
-                                        title="NHÀ ĐẤT CHO THUÊ">NHÀ ĐẤT CHO THUÊ</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-7" data-table="product_list" data-id="7"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-7" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=7"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_list&type=san-pham&p=1&id=7"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                            </tr> --}}
+                            @foreach ($category_level1 as $item)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-17" value="{{ $item->id }}">
+                                            <label for="select-checkbox-17" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $item->number }}" data-id=""
+                                            data-table="">
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="{{ URL::asset('uploads/images/' . $item->image) }}"
+                                            title=""><img class="rounded img-preview" src=""
+                                                alt=""></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark" href=""
+                                            title="Nhà 72m2 một lầu đúc cần tiền bán gấp ">{{ $item->tittle }}</a>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-17" data-table="product_list" data-id="17"
+                                                data-loai="display" {{ $item->display == 1 ? 'checked' : '' }}>
+                                            <label for="show-checkbox-17" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center text-md text-nowrap">
+                                        <a class="text-primary mr-2"
+                                            href="/real_estate/category-level1/edit/{{ $item->id }}"
+                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                        <a class="text-danger" id="delete-item"
+                                            data-url="{{ route('delete.category1', ['id' => $item->id]) }}"
+                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

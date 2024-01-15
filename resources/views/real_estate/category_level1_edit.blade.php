@@ -11,6 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/adminlte.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('js/priceFormat.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
 </head>
 
 <body>
@@ -350,7 +355,10 @@
     <div class="content-wrapper">
         <section class="content">
             <form class="validation-form" novalidate method="post"
-                action="index.php?com=product&act=save_list&type=san-pham&p=1" enctype="multipart/form-data">
+                action="{{ route('update.category1', $category_level1) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $category_level1->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -370,8 +378,8 @@
                             </div>
                             <div class="card-body card-slug">
 
-                                <input type="hidden" class="slug-id" value="">
-                                <input type="hidden" class="slug-copy" value="0">
+                                {{-- <input type="hidden" class="slug-id" value="">
+                                <input type="hidden" class="slug-copy" value=""> --}}
 
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -394,8 +402,8 @@
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
                                                                 class="text-info"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
-                                                        name="slugvi" id="slugvi" placeholder="Đường dẫn (vi)"
-                                                        value="">
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                        value="{{ $category_level1->link }}">
                                                     <input type="hidden" id="slug-defaultvi" value="">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
@@ -429,7 +437,11 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $category_level1->display }}"{{ $category_level1->display == 1 ? 'checked' : '' }}>
+                                        @if (!$category_level1)
+                                            <input type="hidden" name="display" value="0">
+                                        @endif
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -438,8 +450,8 @@
                                         tự:</label>
                                     <input type="number"
                                         class="form-control form-control-mini d-inline-block align-middle"
-                                        min="0" name="data[stt]" id="stt" placeholder="Số thứ tự"
-                                        value="1">
+                                        min="0" name="number" id="stt" placeholder="Số thứ tự"
+                                        value="{{ $category_level1->number }}">
                                 </div>
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -457,14 +469,15 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="tenvi">Tiêu đề (vi):</label>
-                                                    <input type="text" class="form-control for-seo"
-                                                        name="data[tenvi]" id="tenvi" placeholder="Tiêu đề (vi)"
-                                                        value="" required>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)"
+                                                        value="{{ old('tittle') ?? $category_level1->tittle }}"
+                                                        required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"></textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('describe') ?? $category_level1->describe }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -487,10 +500,10 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/product/" onerror="src='assets/images/noimage.png'"
+                                            src="{{ asset('products/' . $category_level1->image) }}"
                                             alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -534,25 +547,25 @@
                                                     <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $category_level1->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
-                                                    <label for="keywordsvi">SEO Keywords (vi):</label>
+                                                    <label for="seo_keyword">SEO Keywords (vi):</label>
                                                     <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="">
+                                                    name="seo_keyword" id="keywordsvi" placeholder=""
+                                                    value="{{ old('seo_keyword') ?? $category_level1->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
-                                                    <label for="descriptionvi">SEO Description (vi):</label>
+                                                    <label for="seo_description">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>0</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)"></textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="">{{ old('seo_description') ?? $category_level1->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>
@@ -577,8 +590,99 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('preview-image');
+            var file = input.files[0];
+            var reader = new FileReader();
 
+            reader.onloadend = function() {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "{{ asset('products/' . $category_level1->image) }}";
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.title-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-tittle span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.keywords-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-keywords span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.description-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-description span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 160) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 160);
+                    inputLength = 160; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
 </body>
 
 </html>
-    

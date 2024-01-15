@@ -6,6 +6,7 @@ use App\Http\Requests\Category1Request;
 use App\Models\Category_level1;
 use App\Models\Seo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class Category_level1Controller extends Controller
 {
@@ -18,32 +19,86 @@ class Category_level1Controller extends Controller
     {
         return view('real_estate.category_level1_create');
     }
-    public function store(Category1Request $request)
-    {
-        dd($request);
-        if ($request->has('image')) {
-            $file = $request->image;
-            $file_name = $file->getClientOriginalName();
-            $file->move(public_path('uploads'), $file_name);
-        }
-        $request->merge(['image' => $file_name]);
 
-        $seo = new Seo();
+    public function store(Request $request)
+    {
+        // Validate dữ liệu từ form
+        // dd($request);
+        $request->validate([
+            'link' => 'required',
+            'tittle' => 'required',
+            'describe' => 'required',
+            'number' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        // Tìm hoặc tạo một đối tượng Seo
+        $seo = new Seo;
         $seo->seo_tittle = $request->input('seo_tittle');
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
 
-        $category_level1 = Category_level1::create(([
-            'image' => $file_name,
-            'tittle' => $request->input('tittle'),
-            'display' => $request->input('display'),
-            'describe' => $request->input('describe'),
-            'seo_id' => $seo->id,
-        ]));
+        // dd($seo);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file_name = $file->getClientOriginalName();
+
+            // Di chuyển hình ảnh đến thư mục lưu trữ
+            $file->move(public_path('products'), $file_name);
+        } else {
+            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
+            $file_name = 'default_image.jpg';
+        }
+
+        $category_level1 = new Category_level1();
+        $category_level1->image = $file_name;
+        $category_level1->link = $request->input('link');
+        $category_level1->tittle = $request->input('tittle');
+        $category_level1->describe = $request->input('describe');
+        $category_level1->display = $request->has('display') ? 1 : 0;
+        $category_level1->number = $request->input('number');
+        $category_level1->seo_id = $seo->id;
+
+        // Cập nhật khóa ngoại 'seo_id' của sản phẩm
         $category_level1->seo()->associate($seo);
         $category_level1->save();
+        // Chuyển hướng hoặc trả về phản hồi theo cần thiết
+        return redirect()->route('show.category1');
+    }
+    public function edit($id)
+    {
+        $category_level1 = Category_level1::with(['seo'])->find($id);
+        // dd($category_level1);
+        // dd($category_level1->display);
+        return view('real_estate.category_level1_edit', compact('category_level1'));
+    }
+    public function update(Request $request, $id)
+    {
+        $category_level1 = Category_level1::findOrFail($id);
+        $seo = $category_level1->seo;
+        // dd($request);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file_name = $file->getClientOriginalName();
 
-        return redirect()->route('show.category1')->with('success', 'Bản ghi đã được tạo thành công!');
+            // Di chuyển hình ảnh đến thư mục lưu trữ
+            $file->move(public_path('products'), $file_name);
+        } else {
+            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
+            $file_name = 'default_image.jpg';
+        }
+        $category_level1->image = $file_name;
+        $category_level1->tittle = $request->input('tittle');
+        $category_level1->describe = $request->input('describe');
+        $category_level1->link = $request->input('link');
+        $category_level1->number = $request->input('number');
+        $category_level1->display = $request->has('display');
+        $category_level1->seo_id = $request->input('seo_id');
+        $category_level1->save();
+        $seo->seo_tittle = $request->input('seo_tittle');
+        $seo->seo_keyword = $request->input('seo_keyword');
+        $seo->seo_description = $request->input('seo_description');
+        $seo->save();
+        return back();
     }
 }

@@ -11,6 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/adminlte.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('js/priceFormat.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
 </head>
 
 <body>
@@ -353,6 +358,7 @@
             <form class="validation-form" novalidate method="post" action="{{ route('store.category1') }}"
                 enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" value="" name="seo_id">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -398,6 +404,9 @@
                                                     <input type="text" class="form-control slug-input no-validate"
                                                         name="link" id="slugvi" placeholder="Đường dẫn (vi)"
                                                         value="">
+                                                    @error('link')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                     <input type="hidden" id="slug-defaultvi" value="">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
@@ -432,7 +441,7 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="display" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox">
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -464,11 +473,17 @@
                                                     <input type="text" class="form-control for-seo" name="tittle"
                                                         id="tenvi" placeholder="Tiêu đề (vi)" value=""
                                                         required>
+                                                    @error('tittle')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)"></textarea>
+                                                    @error('describe')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -478,8 +493,6 @@
                         </div>
                     </div>
                     <div class="col-xl-4">
-
-
                         <div class="card card-primary card-outline text-sm">
                             <div class="card-header">
                                 <h3 class="card-title">Hình ảnh Sản phẩm cấp 1</h3>
@@ -491,9 +504,10 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/product/" alt="Alt Photo" /></div>
+                                            id="uploaded-image" src="" alt="Alt Photo" />
+                                    </div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -504,7 +518,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="card card-primary card-outline text-sm">
@@ -534,34 +547,37 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="titlevi">SEO Title (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-tittle"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="" data-max-characters="70">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="keywordsvi">SEO Keywords (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-keywords"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)" value=""
+                                                    data-max-characters="70">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
-                                                    <label for="descriptionvi">SEO Description (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/160 ký tự</strong>
+                                                    <label for="seo_description">SEO Description (vi):</label>
+                                                    <strong class="count-seo-description"><span>0</span>/160 ký
+                                                        tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)"></textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)" data-max-characters="160"></textarea>
                                             </div>
 
                                         </div>
                                     </div>
                                 </div>
                                 <input type="hidden" id="seo-create" value="vi">
+
                             </div>
                         </div>
                     </div>
@@ -586,6 +602,102 @@
         @endif
 
     </div>
+
+    {{-- Hình ảnh --}}
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+    {{-- Đếm kí tự --}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.title-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-tittle span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.keywords-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-keywords span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.description-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-description span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 160) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 160);
+                    inputLength = 160; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
 
 </body>
 

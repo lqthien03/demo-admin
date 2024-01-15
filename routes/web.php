@@ -25,8 +25,8 @@ Route::controller(Category_level1Controller::class)->group(function () {
     Route::get('/real_estate/category-level1', 'show')->name('show.category1');
     Route::get('/real_estate/category-level1/create', 'create')->name('create.category1');
     Route::post('/real_estate/category-level1/create', 'store')->name('store.category1');
-    Route::get('/real_estate/category-level1/edit{category_level1}', 'edit')->name('edit.category1');
-    Route::put('/real_estate/category-level1/edit{category_level1}', 'update')->name('update.category1');
+    Route::get('/real_estate/category-level1/edit/{category_level1}', 'edit')->name('edit.category1');
+    Route::put('/real_estate/category-level1/edit/{category_level1}', 'update')->name('update.category1');
     Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
 });
 
