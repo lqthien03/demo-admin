@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category_level1 extends Model
 {
     use HasFactory;
-    public $table = "prodct_level1";
+    public $table = "level1_products";
     protected $fillable = [
         // 'noibat',
         // 'tenkhongdauvi',
@@ -20,9 +20,11 @@ class Category_level1 extends Model
         // 'tenen',
         // 'tenvi',
         'image',
+        'number',
         'tittle',
         'outstand',
         'display',
+        'new',
         'link',
         'seo_id',
         'descrie',
