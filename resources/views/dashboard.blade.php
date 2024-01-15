@@ -233,7 +233,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/contact" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
