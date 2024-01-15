@@ -11011,11 +11011,12 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini)
   }
 }
 :not(.layout-fixed) .main-sidebar {
-  height: inherit;
-  min-height: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   z-index: 100;
+  box-sizing: border-box;
+  flex-grow: 1;
 }
 .layout-fixed .brand-link {
   width: 250px;
@@ -28589,7 +28590,7 @@ blockquote.quote-gray-dark h6 {
   background-image: none !important;
 }
 .bg-gradient-danger.btn:hover {
-  border-color: #2c2d9b  
+  border-color: #2c2d9b
 ;
   color: #ececec;
 }
