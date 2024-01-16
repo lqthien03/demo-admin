@@ -366,8 +366,11 @@
         </section>
         <!-- Main content -->
         <section class="content">
-            <form class="validation-form" novalidate method="post" action="index.php?com=setting&act=save"
+            <form class="validation-form" novalidate method="post" action="{{ route('edit.setting', $setting) }}"
                 enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $setting->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -382,73 +385,73 @@
                         <div class="row">
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="diachi">Địa chỉ:</label>
-                                <input type="text" class="form-control" name="data[options][diachi]"
-                                    id="diachi" placeholder="Địa chỉ"
-                                    value="740/11 Lê Trọng Tấn, P. Bình Hưng Hòa, Q. Bình Tân, TP. Hồ Chí Minh">
+                                <input type="text" class="form-control" name="address" id="diachi"
+                                    placeholder="Địa chỉ" value="{{ old('address') ?? $setting->address }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="data[options][email]"
-                                    id="email" placeholder="Email" value="tranquangthu986@gmail.com">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email" value="{{ old('email') ?? $setting->email }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="hotline">Hotline:</label>
-                                <input type="text" class="form-control" name="data[options][hotline]"
-                                    id="hotline" placeholder="Hotline" value="0935.613.986 (Mr Thu)">
+                                <input type="text" class="form-control" name="hotline" id="hotline"
+                                    placeholder="Hotline" value="{{ old('hotline') ?? $setting->hotline }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="dienthoai">Điện thoại:</label>
-                                <input type="text" class="form-control" name="data[options][dienthoai]"
-                                    id="dienthoai" placeholder="Điện thoại" value="0903.250.446 (Ms Phượng)">
+                                <input type="text" class="form-control" name="phone" id="dienthoai"
+                                    placeholder="Điện thoại" value="{{ old('phone') ?? $setting->phone }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="zalo">Zalo:</label>
-                                <input type="text" class="form-control" name="data[options][zalo]" id="zalo"
-                                    placeholder="Zalo" value="0935613986">
+                                <input type="text" class="form-control" name="zalo" id="zalo"
+                                    placeholder="Zalo" value="{{ old('zalo') ?? $setting->zalo }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="website">Website:</label>
-                                <input type="text" class="form-control" name="data[options][website]"
-                                    id="website" placeholder="Website" value="https://nhadatminhphat.com.vn/">
+                                <input type="text" class="form-control" name="website" id="website"
+                                    placeholder="Website" value="{{ old('website') ?? $setting->website }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="fanpage">Fanpage:</label>
-                                <input type="text" class="form-control" name="data[options][fanpage]"
-                                    id="fanpage" placeholder="Fanpage"
-                                    value="https://www.facebook.com/Nhà-Đất-Minh-Phát-111106626972701/">
+                                <input type="text" class="form-control" name="fanpage" id="fanpage"
+                                    placeholder="Fanpage" value="{{ old('fanpage') ?? $setting->fanpage }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="slogan">Copyright:</label>
-                                <input type="text" class="form-control" name="data[options][copyright]"
-                                    id="copyright" placeholder="copyright top"
-                                    value="Copyright ©2023 @ NHÀ ĐẤT MINH PHÁT. All Rights Reserved. Protected by BLUEWEB">
+                                <input type="text" class="form-control" name="copyright" id="copyright"
+                                    placeholder="copyright top"
+                                    value="{{ old('copyright') ?? $setting->copyright }}">
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="chiduong">Chỉ đường:</label>
-                                <input type="text" class="form-control" name="data[options][chiduong]"
-                                    id="chiduong" placeholder="Link chỉ đường"
-                                    value="https://www.google.com/maps/dir//C%C3%B4ng+Ty+Ph%C3%A1t+Tri%E1%BB%83n+C%C3%B4ng+Ngh%E1%BB%87+Ph%E1%BA%A7n+M%E1%BB%81m+Quang+Trung,+T%C3%B2a+nh%C3%A0+SBI,+T%C3%A2n+Ch%C3%A1nh+Hi%E1%BB%87p,+Qu%E1%BA%ADn+12,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.854714,106.6233003,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31752a1c5309b5d7:0x7fbb7aa516eb8f49!2m2!1d106.625489!2d10.854714">
+                                <input type="text" class="form-control" name="map" id="chiduong"
+                                    placeholder="Link chỉ đường" value="{{ old('map') ?? $setting->map }}">
                             </div>
 
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="soluong_sp">Số S.phẩm phân trang:</label>
-                                <input type="text" class="form-control" name="data[options][soluong_sp]"
-                                    id="soluong_sp" placeholder="Số lượng phân trang" value="24">
+                                <input type="text" class="form-control" name="" id="soluong_sp"
+                                    placeholder="Số lượng phân trang"
+                                    value=""readonly>
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="soluong_spk">Số S.phẩm liên quan phân trang:</label>
-                                <input type="text" class="form-control" name="data[options][soluong_spk]"
-                                    id="soluong_spk" placeholder="Số lượng phân trang" value="22">
+                                <input type="text" class="form-control" name="" id="soluong_spk"
+                                    placeholder="Số lượng phân trang"
+                                    value="{{ old('seo_tittle') ?? $setting->seo_tittle }}"readonly>
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="soluong_tin">Số Tin phân trang:</label>
-                                <input type="text" class="form-control" name="data[options][soluong_tin]"
-                                    id="soluong_tin" placeholder="Số lượng phân trang" value="22">
+                                <input type="text" class="form-control" name="" id="soluong_tin"
+                                    placeholder="Số lượng phân trang"
+                                    value="{{ old('seo_tittle') ?? $setting->seo_tittle }}"readonly>
                             </div>
                             <div class="form-group col-md-4 col-sm-6">
                                 <label for="soluong_tink">Số tin liên quan phân trang:</label>
-                                <input type="text" class="form-control" name="data[options][soluong_tink]"
-                                    id="soluong_tink" placeholder="Số lượng phân trang" value="10">
+                                <input type="text" class="form-control" name="" id="soluong_tink"
+                                    placeholder="Số lượng phân trang" value="" readonly>
                             </div>
 
                         </div>
@@ -458,36 +461,25 @@
                                 <a class="text-sm font-weight-normal ml-1" href="https://www.google.com/maps"
                                     target="_blank" title="Lấy mã nhúng google map">(Lấy mã nhúng)</a>
                             </label>
-                            <textarea class="form-control" name="data[options][toado_iframe]" id="toado_iframe" rows="5"
-                                placeholder="Tọa độ google map iframe"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.2185849500174!2d106.6023972751385!3d10.815527989362677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b95662163d9%3A0xa139e3984b7ff50f!2zTMOqIFRy4buNbmcgVOG6pW4sIELDrG5oIEjGsG5nIEhvw6AsIELDrG5oIFTDom4sIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1703776412320!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></textarea>
+                            <textarea class="form-control" name="map_iframe" id="toado_iframe" rows="5"
+                                placeholder="Tọa độ google map iframe">{{ old('map_iframe') ?? $setting->map_iframe }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="analytics">Google analytics:</label>
-                            <textarea class="form-control" name="data[analytics]" id="analytics" rows="5" placeholder="Google analytics"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-179467531-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-179467531-1');
-</script>
-</textarea>
+                            <textarea class="form-control" name="gg_analytic" id="analytics" rows="5" placeholder="Google analytics">{{ old('gg_analytic') ?? $setting->gg_analytic }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="mastertool">Google Webmaster Tool:</label>
-                            <textarea class="form-control" name="data[mastertool]" id="mastertool" rows="5"
-                                placeholder="Google Webmaster Tool"></textarea>
+                            <textarea class="form-control" name="gg_webmaster_tool" id="mastertool" rows="5"
+                                placeholder="Google Webmaster Tool">{{ old('gg_webmaster_tool') ?? $setting->gg_webmaster_tool }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="headjs">Head JS:</label>
-                            <textarea class="form-control" name="data[headjs]" id="headjs" rows="5" placeholder="Head JS"></textarea>
+                            <textarea class="form-control" name="head_js" id="headjs" rows="5" placeholder="Head JS">{{ old('head_js') ?? $setting->head_js }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="bodyjs">Body JS:</label>
-                            <textarea class="form-control" name="data[bodyjs]" id="bodyjs" rows="5" placeholder="Body JS"></textarea>
+                            <textarea class="form-control" name="body_js" id="bodyjs" rows="5" placeholder="Body JS">{{ old('body_js') ?? $setting->body_js }}</textarea>
                         </div>
                         <div class="card card-primary card-outline card-outline-tabs">
                             <div class="card-header p-0 border-bottom-0">
@@ -505,9 +497,9 @@
                                         aria-labelledby="tabs-lang">
                                         <div class="form-group">
                                             <label for="tenvi">Tiêu đề (vi):</label>
-                                            <input type="text" class="form-control for-seo" name="data[tenvi]"
-                                                id="tenvi" placeholder="Tiêu đề (vi)" value="NHÀ ĐẤT MINH PHÁT"
-                                                required>
+                                            <input type="text" class="form-control for-seo" name="tittle"
+                                                id="tenvi" placeholder="Tiêu đề (vi)"
+                                                value="{{ old('tittle') ?? $setting->tittle }}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -545,8 +537,8 @@
                                                     <strong class="count-seo"><span>17</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="NHÀ ĐẤT MINH PHÁT">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $setting->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -554,17 +546,17 @@
                                                     <strong class="count-seo"><span>191</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
+                                                    name="seo_keyword" id="keywordsvi"
                                                     placeholder="SEO Keywords (vi)"
-                                                    value=" bán nhà phố, bán đất nền, mua bán đất giá rẻ, mua bán nhà phố, mua bán nhà phố hcm, bán nhà hcm, bán nhà phố giá rẻ, mua bán đất hcm, mua bán đất, ký gửi nhà đất, hoàn công,  tư vấn pháp lý,">
+                                                    value="{{ old('seo_keyword') ?? $setting->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>215</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)">nhà đất minh phát chuyên bán nhà phố, bán đất nền, mua bán đất giá rẻ, mua bán nhà phố, mua bán nhà phố hcm, bán nhà hcm, bán nhà phố giá rẻ, mua bán đất hcm, mua bán đất, ký gửi nhà đất, hoàn công,  tư vấn pháp lý.</textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $setting->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>

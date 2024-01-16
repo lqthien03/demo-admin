@@ -298,7 +298,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                            <li class="nav-item"><a class="nav-link " href="/users/information/1"
                                     title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
@@ -318,25 +318,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate/1" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news/1" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure/1" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise/1" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -345,7 +345,7 @@
                     </li>
                     <!-- Thiết lập thông tin -->
                     <li class="nav-item  ">
-                        <a class="nav-link " href="" title="Thiết lập thông tin">
+                        <a class="nav-link " href="/setting/1" title="Thiết lập thông tin">
                             <i class="nav-icon text-sm fas fa-cogs"></i>
                             <p>Thiết lập thông tin</p>
                         </a>
@@ -422,8 +422,8 @@
                                             data-table="">
                                     </td>
                                     <td class="align-middle">
-                                        <a href="{{ URL::asset('uploads/images/' . $item->image) }}"
-                                            title=""><img class="rounded img-preview" src=""
+                                        <a href="" title=""><img class="rounded img-preview"
+                                                src="{{ URL::asset('uploads/images/' . $item->image) }}"
                                                 alt=""></a>
                                     </td>
                                     <td class="align-middle">

@@ -363,13 +363,17 @@
                         </li>
                         <li class="breadcrumb-item active">Quản lý Seo page</li>
                     </ol>
-                </div>
+                </div>  
             </div>
         </section>
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="index.php?com=seopage&act=save&type=tu-van" enctype="multipart/form-data">
+            <form method="post" action="{{ route('edit.seo_procedure', $seo_procedure) }}"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $seo_procedure->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -386,8 +390,7 @@
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
                                     <img class="rounded img-upload"
-                                        src="../thumbs/300x200x1/upload/seopage/logo-5206-3542.png"
-                                        onerror="src='assets/images/noimage.png'" alt="Alt Photo" />
+                                        src="{{ URL::asset('products/' . $seo_procedure->image) }}" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i
@@ -398,7 +401,7 @@
                             <strong class="d-block mt-2 mb-2 text-sm">Width: 300 px - Height: 200 px
                                 (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
                             <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="file" id="file">
+                                <input type="file" class="custom-file-input" name="image" id="file">
                                 <label class="custom-file-label" for="file">Chọn file</label>
                             </div>
                         </div>
@@ -425,8 +428,8 @@
                                                     <strong class="count-seo"><span>23</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="Tư vấn thủ tục nhà đất ">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $seo_procedure->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -434,16 +437,17 @@
                                                     <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)"
+                                                    value="{{ old('seo_keyword') ?? $seo_procedure->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>231</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)">Thủ tục nhà đất nhà đất minh phát chuyên bán nhà phố, bán đất nền, mua bán đất giá rẻ, mua bán nhà phố, mua bán nhà phố hcm, bán nhà hcm, bán nhà phố giá rẻ, mua bán đất hcm, mua bán đất, ký gửi nhà đất, hoàn công,  tư vấn pháp lý.</textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $seo_procedure->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>

@@ -5,30 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category_level2 extends Model
+class News extends Model
 {
     use HasFactory;
-    public $table = "level2_products";
+    public $table = "news";
     protected $fillable = [
-        'number',
         'image',
+        'link',
         'tittle',
+        'describe',
+        'content',
         'outstand',
         'display',
-        'link',
+        'number',
         'seo_id',
-        'descrie',
-        'level1_product_id',
     ];
-    // protected $attributes = ['outstand' => 1,];
     public $timestamps = false;
-
     public function seo()
     {
         return $this->belongsTo(Seo::class, 'seo_id', 'id');
-    }
-    public function level1_product()
-    {
-        return $this->belongsTo(Category_level1::class, 'level1_product_id', 'id');
     }
 }

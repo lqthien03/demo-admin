@@ -367,9 +367,8 @@
         </section>
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_cat&type=san-pham&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level2/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
                     data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
@@ -391,9 +390,9 @@
                 <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_list"
                         name="level1_product_id" class="form-control filer-category select2">
                         <option value="0">Chọn danh mục</option>
-                        {{-- @foreach ($category_level1 as $item)
-                            <option value="{{ $item->id }}">{{ $item->tittle }}</option>
-                        @endforeach --}}
+                        @foreach ($category_level2 as $item)
+                            <option value="{{ $item->id }}">{{ $item->level1_product->title }}</option>
+                        @endforeach
 
                     </select></div>
             </div>
@@ -418,312 +417,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-36" value="36">
-                                        <label for="select-checkbox-36" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="36" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=36"
-                                        title="NHÀ ĐẤT BÌNH TÂN">NHÀ ĐẤT BÌNH TÂN</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-36" data-table="product_cat" data-id="36"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-36" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=36"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=36"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-35" value="35">
-                                        <label for="select-checkbox-35" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="35" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id=35"
-                                        title="NHÀ ĐẤT LONG AN">NHÀ ĐẤT LONG AN</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-35" data-table="product_cat" data-id="35"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-35" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id=35"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id=35"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-3" value="3">
-                                        <label for="select-checkbox-3" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="3" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=3"
-                                        title="NHÀ ĐẤT TÂY NINH">NHÀ ĐẤT TÂY NINH</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-3" data-table="product_cat" data-id="3"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-3" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=3"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=3"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-4" value="4">
-                                        <label for="select-checkbox-4" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="3" data-id="4" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=4"
-                                        title="NHÀ ĐẤT QUẬN 12">NHÀ ĐẤT QUẬN 12</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-4" data-table="product_cat" data-id="4"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-4" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=4"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=4"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-5" value="5">
-                                        <label for="select-checkbox-5" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="4" data-id="5" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=5"
-                                        title="NHÀ ĐẤT HÓC MÔN">NHÀ ĐẤT HÓC MÔN</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-5" data-table="product_cat" data-id="5"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-5" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=5"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=5"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-6" value="6">
-                                        <label for="select-checkbox-6" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="5" data-id="6" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=6"
-                                        title="NHÀ ĐẤT CỦ CHI">NHÀ ĐẤT CỦ CHI</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-6" data-table="product_cat" data-id="6"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-6" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=6"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=6"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-7" value="7">
-                                        <label for="select-checkbox-7" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="6" data-id="7" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=7"
-                                        title="NHÀ ĐẤT Q3 TP.HCM">NHÀ ĐẤT Q3 TP.HCM</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-7" data-table="product_cat" data-id="7"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-7" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=7"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=7"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-8" value="8">
-                                        <label for="select-checkbox-8" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="7" data-id="8" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=8"
-                                        title="NHÀ ĐẤT  TÂN PHÚ">NHÀ ĐẤT TÂN PHÚ</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-8" data-table="product_cat" data-id="8"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-8" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=8"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=8"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-37" value="37">
-                                        <label for="select-checkbox-37" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="8" data-id="37" data-table="product_cat">
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=37"
-                                        title="NHÀ ĐẤT BÌNH CHÁNH">NHÀ ĐẤT BÌNH CHÁNH</a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-37" data-table="product_cat" data-id="37"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-37" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_cat&type=san-pham&p=1&id_list=6&id=37"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=37"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                            @foreach ($category_level2 as $item)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-36" value="{{ $item->id }}">
+                                            <label for="select-checkbox-36" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $item->number }}" data-id=""
+                                            data-table="product_cat">
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark"
+                                            href="/real_estate/category-level2/edit/{{ $item->id }}"
+                                            title="NHÀ ĐẤT BÌNH TÂN">{{ $item->tittle }}</a>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-36" data-table="product_cat" data-id="36"
+                                                data-loai="display" {{ $item->display == 1 ? 'checked' : '' }}>
+                                            <label for="show-checkbox-36" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center text-md text-nowrap">
+                                        <a class="text-primary mr-2"
+                                            href="/real_estate/category-level2/edit/{{ $item->id }}"
+                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                        <a class="text-danger" id="delete-item"
+                                            data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1&id_list=6&id=36"
+                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

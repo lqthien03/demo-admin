@@ -1,12 +1,21 @@
 <?php
 
+use App\Http\Controllers\AdviseController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\Category_level1Controller;
 use App\Http\Controllers\Category_level2Controller;
 use App\Http\Controllers\FaviconController;
 use App\Http\Controllers\logoController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SeoAdviseController;
+use App\Http\Controllers\SeoEstateController;
+use App\Http\Controllers\SeoNewsController;
+use App\Http\Controllers\SeoProcedureController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,15 +54,15 @@ Route::controller(Category_level2Controller::class)->group(function () {
 
 
 ///
-Route::get('/real_estate/category-level2', function () {
-    return view('real_estate.category_level2');
-});
-Route::get('/real_estate/category-level2/create', function () {
-    return view('real_estate.category_level2_create');
-});
-Route::get('/real_estate/category-level2/edit', function () {
-    return view('real_estate.category_level2_edit');
-});
+// Route::get('/real_estate/category-level2', function () {
+//     return view('real_estate.category_level2');
+// });
+// Route::get('/real_estate/category-level2/create', function () {
+//     return view('real_estate.category_level2_create');
+// });
+// Route::get('/real_estate/category-level2/edit', function () {
+//     return view('real_estate.category_level2_edit');
+// });
 ///
 Route::get('/real_estate/product', function () {
     return view('real_estate.product');
@@ -70,35 +79,32 @@ Route::get('/real_estate/product/gallery', function () {
 /////end
 
 ///Quản lý bài viết
-Route::get('/posts/advise', function () {
-    return view('posts.advise');
+Route::controller(NewsController::class)->group(function () {
+    Route::get('/posts/news', 'show')->name('show.news');
+    Route::get('/posts/news/create', 'create')->name('create.news');
+    Route::post('/posts/news/create', 'store')->name('store.news');
+    Route::get('/posts/news/edit{news}', 'edit')->name('edit.news');
+    Route::put('/posts/news/edit{news}', 'update')->name('update.news');
+    Route::delete('/posts/news/{id}', 'destroy')->name('delete.news');
 });
-Route::get('/posts/advise/create', function () {
-    return view('posts.advise_create');
+Route::controller(AdviseController::class)->group(function () {
+    Route::get('/posts/advise', 'show')->name('show.advise');
+    Route::get('/posts/advise/create', 'create')->name('create.advise');
+    Route::post('/posts/advise/create', 'store')->name('store.advise');
+    Route::get('/posts/advise/edit{advise}', 'edit')->name('edit.advise');
+    Route::put('/posts/advise/edit{advise}', 'update')->name('update.advise');
+    Route::delete('/posts/advise/{id}', 'destroy')->name('delete.advise');
 });
-Route::get('/posts/advise/edit', function () {
-    return view('posts.advise_edit');
+Route::controller(ProcedureController::class)->group(function () {
+    Route::get('/posts/procedure', 'show')->name('show.procedure');
+    Route::get('/posts/procedure/create', 'create')->name('create.procedure');
+    Route::post('/posts/procedure/create', 'store')->name('store.procedure');
+    Route::get('/posts/procedure/edit{procedure}', 'edit')->name('edit.procedure');
+    Route::put('/posts/procedure/edit{procedure}', 'update')->name('update.procedure');
+    Route::delete('/posts/procedure/{id}', 'destroy')->name('delete.procedure');
 });
-///
-Route::get('/posts/news', function () {
-    return view('posts.advise');
-});
-Route::get('/posts/news/create', function () {
-    return view('posts.advise_create');
-});
-Route::get('/posts/news/edit', function () {
-    return view('posts.advise_edit');
-});
-///
-Route::get('/posts/procedure', function () {
-    return view('posts.procedure');
-});
-Route::get('/posts/procedure/create', function () {
-    return view('posts.procedure_create');
-});
-Route::get('/posts/procedure/edit', function () {
-    return view('posts.procedure_edit');
-});
+
+
 ///end
 
 ///Quản lý nhận tin
@@ -182,29 +188,35 @@ Route::get('/image-video/social_network/edit', function () {
 //     return view('users.information');
 // });
 Route::controller(UserController::class)->group(function () {
-    Route::get('/image-video/users/{user}', 'edit')->name('edit.image.user');
-    Route::put('/image-video/users/{user}', 'update')->name('update.image.user');
+    Route::get('/users/information/{user}', 'edit')->name('edit.user');
+    Route::put('/users/information/{user}', 'update')->name('update.user');
 });
 
 
 ///Quản lý SEO page
-Route::get('/seopage/seo-estate', function () {
-    return view('seo_page.seo_estate');
+Route::controller(SeoEstateController::class)->group(function () {
+    Route::get('/seopage/seo-estate/{seo_estate}', 'edit')->name('edit.seo_estate');
+    Route::put('/seopage/seo-estate/{seo_estate}', 'update')->name('update.seo_estate');
 });
-Route::get('/seopage/seo-news', function () {
-    return view('seo_page.seo_news');
+Route::controller(SeoNewsController::class)->group(function () {
+    Route::get('/seopage/seo-news/{seo_news}', 'edit')->name('edit.seo_news');
+    Route::put('/seopage/seo-news/{seo_news}', 'update')->name('update.seo_news');
 });
-Route::get('/seopage/seo-advise', function () {
-    return view('seo_page.seo_advise');
+Route::controller(SeoAdviseController::class)->group(function () {
+    Route::get('/seopage/seo-advise/{seo_advise}', 'edit')->name('edit.seo_advise');
+    Route::put('/seopage/seo-advise/{seo_advise}', 'update')->name('update.seo_advise');
 });
-Route::get('/seopage/seo-procedure', function () {
-    return view('seo_page.seo_procedure');
+Route::controller(SeoProcedureController::class)->group(function () {
+    Route::get('/seopage/seo-procedure/{seo_procedure}', 'edit')->name('edit.seo_procedure');
+    Route::put('/seopage/seo-procedure/{seo_procedure}', 'update')->name('update.seo_procedure');
 });
+
+
 ///end
 
-
-Route::get('/setting', function () {
-    return view('setting');
+Route::controller(SettingController::class)->group(function () {
+    Route::get('/setting/{setting}', 'edit')->name('edit.setting');
+    Route::put('/setting/{setting}', 'update')->name('update.setting');
 });
 
 Route::get('/dashboard', function () {

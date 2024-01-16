@@ -367,7 +367,9 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="{{ route('edit.image.user', $user) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('edit.user', $user) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -382,42 +384,48 @@
                         <div class="row">
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="username">Tài khoản: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="" id="role"
-                                    placeholder="Tài khoản" value="admin" readonly required>
+                                <input type="text" class="form-control" name="role" id="role"
+                                    placeholder="Tài khoản" value="{{ old('role') ?? $user->role }}" readonly
+                                    required>
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="ten">Họ tên: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="" id="ten"
-                                    placeholder="Họ tên" value="{{}}" required>
+                                <input type="text" class="form-control" name="name" id="ten"
+                                    placeholder="Họ tên" value="{{ old('name') ?? $user->name }}" required>
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="data[email]" id="email"
-                                    placeholder="Email" value="tranquangthu986@gmail.com">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email" value="{{ old('email') ?? $user->email }}">
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="dienthoai">Điện thoại:</label>
-                                <input type="text" class="form-control" name="data[dienthoai]" id="dienthoai"
-                                    placeholder="Điện thoại" value="0935613986">
+                                <input type="text" class="form-control" name="phone" id="dienthoai"
+                                    placeholder="Điện thoại" value="{{ old('phone') ?? $user->phone }}">
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="gioitinh">Giới tính:</label>
-                                <select class="form-control" name="data[gioitinh]" id="gioitinh">
-                                    <option value="0">Chọn giới tính</option>
+                                <select class="form-control" name="sex" id="gioitinh">
+                                    {{-- <option value="0">Chọn giới tính</option>
                                     <option selected value="1">Nam</option>
-                                    <option value="2">Nữ</option>
+                                    <option value="2">Nữ</option> --}}
+                                    <option value="0" @if ($user->sex === 0) selected @endif>Chọn giới
+                                        tính</option>
+                                    <option value="1" @if ($user->sex === 1) selected @endif>Nam
+                                    </option>
+                                    <option value="2" @if ($user->sex === 2) selected @endif>Nữ
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="ngaysinh">Ngày sinh:</label>
-                                <input type="text" class="form-control" name="data[ngaysinh]" id="ngaysinh"
-                                    placeholder="Ngày sinh" value="10/05/1977" readonly>
+                                <input type="date" class="form-control" name="date" id="ngaysinh"
+                                    placeholder="Ngày sinh" value="{{ old('date') ?? $user->date }}">
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="diachi">Địa chỉ:</label>
-                                <input type="text" class="form-control" name="data[diachi]" id="diachi"
-                                    placeholder="Địa chỉ"
-                                    value="740/11 Lê Trọng Rấn, P. Bình Hưng Hòa, Bình Tân, TP HCM">
+                                <input type="text" class="form-control" name="address" id="diachi"
+                                    placeholder="Địa chỉ" value="{{ old('address') ?? $user->address }}">
                             </div>
                         </div>
                     </div>

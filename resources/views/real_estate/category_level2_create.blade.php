@@ -371,6 +371,7 @@
         <section class="content">
             <form class="validation-form" novalidate method="post" action="{{ route('store.category2') }}"
                 enctype="multipart/form-data">
+                @csrf
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
