@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -387,12 +389,12 @@
             </div>
             <div class="card-footer form-group-category text-sm bg-light row">
                 <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_list"
-                        name="id_list" onchange="onchange_category($(this))"
-                        class="form-control filer-category select2">
+                        name="level1_product_id" class="form-control filer-category select2">
                         <option value="0">Chọn danh mục</option>
-                        <option value=17>Nhà 72m2 một lầu đúc cần tiền bán gấp </option>
-                        <option value=6>NHÀ ĐẤT BÁN</option>
-                        <option value=7>NHÀ ĐẤT CHO THUÊ</option>
+                        {{-- @foreach ($category_level1 as $item)
+                            <option value="{{ $item->id }}">{{ $item->tittle }}</option>
+                        @endforeach --}}
+
                     </select></div>
             </div>
             <div class="card card-primary card-outline text-sm mb-0">

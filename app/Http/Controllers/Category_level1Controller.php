@@ -101,4 +101,10 @@ class Category_level1Controller extends Controller
         $seo->save();
         return back();
     }
+    public function destroy($id)
+    {
+        $category_level1 = Category_level1::find($id);
+        $category_level1->delete();
+        return back();
+    }
 }

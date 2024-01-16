@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -365,8 +367,7 @@
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm
                         lại</button>
-                    <a class="btn btn-sm bg-gradient-danger"
-                        href="index.php?com=product&act=man_list&type=san-pham&p=1" title="Thoát"><i
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/category-level1" title="Thoát"><i
                             class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">
@@ -396,14 +397,14 @@
                                         <div class="tab-content" id="custom-tabs-three-tabContent-lang">
                                             <div class="tab-pane fade show active" id="tabs-sluglang-vi"
                                                 role="tabpanel" aria-labelledby="tabs-lang">
-                                                <div class="form-gourp mb-0">
-                                                    <label class="d-block">Đường dẫn mẫu (vi):<span
-                                                            class="pl-2 font-weight-normal"
+                                                <div class="form-group mb-0">
+                                                    <label class="d-block">Đường dẫn mẫu (vi):
+                                                        <span class="pl-2 font-weight-normal"
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
-                                                                class="text-info"></strong></span></label>
+                                                                class="text-info" id="slugPreview"></strong></span>
+                                                    </label>
                                                     <input type="text" class="form-control slug-input no-validate"
-                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
-                                                        value="">
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)">
                                                     @error('link')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -411,8 +412,7 @@
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
                                                         <i class="fas fa-exclamation-triangle mr-1"></i>
-                                                        <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có
-                                                            thể bị
+                                                        <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có thể bị
                                                             trùng lặp.</span>
                                                     </p>
                                                     <p class="alert-slugvi text-success d-none mt-2 mb-0"
@@ -698,6 +698,24 @@
             });
         });
     </script>
+
+    {{-- Nối chuỗi --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var slugInput = document.getElementById('slugvi');
+            var slugPreview = document.getElementById('slugPreview');
+
+            // Xác định khi người dùng nhập liệu
+            slugInput.addEventListener('input', function() {
+                var inputValue = slugInput.value;
+                // Nối thêm đoạn "https://nhadatminhphat.com.vn/" vào giá trị nhập vào
+                var fullUrl = 'https://nhadatminhphat.com.vn/' + inputValue;
+                // Hiển thị giá trị đã nối trong phần xem trước
+                slugPreview.textContent = inputValue;
+            });
+        });
+    </script>
+
 
 </body>
 

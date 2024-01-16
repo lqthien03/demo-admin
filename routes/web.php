@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\Category_level1Controller;
 use App\Http\Controllers\Category_level2Controller;
+use App\Http\Controllers\FaviconController;
+use App\Http\Controllers\logoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,7 +40,7 @@ Route::controller(Category_level2Controller::class)->group(function () {
     Route::post('/real_estate/category-level2/create', 'store')->name('store.category2');
     Route::get('/real_estate/category-level2/edit{category_level2}', 'edit')->name('edit.category2');
     Route::put('/real_estate/category-level2/edit{category_level2}', 'update')->name('update.category2');
-    Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
+    Route::delete('/real_estate/category-level2/{id}', 'destroy')->name('delete.category2');
 });
 
 
@@ -138,15 +142,19 @@ Route::get('/static-page/footer', function () {
 ///end
 
 ///Quản lý hình ảnh video
-Route::get('/image-video/logo', function () {
-    return view('image_video.logo');
+Route::controller(logoController::class)->group(function () {
+    Route::get('/image-video/logo/{logo}', 'edit')->name('edit.image.logo');
+    Route::put('/image-video/logo/{logo}', 'update')->name('update.image.logo');
 });
-Route::get('/image-video/banner', function () {
-    return view('image_video.banner');
+Route::controller(BannerController::class)->group(function () {
+    Route::get('/image-video/banner/{banner}', 'edit')->name('edit.image.banner');
+    Route::put('/image-video/banner/{banner}', 'update')->name('update.image.banner');
 });
-Route::get('/image-video/favicon', function () {
-    return view('image_video.favicon');
+Route::controller(FaviconController::class)->group(function () {
+    Route::get('/image-video/favicon/{favicon}', 'edit')->name('edit.image.favicon');
+    Route::put('/image-video/favicon/{favicon}', 'update')->name('update.image.favicon');
 });
+
 ///
 Route::get('/image-video/slideshow', function () {
     return view('image_video.slideshow');
@@ -170,9 +178,14 @@ Route::get('/image-video/social_network/edit', function () {
 ///end
 
 ///Quản lý user
-Route::get('/users/information', function () {
-    return view('users.information');
+// Route::get('/users/information', function () {
+//     return view('users.information');
+// });
+Route::controller(UserController::class)->group(function () {
+    Route::get('/image-video/users/{user}', 'edit')->name('edit.image.user');
+    Route::put('/image-video/users/{user}', 'update')->name('update.image.user');
 });
+
 
 ///Quản lý SEO page
 Route::get('/seopage/seo-estate', function () {

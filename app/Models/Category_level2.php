@@ -26,6 +26,7 @@ class Category_level2 extends Model
         'link',
         'seo_id',
         'descrie',
+        'level1_product_id',
     ];
     // protected $attributes = ['outstand' => 1,];
     public $timestamps = false;
@@ -33,5 +34,9 @@ class Category_level2 extends Model
     public function seo()
     {
         return $this->belongsTo(Seo::class, 'seo_id', 'id');
+    }
+    public function level1_product()
+    {
+        return $this->belongsTo(Category_level1::class, 'level1_product_id', 'id');
     }
 }

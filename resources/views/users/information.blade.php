@@ -367,7 +367,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="index.php?com=user&act=admin_edit" enctype="multipart/form-data">
+            <form method="post" action="{{ route('edit.image.user', $user) }}" enctype="multipart/form-data">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -382,13 +382,13 @@
                         <div class="row">
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="username">Tài khoản: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="data[username]" id="username"
+                                <input type="text" class="form-control" name="" id="role"
                                     placeholder="Tài khoản" value="admin" readonly required>
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="ten">Họ tên: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="data[ten]" id="ten"
-                                    placeholder="Họ tên" value="TRẦN QUANG THU - NHÀ ĐẤT MINH PHÁT" required>
+                                <input type="text" class="form-control" name="" id="ten"
+                                    placeholder="Họ tên" value="{{}}" required>
                             </div>
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label for="email">Email:</label>

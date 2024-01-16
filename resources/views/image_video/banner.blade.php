@@ -362,8 +362,10 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" id="form-watermark" action="index.php?com=photo&act=save_static&type=banner"
+            <form method="post" id="form-watermark" action="{{ route('edit.image.banner', $banner) }}"
                 enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -379,9 +381,8 @@
                             <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload"
-                                        src="../thumbs/200x50x2/upload/photo/banner-4023.png"
-                                        onerror="src='assets/images/noimage.png'" alt="Alt Photo" />
+                                    <img class="rounded img-upload" src="{{ asset('products/' . $banner->image) }}"
+                                        alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i
@@ -392,7 +393,7 @@
                             <strong class="d-block mt-2 mb-2 text-sm">Width: 600 px - Height: 100 px
                                 (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
                             <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="file" id="file">
+                                <input type="file" class="custom-file-input" name="image" id="file">
                                 <label class="custom-file-label" for="file">Chọn file</label>
                             </div>
                         </div>
@@ -404,8 +405,9 @@
                         <div class="form-group">
                             <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
                             <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                    name="data[hienthi]" id="hienthi-checkbox" checked>
+                                <input type="checkbox" class="custom-control-input hienthi-checkbox" name="display"
+                                    id="hienthi-checkbox"
+                                    value="{{ old('display') ?? $banner->display }}"{{ $banner->display == 1 ? 'checked' : '' }}>
                                 <label for="hienthi-checkbox" class="custom-control-label"></label>
                             </div>
                         </div>

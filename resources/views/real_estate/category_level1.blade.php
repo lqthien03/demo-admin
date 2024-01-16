@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,19 +221,21 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer/1" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -252,19 +254,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo/1" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner/1" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon/1" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -405,45 +407,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-17" value="17">
-                                        <label for="select-checkbox-17" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="17" data-table="product_list">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="" title="Nhà 72m2 một lầu đúc cần tiền bán gấp "><img
-                                            class="rounded img-preview" src="" alt=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark" href=""
-                                        title="Nhà 72m2 một lầu đúc cần tiền bán gấp ">Nhà 72m2 một lầu đúc cần tiền
-                                        bán
-                                        gấp </a>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-17" data-table="product_list" data-id="17"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-17" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_list&type=san-pham&p=1&id=17"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_list&type=san-pham&p=1&id=17"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr> --}}
                             @foreach ($category_level1 as $item)
                                 <tr>
                                     <td class="align-middle">
@@ -464,7 +427,8 @@
                                                 alt=""></a>
                                     </td>
                                     <td class="align-middle">
-                                        <a class="text-dark" href=""
+                                        <a class="text-dark"
+                                            href="/real_estate/category-level1/edit/{{ $item->id }}"
                                             title="Nhà 72m2 một lầu đúc cần tiền bán gấp ">{{ $item->tittle }}</a>
                                     </td>
                                     <td class="align-middle text-center">
@@ -475,14 +439,23 @@
                                             <label for="show-checkbox-17" class="custom-control-label"></label>
                                         </div>
                                     </td>
-                                    <td class="align-middle text-center text-md text-nowrap">
-                                        <a class="text-primary mr-2"
-                                            href="/real_estate/category-level1/edit/{{ $item->id }}"
-                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="{{ route('delete.category1', ['id' => $item->id]) }}"
-                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                    </td>
+                                    <form action="{{ route('delete.category1', ['id' => $item->id]) }}"
+                                        method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <td class="align-middle text-center text-md text-nowrap">
+                                            <a class="text-primary mr-2"
+                                                href="/real_estate/category-level1/edit/{{ $item->id }}"
+                                                title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+
+                                            <button
+                                                type="submit"style="background: none; border: none; cursor: pointer;">
+                                                <a class="text-danger" id="delete-item" title="Xóa"><i
+                                                        class="fas fa-trash-alt"></i></a>
+                                            </button>
+                                        </td>
+                                    </form>
+
                                 </tr>
                             @endforeach
                         </tbody>
@@ -490,9 +463,8 @@
                 </div>
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_list&type=san-pham&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level1/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
                     data-url="index.php?com=product&act=delete_list&type=san-pham&p=1" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>

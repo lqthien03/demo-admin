@@ -10,13 +10,16 @@ class Category_level2Controller extends Controller
 {
     public function show()
     {
+        // $category_level2 = Category_level2::with(['seo', 'level1_product']);
+        $category_level1 = Category_level1::all();
         $category_level2 = Category_level2::all();
-        return view('real_estate.category_level2', compact('category_level2'));
+
+        return view('real_estate.category_level2', compact('category_level2', 'category_level1'));
     }
     public function create()
     {
         $category_level1 = Category_level1::all();
-        return view('real_estate.category_level2_create');
+        return view('real_estate.category_level2_create', compact('category_level1'));
     }
     public function store()
     {
