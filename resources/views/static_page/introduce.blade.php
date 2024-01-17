@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -368,7 +370,10 @@
         <!-- Main content -->
         <section class="content">
             <form class="validation-form" novalidate method="post"
-                action="index.php?com=static&act=save&type=gioi-thieu" enctype="multipart/form-data">
+                action="{{ route('update.introduce', $introduce) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $introduce->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -391,7 +396,11 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $introduce->display }}"{{ $introduce->display == 1 ? 'checked' : '' }}>
+                                        @if (!$introduce)
+                                            <input type="hidden" name="display" value="0">
+                                        @endif
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -411,37 +420,19 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="tenvi">Tiêu đề (vi):</label>
-                                                    <input type="text" class="form-control for-seo"
-                                                        name="data[tenvi]" id="tenvi" placeholder="Tiêu đề (vi)"
-                                                        value="NHÀ ĐẤT MINH PHÁT" required>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)"
+                                                        value="{{ old('tittle') ?? $introduce->tittle }}" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="motavi">Mô tả (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[motavi]" id="motavi" rows="5"
-                                                        placeholder="Mô tả (vi)"><p style="text-align: justify;"><span style="font-size:18px;"><span style="line-height:1.5;">Lời đầu tiên, Nhà Đất Minh Phát xin gởi lời cảm ơn chân thành đến tất cả khách hàng đã quan tâm, hợp tác với chúng tôi suốt hơn những năm qua. Là đơn vị hoạt động trong lĩnh vực kinh doanh, tư vấn, quản lý và tiếp thị bất động sản. Nhà Đất Minh Phát nơi tập trung những sản phẩm Nhà Phố Cao Cấp - Vị Trí Đất Nền Đẹp của các Dự án đã được chọn lọc sẽ đáp ứng mọi nhu cầu về bất động sản của Quý Khách Hàng</span></span></p>
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="motavi" rows="5"
+                                                        placeholder="Mô tả (vi)">{{ old('describe') ?? $introduce->describe }}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"><p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;">Lời đầu tiên, <span style="color:#e74c3c;"><strong>Nhà Đất Minh Phát</strong></span> xin gởi lời cảm ơn chân thành đến tất cả khách hàng đã quan tâm, hợp tác với chúng tôi suốt hơn những năm qua. Là đơn vị hoạt động trong lĩnh vực kinh doanh, tư vấn, quản lý và tiếp thị bất động sản.</span></span></p>
-
-        <p> </p>
-
-        <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;"><span style="color:#e74c3c;"><strong>Nhà Đất Minh Phát </strong></span>nơi tập trung những sản phẩm Nhà Phố Cao Cấp - Vị Trí Đất Nền Đẹp của các Dự án đã được chọn lọc sẽ đáp ứng mọi nhu cầu về bất động sản của Quý Khách Hàng . Với đội ngũ chuyên viên tư vấn bất động sản có trình độ chuyên môn cao, giàu kinh nghiệm và luôn lấy chữ tín làm trọng.</span></span></p>
-
-        <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;">Qúy khách hàng đến với chúng tôi luôn luôn hài lòng với phong cách làm việc chuyên nghiệp, tận tâm và có trách nhiệm .Chúng tôi hiểu rằng sự thành công của khách hàng chính là yếu tố quan trọng nhất mang lại thành công cho chúng tôi. </span></span></p>
-
-        <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;"> Với mong muốn mang lại cho khách hàng một kênh đầu tư tiện lợi và an toàn, lợi nhuận cao, làm cho khách hàng cảm thấy an tâm, thoải mái nhất, <span style="color:#e74c3c;"><strong>Nhà Đất Minh Phát</strong></span> xin giới thiệu với khách hàng thông tin dự án mới cam kết sẽ đem lại nhiều lợi nhuận cho khách hàng mua để ở hoặc đầu tư.</span></span></p>
-
-        <p style="text-align: center;"><span style="line-height:1.5;"><span style="font-size:16px;"> <img alt="" src="https://demo-saigonwebsite.com/bds/upload/elfinder/bd2a05d462e38448273659a142aed439.jpg" style="width: 633px;" /></span></span></p>
-
-        <p style="text-align: center;"><span style="line-height:1.5;"><span style="font-size:16px;">Nhà Đất Minh Phát</span></span></p>
-
-        <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;">Hiện tại thị trường Việt Nam nói chung và thị trường bất động sản nói riêng vẫn còn gặp không ít khó khăn, tuy nhiên đây vẫn là một thị trường tiềm năng. Chúng tôi tin chắc sẽ có rất nhiều cơ hội đến với thị trường khi các nhà đầu tư sắn sàng xúc tiến kế hoạch của họ tại Việt Nam. </span></span></p>
-
-        <p style="text-align: justify;"><span style="line-height:1.5;"><span style="font-size:16px;">Những nguyên tắc cơ bản của bất động sản thường không thay đổi quá nhiều theo thời gian, tuy nhiên những nguyên tắc cơ bản này cũng có những biến đổi nhất định nhằm phù hợp với sự chuyển động của thị trường.  tin chắc sẽ có rất nhiều cơ hội đến với thị trường khi các nhà đầu tư sắn sàng xúc tiến kế hoạch của họ tại Việt Nam. </span></span></p>
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $introduce->content }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -462,10 +453,10 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/news/gt-1683.jpg" onerror="src='assets/images/noimage.png'"
-                                            alt="Alt Photo" /></div>
+                                            src="{{ asset('products/' . $introduce->image) }}" alt="Alt Photo" />
+                                    </div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -510,8 +501,8 @@
                                                     <strong class="count-seo"><span>17</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="NHÀ ĐẤT MINH PHÁT">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $introduce->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -519,16 +510,17 @@
                                                     <strong class="count-seo"><span>17</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="NHÀ ĐẤT MINH PHÁT">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)"
+                                                    value="{{ old('seo_keyword') ?? $introduce->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>160</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)">Lời đầu tiên, Nhà Đất Minh Phát xin gởi lời cảm ơn chân thành đến tất cả khách hàng đã quan tâm, hợp tác với chúng tôi suốt hơn những năm qua. Là đơn vị hoạt độ</textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $introduce->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>

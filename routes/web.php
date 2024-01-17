@@ -8,12 +8,14 @@ use App\Http\Controllers\FaviconController;
 use App\Http\Controllers\logoController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProcedureController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SeoAdviseController;
 use App\Http\Controllers\SeoEstateController;
 use App\Http\Controllers\SeoNewsController;
 use App\Http\Controllers\SeoProcedureController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
@@ -47,32 +49,30 @@ Route::controller(Category_level2Controller::class)->group(function () {
     Route::get('/real_estate/category-level2', 'show')->name('show.category2');
     Route::get('/real_estate/category-level2/create', 'create')->name('create.category2');
     Route::post('/real_estate/category-level2/create', 'store')->name('store.category2');
-    Route::get('/real_estate/category-level2/edit{category_level2}', 'edit')->name('edit.category2');
-    Route::put('/real_estate/category-level2/edit{category_level2}', 'update')->name('update.category2');
+    Route::get('/real_estate/category-level2/edit/{category_level2}', 'edit')->name('edit.category2');
+    Route::put('/real_estate/category-level2/edit/{category_level2}', 'update')->name('update.category2');
     Route::delete('/real_estate/category-level2/{id}', 'destroy')->name('delete.category2');
 });
 
-
 ///
-// Route::get('/real_estate/category-level2', function () {
-//     return view('real_estate.category_level2');
-// });
-// Route::get('/real_estate/category-level2/create', function () {
-//     return view('real_estate.category_level2_create');
-// });
-// Route::get('/real_estate/category-level2/edit', function () {
-//     return view('real_estate.category_level2_edit');
-// });
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/real_estate/product', 'show')->name('show.product');
+    Route::get('/real_estate/product/create', 'create')->name('create.product');
+    Route::post('/real_estate/product/create', 'store')->name('store.product');
+    Route::get('/real_estate/product/edit/{product}', 'edit')->name('edit.product');
+    Route::put('/real_estate/product/edit/{product}', 'update')->name('update.product');
+    Route::delete('/real_estate/product/{id}', 'destroy')->name('delete.product');
+});
 ///
-Route::get('/real_estate/product', function () {
-    return view('real_estate.product');
-});
-Route::get('/real_estate/product/create', function () {
-    return view('real_estate.product_create');
-});
-Route::get('/real_estate/product/edit', function () {
-    return view('real_estate.product_edit');
-});
+// Route::get('/real_estate/product', function () {
+//     return view('real_estate.product');
+// });
+// Route::get('/real_estate/product/create', function () {
+//     return view('real_estate.product_create');
+// });
+// Route::get('/real_estate/product/edit', function () {
+//     return view('real_estate.product_edit');
+// });
 Route::get('/real_estate/product/gallery', function () {
     return view('real_estate.gallery');
 });
@@ -144,6 +144,19 @@ Route::get('/static-page/customer-support', function () {
 });
 Route::get('/static-page/footer', function () {
     return view('static_page.footer');
+});
+Route::controller(StaticPageController::class)->group(function () {
+
+    Route::get('/static-page/introduce/{introduce}', 'edit_introduce')->name('edit.introduce');
+    Route::put('/static-page/introduce/{introduce}', 'update_introduce')->name('update.introduce');
+    Route::get('/static-page/contact/{contact}', 'edit_contact')->name('edit.contact');
+    Route::put('/static-page/contact/{contact}', 'update_contact')->name('update.contact');
+    Route::get('/static-page/register-advise/{register_advise}', 'edit_register_advise')->name('edit.register_advise');
+    Route::put('/static-page/register-advise/{register_advise}', 'update_register_advise')->name('update.register_advise');
+    Route::get('/static-page/customer-support/{customer_support}', 'edit_customer_support')->name('edit.customer-support');
+    Route::put('/static-page/customer-support/{customer_support}', 'update_customer_support')->name('update.customer-support');
+    Route::get('/static-page/footer/{footer}', 'edit_footer')->name('edit.footer');
+    Route::put('/static-page/footer/{footer}', 'update_footer')->name('update.footer');
 });
 ///end
 

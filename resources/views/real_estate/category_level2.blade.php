@@ -391,7 +391,7 @@
                         name="level1_product_id" class="form-control filer-category select2">
                         <option value="0">Chọn danh mục</option>
                         @foreach ($category_level2 as $item)
-                            <option value="{{ $item->id }}">{{ $item->level1_product->title }}</option>
+                            <option value="{{ $item->id }}">{{ $item->level1_product->tittle }}</option>
                         @endforeach
 
                     </select></div>

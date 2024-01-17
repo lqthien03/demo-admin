@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -368,7 +370,9 @@
         <!-- Main content -->
         <section class="content">
             <form class="validation-form" novalidate method="post"
-                action="index.php?com=static&act=save&type=text-tu-van" enctype="multipart/form-data">
+                action="{{ route('update.register_advise', $register_advise) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -391,7 +395,11 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $register_advise->display }}"{{ $register_advise->display == 1 ? 'checked' : '' }}>
+                                        @if (!$register_advise)
+                                            <input type="hidden" name="display" value="0">
+                                        @endif
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -411,9 +419,8 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)">Quý khách điền những thông tin bên dưới chuyên viên tư vấn từ công ty NHÀ ĐẤT MINH PHÁT sẽ trực tiếp liên hệ với quý khách
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $register_advise->content }}</textarea>
                                                 </div>
                                             </div>
                                         </div>

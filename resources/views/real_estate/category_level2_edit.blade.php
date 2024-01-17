@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -367,7 +369,10 @@
         <!-- Main content -->
         <section class="content">
             <form class="validation-form" novalidate method="post"
-                action="index.php?com=product&act=save_cat&type=san-pham&p=1" enctype="multipart/form-data">
+                action="{{ route('update.category2', $category_level2) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $category_level2->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -386,8 +391,8 @@
                             </div>
                             <div class="card-body card-slug">
 
-                                <input type="hidden" class="slug-id" value="">
-                                <input type="hidden" class="slug-copy" value="0">
+                                {{-- <input type="hidden" class="slug-id" value="">
+                                <input type="hidden" class="slug-copy" value="0"> --}}
 
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -410,8 +415,8 @@
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
                                                                 class="text-info"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
-                                                        name="slugvi" id="slugvi" placeholder="Đường dẫn (vi)"
-                                                        value="">
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                        value="{{ $category_level2->link }}">
                                                     <input type="hidden" id="slug-defaultvi" value="">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
@@ -445,7 +450,8 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $category_level2->display }}"{{ $category_level2->display == 1 ? 'checked' : '' }}>
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -454,8 +460,8 @@
                                         tự:</label>
                                     <input type="number"
                                         class="form-control form-control-mini d-inline-block align-middle"
-                                        min="0" name="data[stt]" id="stt" placeholder="Số thứ tự"
-                                        value="1">
+                                        min="0" name="number" id="stt" placeholder="Số thứ tự"
+                                        value="{{ $category_level2->number }}">
                                 </div>
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -473,14 +479,15 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="tenvi">Tiêu đề (vi):</label>
-                                                    <input type="text" class="form-control for-seo"
-                                                        name="data[tenvi]" id="tenvi" placeholder="Tiêu đề (vi)"
-                                                        value="" required>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)"
+                                                        value="{{ old('tittle') ?? $category_level2->tittle }}"
+                                                        required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"></textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('describe') ?? $category_level2->describe }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -496,13 +503,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group-category">
-                                    <select id="id_list" name="data[id_list]" data-level="0" data-type="san-pham"
-                                        data-table="#_product_cat" data-child="id_cat"
+                                    <select id="id_list" name="level1_product_id" data-level="0"
+                                        data-type="san-pham" data-table="#_product_cat" data-child="id_cat"
                                         class="form-control select2 select-category">
                                         <option value="0">Chọn danh mục</option>
-                                        <option value=17>Nhà 72m2 một lầu đúc cần tiền bán gấp </option>
-                                        <option value=6>NHÀ ĐẤT BÁN</option>
-                                        <option value=7>NHÀ ĐẤT CHO THUÊ</option>
+                                        @foreach ($category_level1 as $item)
+                                            <option value="{{ $item->id }}">{{ $item->tittle }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -539,8 +547,8 @@
                                                     <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $category_level2->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -548,16 +556,17 @@
                                                     <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)"
+                                                    value="{{ old('seo_keyword') ?? $category_level2->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>0</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)"></textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $category_level2->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>

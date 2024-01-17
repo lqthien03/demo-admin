@@ -209,26 +209,26 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce/1" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/contact/1" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise"
+                                <a class="nav-link " href="/static-page/register_advise/1"
                                     title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support"
+                                <a class="nav-link " href="/static-page/customer-support/1"
                                     title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
@@ -423,8 +423,7 @@
                                     </td>
                                     <td class="align-middle">
                                         <a href="" title=""><img class="rounded img-preview"
-                                                src="{{ URL::asset('uploads/images/' . $item->image) }}"
-                                                alt=""></a>
+                                                src="{{ URL::asset('uploads/' . $item->image) }}" alt=""></a>
                                     </td>
                                     <td class="align-middle">
                                         <a class="text-dark"

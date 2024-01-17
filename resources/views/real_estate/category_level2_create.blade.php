@@ -16,6 +16,8 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+
+
 </head>
 
 <body>
@@ -572,7 +574,7 @@
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>0</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="seo_description  " id="descriptionvi" rows="5"
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
                                                     placeholder="SEO Description (vi)"></textarea>
                                             </div>
 

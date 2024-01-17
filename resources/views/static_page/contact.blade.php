@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -367,8 +369,11 @@
 
         <!-- Main content -->
         <section class="content">
-            <form class="validation-form" novalidate method="post"
-                action="index.php?com=static&act=save&type=lien-he" enctype="multipart/form-data">
+            <form class="validation-form" novalidate method="post" action="{{ route('update.contact', $contact) }}"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $contact->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -391,7 +396,11 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $contact->display }}"{{ $contact->display == 1 ? 'checked' : '' }}>
+                                        @if (!$contact)
+                                            <input type="hidden" name="display" value="0">
+                                        @endif
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -411,17 +420,8 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"><h2 style="box-sizing:border-box;font-family:Arial;font-weight:500;line-height:21px;color:rgb(0, 0, 0);font-size:14px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;padding:0px;text-align:justify;"><span style="box-sizing:border-box;"><span style="font-family:verdana,geneva,sans-serif;"><a href="https://nhadatminhphat.com.vn/" style="box-sizing:border-box;color:rgb(170, 170, 170);text-decoration:none !important;transition:all 0.5s ease 0s;"><span style="box-sizing:border-box;"><span style="color:#ff8c00;"><span style="box-sizing:border-box;"><span style="font-size:20px;"><span style="box-sizing:border-box;"><strong style="box-sizing:border-box;font-weight:700;">NHÀ ĐẤT MINH PHÁT</strong></span></span></span></span></span></a></span></span></h2>
-
-        <h2 style="box-sizing: border-box; padding: 0px; width: 1150px; color: rgb(0, 0, 0); font-family: Roboto; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; border: none !important;"><span style="box-sizing:border-box;"><span style="font-size:16px;"><span style="box-sizing:border-box;"><span style="font-family:tahoma,geneva,sans-serif;"><span style="box-sizing:border-box;"><span style="box-sizing:border-box;"><span style="color:#000000;">Địa Chỉ: 740/11 Lê Trọng Tấn, P.Bình Hưng Hòa, Q.Bình Tân, TP.HCM</span></span></span></span></span></span></span></h2>
-
-        <p style="box-sizing:border-box;padding:0px;width:1150px;border:none !important;color:rgb(0, 0, 0);font-family:Roboto;font-size:14px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;"><span style="box-sizing:border-box;"><span style="font-size:16px;"><span style="box-sizing:border-box;"><span style="font-family:tahoma,geneva,sans-serif;"><span style="box-sizing:border-box;"><span style="box-sizing:border-box;"><span style="color:#000000;">Hotline: </span></span><strong style="box-sizing:border-box;font-weight:700;"><span style="box-sizing:border-box;"><span style="color:#ff0000;">0935.613.986 - 0903.250.446</span></span></strong></span></span></span></span></span></p>
-
-        <p style="box-sizing:border-box;padding:0px;width:1150px;border:none !important;color:rgb(0, 0, 0);font-family:Roboto;font-size:14px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;"><span style="box-sizing:border-box;"><span style="font-size:16px;"><span style="box-sizing:border-box;"><span style="font-family:tahoma,geneva,sans-serif;"><span style="box-sizing:border-box;"><span style="box-sizing:border-box;"><span style="color:#000000;">Email: </span></span><span style="box-sizing:border-box;box-sizing:border-box;"><span style="color:#3366ff;">tranquangthu986@gmail.com</span></span></span></span></span></span></span></p>
-
-        <h2 style="box-sizing: border-box; padding: 0px; width: 1150px; color: rgb(0, 0, 0); font-family: Roboto; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; border: none !important;"><span style="box-sizing:border-box;"><span style="font-size:16px;"><span style="box-sizing:border-box;"><span style="font-family:tahoma,geneva,sans-serif;"><span style="box-sizing:border-box;"><span style="box-sizing:border-box;"><span style="color:#000000;">Website: <a href="https://nhadatminhphat.com.vn/" style="box-sizing:border-box;color:rgb(170, 170, 170);text-decoration:none !important;transition:all 0.5s ease 0s;">nhadatminhphat.com.vn</a></span></span></span></span></span></span></span></h2>
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $contact->content }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -442,10 +442,9 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/news/mplogo11681261471-2084-9116.png"
-                                            onerror="src='assets/images/noimage.png'" alt="Alt Photo" /></div>
+                                            src="{{ asset('products/' . $contact->image) }}" alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -490,8 +489,8 @@
                                                     <strong class="count-seo"><span>17</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="NHÀ ĐẤT MINH PHÁT">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $contact->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -499,16 +498,17 @@
                                                     <strong class="count-seo"><span>11</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="Seo liên hệ">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)"
+                                                    value="{{ old('seo_keyword') ?? $contact->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>179</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)">NHÀ ĐẤT MINH PHÁT Địa Chỉ: 740/11 Lê Trọng Tấn, P.Bình Hưng Hòa, Q.Bình Tân, TP.HCM Hotline: 0935.613.986 - 0903.250.446 Email: tranquangthu986@gmail.com Web:nhadatminhphat.com.vn</textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $contact->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>
