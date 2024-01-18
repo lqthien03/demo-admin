@@ -11,6 +11,7 @@ class Register_advise extends Model
     public $table = "register_advise";
     protected $fillable = [
         'content',
+        'display',
     ];
     // protected $attributes = ['outstand' => 1,];
     public $timestamps = false;

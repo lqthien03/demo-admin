@@ -2,29 +2,25 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Procedure extends Model
+class Mail extends Model
 {
     use HasFactory;
-    public $table = "procedures";
+    public $table = "mails";
     protected $fillable = [
-        'link',
-        'tittle',
-        'describe',
+        'name',
+        'phone',
+        'email',
+        'topic',
+        'address',
+        'status',
         'content',
-        'image',
+        'note',
         'number',
-        'display',
-        'seo_id',
-
     ];
     // protected $attributes = ['outstand' => 1,];
     public $timestamps = false;
-
-    public function seo()
-    {
-        return $this->belongsTo(Seo::class, 'seo_id', 'id');
-    }
 }

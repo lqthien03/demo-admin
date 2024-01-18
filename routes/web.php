@@ -6,6 +6,7 @@ use App\Http\Controllers\Category_level1Controller;
 use App\Http\Controllers\Category_level2Controller;
 use App\Http\Controllers\FaviconController;
 use App\Http\Controllers\logoController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProcedureController;
 use App\Http\Controllers\ProductController;
@@ -63,16 +64,7 @@ Route::controller(ProductController::class)->group(function () {
     Route::put('/real_estate/product/edit/{product}', 'update')->name('update.product');
     Route::delete('/real_estate/product/{id}', 'destroy')->name('delete.product');
 });
-///
-// Route::get('/real_estate/product', function () {
-//     return view('real_estate.product');
-// });
-// Route::get('/real_estate/product/create', function () {
-//     return view('real_estate.product_create');
-// });
-// Route::get('/real_estate/product/edit', function () {
-//     return view('real_estate.product_edit');
-// });
+
 Route::get('/real_estate/product/gallery', function () {
     return view('real_estate.gallery');
 });
@@ -83,24 +75,26 @@ Route::controller(NewsController::class)->group(function () {
     Route::get('/posts/news', 'show')->name('show.news');
     Route::get('/posts/news/create', 'create')->name('create.news');
     Route::post('/posts/news/create', 'store')->name('store.news');
-    Route::get('/posts/news/edit{news}', 'edit')->name('edit.news');
-    Route::put('/posts/news/edit{news}', 'update')->name('update.news');
+    Route::get('/posts/news/edit/{news}', 'edit')->name('edit.news');
+    Route::put('/posts/news/edit/{news}', 'update')->name('update.news');
     Route::delete('/posts/news/{id}', 'destroy')->name('delete.news');
 });
+//tư vấn
 Route::controller(AdviseController::class)->group(function () {
     Route::get('/posts/advise', 'show')->name('show.advise');
     Route::get('/posts/advise/create', 'create')->name('create.advise');
     Route::post('/posts/advise/create', 'store')->name('store.advise');
-    Route::get('/posts/advise/edit{advise}', 'edit')->name('edit.advise');
-    Route::put('/posts/advise/edit{advise}', 'update')->name('update.advise');
+    Route::get('/posts/advise/edit/{advise}', 'edit')->name('edit.advise');
+    Route::put('/posts/advise/edit/{advise}', 'update')->name('update.advise');
     Route::delete('/posts/advise/{id}', 'destroy')->name('delete.advise');
 });
+//thủ tục
 Route::controller(ProcedureController::class)->group(function () {
     Route::get('/posts/procedure', 'show')->name('show.procedure');
     Route::get('/posts/procedure/create', 'create')->name('create.procedure');
     Route::post('/posts/procedure/create', 'store')->name('store.procedure');
-    Route::get('/posts/procedure/edit{procedure}', 'edit')->name('edit.procedure');
-    Route::put('/posts/procedure/edit{procedure}', 'update')->name('update.procedure');
+    Route::get('/posts/procedure/edit/{procedure}', 'edit')->name('edit.procedure');
+    Route::put('/posts/procedure/edit/{procedure}', 'update')->name('update.procedure');
     Route::delete('/posts/procedure/{id}', 'destroy')->name('delete.procedure');
 });
 
@@ -108,53 +102,53 @@ Route::controller(ProcedureController::class)->group(function () {
 ///end
 
 ///Quản lý nhận tin
-Route::get('/mail/contact', function () {
-    return view('mail.contact');
+Route::controller(MailController::class)->group(function () {
+    Route::get('/mail/contact', 'show')->name('show.mail.contact');
+    Route::get('/mail/contact/create', 'create')->name('create.mail.contact');
+    Route::post('/mail/contact/create', 'store')->name('store.mail.contact');
+    Route::get('/mail/contact/edit/{contact}', 'edit')->name('edit.mail.contact');
+    Route::put('/mail/contact/edit/{contact}', 'update')->name('update.mail.contact');
+    Route::delete('/mail/contact/{id}', 'destroy')->name('delete.mail.contact');
+    ///
+    Route::get('/mail/register-advise', 'show_register_advise')->name('show.register-advise');
+    Route::get('/mail/register-advise/create', 'create_register_advise')->name('create.mail.register-advise');
+    Route::post('/mail/register-advise/create', 'store_register_advise')->name('store.mail.register-advise');
+    Route::get('/mail/register-advise/edit/{register-advise}', 'edit_register_advise')->name('edit.mail.register-advise');
+    Route::put('/mail/register-advise/edit/{register-advise}', 'update_register_advise')->name('update.mail.register-advise');
+    Route::delete('/mail/register-advise/{id}', 'destroy_register_advise')->name('delete.mail.register-advise');
 });
-Route::get('/mail/contact/create', function () {
-    return view('mail.contact_create');
-});
-Route::get('/mail/contact/edit', function () {
-    return view('mail.contact_edit');
-});
+// Route::get('/mail/contact', function () {
+//     return view('mail.contact');
+// });
+// Route::get('/mail/contact/create', function () {
+//     return view('mail.contact_create');
+// });
+// Route::get('/mail/contact/edit', function () {
+//     return view('mail.contact_edit');
+// });
 ///
-Route::get('/mail/register-advise', function () {
-    return view('mail.register_advise');
-});
-Route::get('/mail/register-advise/create', function () {
-    return view('mail.register_advise_create');
-});
-Route::get('/mail/register-advise/edit', function () {
-    return view('mail.register_advise_edit');
-});
+// Route::get('/mail/register-advise', function () {
+//     return view('mail.register_advise');
+// });
+// Route::get('/mail/register-advise/create', function () {
+//     return view('mail.register_advise_create');
+// });
+// Route::get('/mail/register-advise/edit', function () {
+//     return view('mail.register_advise_edit');
+// });
 ///end
 
 ///Quản lý trang tĩnh
-Route::get('/static-page/introduce', function () {
-    return view('static_page.introduce');
-});
-Route::get('/static-page/contact', function () {
-    return view('static_page.contact');
-});
-Route::get('/static-page/register_advise', function () {
-    return view('static_page.register_advise');
-});
-Route::get('/static-page/customer-support', function () {
-    return view('static_page.customer_support');
-});
-Route::get('/static-page/footer', function () {
-    return view('static_page.footer');
-});
-Route::controller(StaticPageController::class)->group(function () {
 
+Route::controller(StaticPageController::class)->group(function () {
     Route::get('/static-page/introduce/{introduce}', 'edit_introduce')->name('edit.introduce');
     Route::put('/static-page/introduce/{introduce}', 'update_introduce')->name('update.introduce');
     Route::get('/static-page/contact/{contact}', 'edit_contact')->name('edit.contact');
     Route::put('/static-page/contact/{contact}', 'update_contact')->name('update.contact');
     Route::get('/static-page/register-advise/{register_advise}', 'edit_register_advise')->name('edit.register_advise');
     Route::put('/static-page/register-advise/{register_advise}', 'update_register_advise')->name('update.register_advise');
-    Route::get('/static-page/customer-support/{customer_support}', 'edit_customer_support')->name('edit.customer-support');
-    Route::put('/static-page/customer-support/{customer_support}', 'update_customer_support')->name('update.customer-support');
+    Route::get('/static-page/customer-support/{customer_support}', 'edit_customer_support')->name('edit.customer_support');
+    Route::put('/static-page/customer-support/{customer_support}', 'update_customer_support')->name('update.customer_support');
     Route::get('/static-page/footer/{footer}', 'edit_footer')->name('edit.footer');
     Route::put('/static-page/footer/{footer}', 'update_footer')->name('update.footer');
 });
@@ -196,10 +190,7 @@ Route::get('/image-video/social_network/edit', function () {
 });
 ///end
 
-///Quản lý user
-// Route::get('/users/information', function () {
-//     return view('users.information');
-// });
+
 Route::controller(UserController::class)->group(function () {
     Route::get('/users/information/{user}', 'edit')->name('edit.user');
     Route::put('/users/information/{user}', 'update')->name('update.user');

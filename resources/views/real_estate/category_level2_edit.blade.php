@@ -508,7 +508,9 @@
                                         class="form-control select2 select-category">
                                         <option value="0">Chọn danh mục</option>
                                         @foreach ($category_level1 as $item)
-                                            <option value="{{ $item->id }}">{{ $item->tittle }}
+                                            <option value="{{ $item->id }}"
+                                                {{ $item->id == $item->level1_product_id ? 'selected' : '' }}>
+                                                {{ $item->tittle }}
                                             </option>
                                         @endforeach
                                     </select>

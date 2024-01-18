@@ -113,8 +113,8 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
-                     <!-- Sản phẩm -->
-                     <li class="nav-item has-treeview  ">
+                    <!-- Sản phẩm -->
+                    <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
                             <p>
@@ -122,16 +122,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -222,13 +222,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -297,8 +299,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -369,9 +371,8 @@
         <!-- Main content -->
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=news&act=add&type=thu-tuc-nha-dat&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/posts/procedure/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
                     data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
@@ -412,282 +413,101 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-57" value="57">
-                                        <label for="select-checkbox-57" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="57" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
-                                        title="Hoàn công"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-6795.jpg"
-                                            alt="Hoàn công"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
-                                        title="Hoàn công">Hoàn công</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3" href="https://nhadatminhphat.com.vn/hoan-cong"
-                                            target="_blank" title="Hoàn công"><i class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
+                            @foreach ($procedure as $item)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-57" value="{{ $item->id }}">
+                                            <label for="select-checkbox-57" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $item->number }}" data-id="57"
+                                            data-table="news">
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
+                                            title="{{ $item->tittle }}"><img class="rounded img-preview"
+                                                src="{{ URL::asset('uploads/' . $item->image) }}"
+                                                alt="{{ $item->tittle }}"></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark"
                                             href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
-                                            title="Hoàn công"><i class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
+                                            title="{{ $item->tittle }}">{{ $item->tittle }}</a>
+                                        <div class="tool-action mt-2 w-clear">
+                                            <a class="text-primary mr-3"
+                                                href="https://nhadatminhphat.com.vn/hoan-cong" target="_blank"
+                                                title="Hoàn công"><i class="far fa-eye mr-1"></i>View</a>
+                                            <a class="text-info mr-3"
+                                                href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
+                                                title="Hoàn công"><i class="far fa-edit mr-1"></i>Edit</a>
+                                            <div class="dropdown">
+                                                <a id="dropdownCopy" href="#" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false"
+                                                    class="nav-link dropdown-toggle text-success p-0 pr-3"><i
+                                                        class="far fa-clone mr-1"></i>Copy</a>
+                                                <ul aria-labelledby="dropdownCopy"
+                                                    class="dropdown-menu border-0 shadow">
+                                                    <li><a href="#" class="dropdown-item copy-now"
+                                                            data-id="57" data-table="news" data-copyimg=""><i
+                                                                class="far fa-caret-square-right text-secondary mr-2"></i>Sao
+                                                            chép ngay</a></li>
+                                                    <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id_copy=57"
+                                                            class="dropdown-item"><i
+                                                                class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
+                                                            sửa thông tin</a></li>
+                                                </ul>
+                                            </div>
+                                            <a class="text-danger" id="delete-item"
+                                                data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=57"
+                                                title="Hoàn công"><i class="far fa-trash-alt mr-1"></i>Delete</a>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-noibat-57" data-table="news" data-id="57"
+                                                data-loai="outstand" {{ $item->outstand == 1 ? 'checked' : '' }}>
+                                            <label for="show-checkbox-noibat-57" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-57" data-table="news" data-id="57"
+                                                data-loai="display" {{ $item->display == 1 ? 'checked' : '' }}>
+                                            <label for="show-checkbox-57" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center text-md text-nowrap">
+                                        <div class="dropdown d-inline-block align-middle">
                                             <a id="dropdownCopy" href="#" data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
+                                                class="nav-link dropdown-toggle text-success p-0 pr-2"><i
+                                                    class="far fa-clone"></i></a>
                                             <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
                                                 <li><a href="#" class="dropdown-item copy-now" data-id="57"
-                                                        data-table="news" data-copyimg=""><i
+                                                        data-table="news"><i
                                                             class="far fa-caret-square-right text-secondary mr-2"></i>Sao
                                                         chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id_copy=57"
+                                                <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id=57"
                                                         class="dropdown-item"><i
                                                             class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
                                                         sửa thông tin</a></li>
                                             </ul>
                                         </div>
+                                        <a class="text-primary mr-2" href="/posts/procedure/edit/{{ $item->id }}"
+                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
                                         <a class="text-danger" id="delete-item"
                                             data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=57"
-                                            title="Hoàn công"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-noibat-57" data-table="news" data-id="57"
-                                            data-loai="noibat" checked>
-                                        <label for="show-checkbox-noibat-57" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-57" data-table="news" data-id="57"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-57" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="57"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id=57"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=57"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=57"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-56" value="56">
-                                        <label for="select-checkbox-56" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="56" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=56"
-                                        title="TƯ VẤN PHÁP LÝ"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-8115.png"
-                                            alt="TƯ VẤN PHÁP LÝ"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=56"
-                                        title="TƯ VẤN PHÁP LÝ">TƯ VẤN PHÁP LÝ</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/tu-van-phap-ly" target="_blank"
-                                            title="TƯ VẤN PHÁP LÝ"><i class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=56"
-                                            title="TƯ VẤN PHÁP LÝ"><i class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="56"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id_copy=56"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
-                                        </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=56"
-                                            title="TƯ VẤN PHÁP LÝ"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-noibat-56" data-table="news" data-id="56"
-                                            data-loai="noibat" checked>
-                                        <label for="show-checkbox-noibat-56" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-56" data-table="news" data-id="56"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-56" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="56"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id=56"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=56"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=56"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-55" value="55">
-                                        <label for="select-checkbox-55" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="55" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=55"
-                                        title="MÔI GIỚI BẤT ĐỘNG SẢN"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-8455.jpg"
-                                            alt="MÔI GIỚI BẤT ĐỘNG SẢN"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=55"
-                                        title="MÔI GIỚI BẤT ĐỘNG SẢN">MÔI GIỚI BẤT ĐỘNG SẢN</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/moi-gioi-bat-dong-san" target="_blank"
-                                            title="MÔI GIỚI BẤT ĐỘNG SẢN"><i class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=55"
-                                            title="MÔI GIỚI BẤT ĐỘNG SẢN"><i class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="55"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id_copy=55"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
-                                        </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=55"
-                                            title="MÔI GIỚI BẤT ĐỘNG SẢN"><i
-                                                class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-noibat-55" data-table="news" data-id="55"
-                                            data-loai="noibat" checked>
-                                        <label for="show-checkbox-noibat-55" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-55" data-table="news" data-id="55"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-55" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="55"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=thu-tuc-nha-dat&p=1&id=55"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=thu-tuc-nha-dat&p=1&id=55"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=thu-tuc-nha-dat&p=1&id=55"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

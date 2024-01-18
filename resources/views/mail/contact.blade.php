@@ -91,8 +91,6 @@
     </nav><!-- Main Sidebar -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4 text-sm">
         <!-- Logo -->
-
-
         <!-- Sidebar -->
         <img src="../assets/images/logo-admin.png" alt="Mô tả hình ảnh"
             style="width: 190px; margin-top: 45px; margin-left: 20px;">
@@ -113,235 +111,237 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
- <!-- Sản phẩm -->
- <li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý Nhà đất">
-        <i class="nav-icon text-sm fas fa-boxes"></i>
-        <p>
-            Quản lý Nhà đất <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Danh mục cấp 1</p>
-            </a></li>
-        <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Danh mục cấp 2</p>
-            </a></li>
-        <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Nhà đất</p>
-            </a></li>
-    </ul>
-</li>
+                    <!-- Sản phẩm -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý Nhà đất">
+                            <i class="nav-icon text-sm fas fa-boxes"></i>
+                            <p>
+                                Quản lý Nhà đất <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Danh mục cấp 1</p>
+                                </a></li>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Danh mục cấp 2</p>
+                                </a></li>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Nhà đất</p>
+                                </a></li>
+                        </ul>
+                    </li>
 
-<!-- Bài viết (Có cấp) -->
+                    <!-- Bài viết (Có cấp) -->
 
-<!-- Bài viết (Không cấp) -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý bài viết">
-        <i class="nav-icon text-sm far fa-newspaper"></i>
-        <p>
-            Quản lý bài viết
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item ">
-            <a class="nav-link " href="/posts/news" title="Tin tức"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Tin tức</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/posts/procedure" title="Thủ tục nhà đất"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Thủ tục nhà đất</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/posts/advise" title="Tư vấn"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Tư vấn</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- Bài viết (Không cấp) -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý bài viết">
+                            <i class="nav-icon text-sm far fa-newspaper"></i>
+                            <p>
+                                Quản lý bài viết
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/posts/news" title="Tin tức"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Tin tức</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/posts/procedure" title="Thủ tục nhà đất"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Thủ tục nhà đất</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/posts/advise" title="Tư vấn"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Tư vấn</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-<!-- Cart -->
+                    <!-- Cart -->
 
-<!-- Tags -->
+                    <!-- Tags -->
 
-<!-- Newsletter -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý nhận tin">
-        <i class="nav-icon text-sm fas fa-envelope"></i>
-        <p>
-            Quản lý nhận tin
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item ">
-            <a class="nav-link " href="/mail/contact" title="Thư liên hệ"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Thư liên hệ</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="mail/register-advise" title="Đăng ký tư vấn"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Đăng ký tư vấn</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- Newsletter -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý nhận tin">
+                            <i class="nav-icon text-sm fas fa-envelope"></i>
+                            <p>
+                                Quản lý nhận tin
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/mail/contact" title="Thư liên hệ"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Thư liên hệ</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="mail/register-advise" title="Đăng ký tư vấn"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Đăng ký tư vấn</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-<!-- Static -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý trang tĩnh">
-        <i class="nav-icon text-sm fas fa-bookmark"></i>
-        <p>
-            Quản lý trang tĩnh
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item ">
-            <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Giới thiệu</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Liên hệ</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Text đăng ký tư vấn</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Hỗ trợ khách hàng</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/static-page/footer" title="Footer"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Footer</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- Static -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý trang tĩnh">
+                            <i class="nav-icon text-sm fas fa-bookmark"></i>
+                            <p>
+                                Quản lý trang tĩnh
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Giới thiệu</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Liên hệ</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Text đăng ký tư vấn</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Hỗ trợ khách hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Footer</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-<!-- Gallery -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý hình ảnh - video">
-        <i class="nav-icon text-sm fas fa-photo-video"></i>
-        <p>
-            Quản lý hình ảnh - video
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item ">
-            <a class="nav-link " href="/image-video/logo" title="Logo"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Logo</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/image-video/banner" title="Banner"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Banner</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Favicon</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/image-video/slideshow" title="Slideshow"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Slideshow</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/image-video/social_network" title="Mạng xã hội"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Mạng xã hội</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- Gallery -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý hình ảnh - video">
+                            <i class="nav-icon text-sm fas fa-photo-video"></i>
+                            <p>
+                                Quản lý hình ảnh - video
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Logo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Banner</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Favicon</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/image-video/slideshow" title="Slideshow"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Slideshow</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/image-video/social_network" title="Mạng xã hội"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Mạng xã hội</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-<!-- Địa điểm -->
+                    <!-- Địa điểm -->
 
-<!-- User -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý user">
-        <i class="nav-icon text-sm fas fa-users"></i>
-        <p>
-            Quản lý user
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Thông tin admin</p>
-            </a></li>
-    </ul>
-</li>
+                    <!-- User -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý user">
+                            <i class="nav-icon text-sm fas fa-users"></i>
+                            <p>
+                                Quản lý user
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Thông tin admin</p>
+                                </a></li>
+                        </ul>
+                    </li>
 
-<!-- Onesignal -->
+                    <!-- Onesignal -->
 
-<!-- SEO page -->
-<li class="nav-item has-treeview  ">
-    <a class="nav-link " href="#" title="Quản lý SEO page">
-        <i class="nav-icon text-sm fas fa-share-alt"></i>
-        <p>
-            Quản lý SEO page
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item ">
-            <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Nhà đất</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Tin tức</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Thủ tục nhà đất</p>
-            </a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
-                    class="nav-icon text-sm far fa-caret-square-right"></i>
-                <p>Tư vấn</p>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- SEO page -->
+                    <li class="nav-item has-treeview  ">
+                        <a class="nav-link " href="#" title="Quản lý SEO page">
+                            <i class="nav-icon text-sm fas fa-share-alt"></i>
+                            <p>
+                                Quản lý SEO page
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Nhà đất</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Tin tức</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Thủ tục nhà đất</p>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
+                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                                    <p>Tư vấn</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <!-- Thiết lập thông tin -->
                     <li class="nav-item  ">
@@ -369,8 +369,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=newsletter&act=add&type=lien-he&p=1" title="Thêm mới"><i
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/mail/contact/create" title="Thêm mới"><i
                         class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
                     data-url="index.php?com=newsletter&act=delete&type=lien-he&p=1" title="Xóa tất cả"><i
@@ -413,9 +412,57 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            {{-- <tr>
                                 <td colspan="100" class="text-center">Không có dữ liệu</td>
-                            </tr>
+                            </tr> --}}
+                            @foreach ($contact as $item)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-7" value="{{ $item->id }}">
+                                            <label for="select-checkbox-7" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $item->number }}" data-id="7"
+                                            data-table="newsletter">
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark"
+                                            href="index.php?com=newsletter&act=edit&type=lien-he&p=1&id=7"
+                                            title="{{ $item->name }}">{{ $item->name }}</a>
+                                    </td>
+                                    <td class="align-middle">{{ $item->phone }}</td>
+
+                                    <td class="align-middle">
+                                        <a class="text-dark"
+                                            href="index.php?com=newsletter&act=edit&type=lien-he&p=1&id=7"
+                                            title="{{ $item->email }}">{{ $item->email }}</a>
+                                    </td>
+
+
+                                    <td class="align-middle">{{ $item->created_at }}</td>
+                                    <td class="align-middle">
+                                        @if ($item->status == 1)
+                                            {{ 'Đã xem' }}
+                                        @elseif($item->status == 0)
+                                            {{ 'Chưa xem' }}
+                                        @else
+                                            {{ 'Đã liên hệ' }}
+                                        @endif
+                                    </td>
+                                    <td class="align-middle text-center text-md text-nowrap">
+                                        <a class="text-primary mr-2" href="/mail/contact/edit/{{ $item->id }}"
+                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                        <a class="text-danger" id="delete-item"
+                                            data-url="index.php?com=newsletter&act=delete&type=lien-he&p=1&id=7"
+                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>

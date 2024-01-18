@@ -113,8 +113,8 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
-                     <!-- Sản phẩm -->
-                     <li class="nav-item has-treeview  ">
+                    <!-- Sản phẩm -->
+                    <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
                             <p>
@@ -122,16 +122,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -222,13 +222,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -297,8 +299,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -359,7 +361,7 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item active">Quản lý Tư vấn</li>
+                        <li class="breadcrumb-item active">Thêm mới Tư vấn</li>
                     </ol>
                 </div>
             </div>
@@ -367,400 +369,256 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=news&act=add&type=tutu-van&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=news&act=delete&type=tutu-van&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-                <div class="form-inline form-search d-inline-block align-middle ml-3">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
-                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value=""
-                            onkeypress="doEnter(event,'keyword','index.php?com=news&act=man&type=tutu-van&p=1')">
-                        <div class="input-group-append bg-primary rounded-right">
-                            <button class="btn btn-navbar text-white" type="button"
-                                onclick="onSearch('keyword','index.php?com=news&act=man&type=tutu-van&p=1')">
-                                <i class="fas fa-search"></i>
-                            </button>
+            <form class="validation-form" novalidate method="post" action="{{ route('store.advise') }}"
+                enctype="multipart/form-data">
+                @csrf
+                <div class="card-footer text-sm sticky-top">
+                    <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
+                            class="far fa-save mr-2"></i>Lưu</button>
+                    <button type="submit" class="btn btn-sm bg-gradient-success submit-check" name="save-here"><i
+                            class="far fa-save mr-2"></i>Lưu tại trang</button>
+                    <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
+                            class="fas fa-redo mr-2"></i>Làm lại</button>
+                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tutu-van&p=1"
+                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                </div>
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="card card-primary card-outline text-sm">
+                            <div class="card-header">
+                                <h3 class="card-title">Đường dẫn</h3>
+                                <span class="pl-2 text-danger">(Vui lòng không nhập trùng tiêu đề)</span>
+                            </div>
+                            <div class="card-body card-slug">
+
+                                {{-- <input type="hidden" class="slug-id" value="">
+                                <input type="hidden" class="slug-copy" value="0"> --}}
+
+                                <div class="card card-primary card-outline card-outline-tabs">
+                                    <div class="card-header p-0 border-bottom-0">
+                                        <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="tabs-lang" data-toggle="pill"
+                                                    href="#tabs-sluglang-vi" role="tab"
+                                                    aria-controls="tabs-sluglang-vi" aria-selected="true">Tiếng
+                                                    Việt</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="custom-tabs-three-tabContent-lang">
+                                            <div class="tab-pane fade show active" id="tabs-sluglang-vi"
+                                                role="tabpanel" aria-labelledby="tabs-lang">
+                                                <div class="form-gourp mb-0">
+                                                    <label class="d-block">Đường dẫn mẫu (vi):<span
+                                                            class="pl-2 font-weight-normal"
+                                                            id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
+                                                                class="text-info"></strong></span></label>
+                                                    <input type="text" class="form-control slug-input no-validate"
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                        value="">
+                                                    <input type="hidden" id="slug-defaultvi" value="">
+                                                    <p class="alert-slugvi text-danger d-none mt-2 mb-0"
+                                                        id="alert-slug-dangervi">
+                                                        <i class="fas fa-exclamation-triangle mr-1"></i>
+                                                        <span>Đường dẫn đã tồn tại. Đường dẫn truy cập mục này có thể bị
+                                                            trùng lặp.</span>
+                                                    </p>
+                                                    <p class="alert-slugvi text-success d-none mt-2 mb-0"
+                                                        id="alert-slug-successvi">
+                                                        <i class="fas fa-check-circle mr-1"></i>
+                                                        <span>Đường dẫn hợp lệ.</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-primary card-outline text-sm">
+                            <div class="card-header">
+                                <h3 class="card-title">Nội dung Tư vấn</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card card-primary card-outline card-outline-tabs">
+                                    <div class="card-header p-0 border-bottom-0">
+                                        <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="tabs-lang" data-toggle="pill"
+                                                    href="#tabs-lang-vi" role="tab" aria-controls="tabs-lang-vi"
+                                                    aria-selected="true">Tiếng Việt</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body card-article">
+                                        <div class="tab-content" id="custom-tabs-three-tabContent-lang">
+                                            <div class="tab-pane fade show active" id="tabs-lang-vi" role="tabpanel"
+                                                aria-labelledby="tabs-lang">
+                                                <div class="form-group">
+                                                    <label for="tenvi">Tiêu đề (vi):</label>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)" value=""
+                                                        required>
+                                                    @error('tittle')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="motavi">Mô tả (vi):</label>
+                                                    <textarea class="form-control for-seo " name="describe" id="motavi" rows="5" placeholder="Mô tả (vi)"></textarea>
+                                                    @error('describe')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="noidungvi">Nội dung (vi):</label>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)"></textarea>
+                                                    @error('content')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+
+                        <div class="card card-primary card-outline text-sm">
+                            <div class="card-header">
+                                <h3 class="card-title">Hình ảnh Tư vấn</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="photoUpload-zone">
+                                    <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
+                                            src="" alt="Alt Photo" /></div>
+                                    <label class="photoUpload-file" id="photo-zone" for="file-zone">
+                                        <input type="file" name="image" id="file-zone">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
+                                        <p class="photoUpload-or">hoặc</p>
+                                        <p class="photoUpload-choose btn btn-sm bg-gradient-success">Chọn hình</p>
+                                    </label>
+                                    <div class="photoUpload-dimension">Width: 400 px - Height: 250 px
+                                        (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card card-primary card-outline text-sm mb-0">
-                <div class="card-header">
-                    <h3 class="card-title">Danh sách Tư vấn</h3>
+                <div class="card card-primary card-outline text-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin Tư vấn</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                    class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
+                            <div class="custom-control custom-checkbox d-inline-block align-middle">
+                                <input type="checkbox" class="custom-control-input hienthi-checkbox" name="display"
+                                    id="hienthi-checkbox">
+                                <label for="hienthi-checkbox" class="custom-control-label"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
+                            <input type="number" class="form-control form-control-mini d-inline-block align-middle"
+                                min="0" name="number" id="stt" placeholder="Số thứ tự"
+                                value="">
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th class="align-middle" width="5%">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="selectall-checkbox">
-                                        <label for="selectall-checkbox" class="custom-control-label"></label>
-                                    </div>
-                                </th>
-                                <th class="align-middle text-center" width="10%">STT</th>
-                                <th class="align-middle">Hình</th>
-                                <th class="align-middle" style="width:30%">Tiêu đề</th>
-                                <th class="align-middle text-center">Hiển thị</th>
-                                <th class="align-middle text-center">Thao tác</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-61" value="61">
-                                        <label for="select-checkbox-61" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="61" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=tutu-van&p=1&id=61"
-                                        title="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ"><img
-                                            class="rounded img-preview" onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-5209.jpg"
-                                            alt="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark" href="index.php?com=news&act=edit&type=tutu-van&p=1&id=61"
-                                        title="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ">VAY TIỀN NGÂN HÀNG MUA NHÀ,
-                                        DỄ MÀ KHÔNG DỄ</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/vay-tien-ngan-hang-mua-nha-de-ma-khong-de"
-                                            target="_blank" title="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ"><i
-                                                class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=tutu-van&p=1&id=61"
-                                            title="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ"><i
-                                                class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="61"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id_copy=61"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
+                <div class="card card-primary card-outline text-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Nội dung SEO</h3>
+                        <a class="btn btn-sm bg-gradient-success d-inline-block text-white float-right create-seo"
+                            title="Tạo SEO">Tạo SEO</a>
+                    </div>
+                    <div class="card-body">
+                        <!-- SEO -->
+                        <div class="card-seo">
+                            <div class="card card-primary card-outline card-outline-tabs">
+                                <div class="card-header p-0 border-bottom-0">
+                                    <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="tabs-lang" data-toggle="pill"
+                                                href="#tabs-seolang-vi" role="tab"
+                                                aria-controls="tabs-seolang-vi" aria-selected="true">SEO (Tiếng
+                                                Việt)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content" id="custom-tabs-three-tabContent-lang">
+                                        <div class="tab-pane fade show active" id="tabs-seolang-vi" role="tabpanel"
+                                            aria-labelledby="tabs-lang">
+                                            <div class="form-group">
+                                                <div class="label-seo">
+                                                    <label for="titlevi">SEO Title (vi):</label>
+                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                </div>
+                                                <input type="text" class="form-control check-seo title-seo"
+                                                    name="dataSeo[titlevi]" id="titlevi"
+                                                    placeholder="SEO Title (vi)" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="label-seo">
+                                                    <label for="keywordsvi">SEO Keywords (vi):</label>
+                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                </div>
+                                                <input type="text" class="form-control check-seo keywords-seo"
+                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="label-seo">
+                                                    <label for="descriptionvi">SEO Description (vi):</label>
+                                                    <strong class="count-seo"><span>0</span>/160 ký tự</strong>
+                                                </div>
+                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
+                                                    rows="5" placeholder="SEO Description (vi)"></textarea>
+                                            </div>
+
                                         </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=61"
-                                            title="VAY TIỀN NGÂN HÀNG MUA NHÀ, DỄ MÀ KHÔNG DỄ"><i
-                                                class="far fa-trash-alt mr-1"></i>Delete</a>
                                     </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-61" data-table="news" data-id="61"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-61" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="61"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id=61"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=tutu-van&p=1&id=61"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=61"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-60" value="60">
-                                        <label for="select-checkbox-60" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="60" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=tutu-van&p=1&id=60"
-                                        title="DỊCH VỤ LÀM SỔ ĐỎ"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-7173.jpg"
-                                            alt="DỊCH VỤ LÀM SỔ ĐỎ"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark" href="index.php?com=news&act=edit&type=tutu-van&p=1&id=60"
-                                        title="DỊCH VỤ LÀM SỔ ĐỎ">DỊCH VỤ LÀM SỔ ĐỎ</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/dich-vu-lam-so-do" target="_blank"
-                                            title="DỊCH VỤ LÀM SỔ ĐỎ"><i class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=tutu-van&p=1&id=60"
-                                            title="DỊCH VỤ LÀM SỔ ĐỎ"><i class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="60"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id_copy=60"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
-                                        </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=60"
-                                            title="DỊCH VỤ LÀM SỔ ĐỎ"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-60" data-table="news" data-id="60"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-60" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="60"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id=60"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=tutu-van&p=1&id=60"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=60"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-59" value="59">
-                                        <label for="select-checkbox-59" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="59" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=tutu-van&p=1&id=59"
-                                        title="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-2539.jpg"
-                                            alt="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark" href="index.php?com=news&act=edit&type=tutu-van&p=1&id=59"
-                                        title="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT">GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/gia-tinh-thue-chuyen-nhuong-dat"
-                                            target="_blank" title="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT"><i
-                                                class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=tutu-van&p=1&id=59"
-                                            title="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT"><i
-                                                class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="59"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id_copy=59"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
-                                        </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=59"
-                                            title="GIÁ TÍNH THUẾ CHUYỂN NHƯỢNG ĐẤT"><i
-                                                class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-59" data-table="news" data-id="59"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-59" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="59"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id=59"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=tutu-van&p=1&id=59"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=59"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-58" value="58">
-                                        <label for="select-checkbox-58" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="58" data-table="news">
-                                </td>
-                                <td class="align-middle">
-                                    <a href="index.php?com=news&act=edit&type=tutu-van&p=1&id=58"
-                                        title="XIN PHÉP XÂY DỰNG"><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x70x1/upload/news/timthumb-5392.jpg"
-                                            alt="XIN PHÉP XÂY DỰNG"></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark" href="index.php?com=news&act=edit&type=tutu-van&p=1&id=58"
-                                        title="XIN PHÉP XÂY DỰNG">XIN PHÉP XÂY DỰNG</a>
-                                    <div class="tool-action mt-2 w-clear">
-                                        <a class="text-primary mr-3"
-                                            href="https://nhadatminhphat.com.vn/xin-phep-xay-dung" target="_blank"
-                                            title="XIN PHÉP XÂY DỰNG"><i class="far fa-eye mr-1"></i>View</a>
-                                        <a class="text-info mr-3"
-                                            href="index.php?com=news&act=edit&type=tutu-van&p=1&id=58"
-                                            title="XIN PHÉP XÂY DỰNG"><i class="far fa-edit mr-1"></i>Edit</a>
-                                        <div class="dropdown">
-                                            <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"
-                                                class="nav-link dropdown-toggle text-success p-0 pr-3"><i
-                                                    class="far fa-clone mr-1"></i>Copy</a>
-                                            <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                                <li><a href="#" class="dropdown-item copy-now" data-id="58"
-                                                        data-table="news" data-copyimg=""><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                        chép ngay</a></li>
-                                                <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id_copy=58"
-                                                        class="dropdown-item"><i
-                                                            class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                        sửa thông tin</a></li>
-                                            </ul>
-                                        </div>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=58"
-                                            title="XIN PHÉP XÂY DỰNG"><i class="far fa-trash-alt mr-1"></i>Delete</a>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-58" data-table="news" data-id="58"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-58" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <div class="dropdown d-inline-block align-middle">
-                                        <a id="dropdownCopy" href="#" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false"
-                                            class="nav-link dropdown-toggle text-success p-0 pr-2"><i
-                                                class="far fa-clone"></i></a>
-                                        <ul aria-labelledby="dropdownCopy" class="dropdown-menu border-0 shadow">
-                                            <li><a href="#" class="dropdown-item copy-now" data-id="58"
-                                                    data-table="news"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Sao
-                                                    chép ngay</a></li>
-                                            <li><a href="index.php?com=news&act=copy&type=tutu-van&p=1&id=58"
-                                                    class="dropdown-item"><i
-                                                        class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
-                                                    sửa thông tin</a></li>
-                                        </ul>
-                                    </div>
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=news&act=edit&type=tutu-van&p=1&id=58"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=news&act=delete&type=tutu-van&p=1&id=58"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                                <input type="hidden" id="seo-create" value="vi">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=news&act=add&type=tutu-van&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=news&act=delete&type=tutu-van&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-            </div>
+                <div class="card-footer text-sm">
+                    <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
+                            class="far fa-save mr-2"></i>Lưu</button>
+                    <button type="submit" class="btn btn-sm bg-gradient-success submit-check" name="save-here"><i
+                            class="far fa-save mr-2"></i>Lưu tại trang</button>
+                    <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
+                            class="fas fa-redo mr-2"></i>Làm lại</button>
+                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tutu-van&p=1"
+                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <input type="hidden" name="id" value="">
+                </div>
+            </form>
         </section>
     </div>
 </body>

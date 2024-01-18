@@ -510,9 +510,10 @@
                                         <select id="id_list" name="level1_product_id" data-level="0"
                                             data-type="san-pham" data-table="#_product_cat" data-child="id_cat"
                                             class="form-control select2 select-category">
-                                            <option value="0">Chọn danh mục</option>
                                             @foreach ($category_level1 as $item)
-                                                <option value="{{ $item->id }}">{{ $item->tittle }}</option>
+                                                <option value="{{ $item->id }}"
+                                                    {{ $item->id == $product->level1_product_id ? 'selected' : '' }}>
+                                                    {{ $item->tittle }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -521,9 +522,10 @@
                                         <select id="id_cat" name="level2_product_id" data-level="1"
                                             data-type="san-pham" data-table="#_product_item" data-child="id_item"
                                             class="form-control select2 select-category">
-                                            <option value="0">Chọn danh mục</option>
                                             @foreach ($category_level2 as $item)
-                                                <option value="{{ $item->id }}">{{ $item->tittle }}</option>
+                                                <option value="{{ $item->id }}"
+                                                    {{ $item->id == $product->level2_product_id ? 'selected' : '' }}>
+                                                    {{ $item->tittle }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -539,12 +541,14 @@
                                             class="fas fa-minus"></i></button>
                                 </div>
                             </div>
+
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="{{ asset('products/' . $product->image) }}" alt="Alt Photo" /></div>
+                                            id="uploaded-image"src="{{ asset('products/' . $product->image) }}"
+                                            alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -795,6 +799,24 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('preview-image');
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "{{ asset('products/' . $product->image) }}";
+            }
+        }
+    </script>
 </body>
 
 </html>

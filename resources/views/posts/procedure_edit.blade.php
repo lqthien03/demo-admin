@@ -113,8 +113,8 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
-                     <!-- Sản phẩm -->
-                     <li class="nav-item has-treeview  ">
+                    <!-- Sản phẩm -->
+                    <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
                             <p>
@@ -122,16 +122,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -222,13 +222,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -297,8 +299,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -369,7 +371,10 @@
         <!-- Main content -->
         <section class="content">
             <form class="validation-form" novalidate method="post"
-                action="index.php?com=news&act=save&type=thu-tuc-nha-dat&p=1" enctype="multipart/form-data">
+                action="{{ route('update.procedure', $procedure) }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="seo_id" value="{{ $procedure->seo_id }}">
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -400,8 +405,8 @@
                                     </div>
                                 </div>
 
-                                <input type="hidden" class="slug-id" value="57">
-                                <input type="hidden" class="slug-copy" value="0">
+                                {{-- <input type="hidden" class="slug-id" value="57">
+                                <input type="hidden" class="slug-copy" value="0"> --}}
 
                                 <div class="card card-primary card-outline card-outline-tabs">
                                     <div class="card-header p-0 border-bottom-0">
@@ -422,10 +427,10 @@
                                                     <label class="d-block">Đường dẫn mẫu (vi):<span
                                                             class="pl-2 font-weight-normal"
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
-                                                                class="text-info">hoan-cong</strong></span></label>
+                                                                class="text-info"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
-                                                        name="slugvi" id="slugvi" placeholder="Đường dẫn (vi)"
-                                                        value="hoan-cong">
+                                                        name="link" id="slugvi" placeholder="Đường dẫn (vi)"
+                                                        value="{{ old('link') ?? $procedure->link }}">
                                                     <input type="hidden" id="slug-defaultvi" value="hoan-cong">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
@@ -470,72 +475,18 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="tenvi">Tiêu đề (vi):</label>
-                                                    <input type="text" class="form-control for-seo"
-                                                        name="data[tenvi]" id="tenvi" placeholder="Tiêu đề (vi)"
-                                                        value="Hoàn công" required>
+                                                    <input type="text" class="form-control for-seo" name="tittle"
+                                                        id="tenvi" placeholder="Tiêu đề (vi)"
+                                                        value="{{ old('tittle') ?? $procedure->tittle }}" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="motavi">Mô tả (vi):</label>
-                                                    <textarea class="form-control for-seo " name="data[motavi]" id="motavi" rows="5" placeholder="Mô tả (vi)">Hoàn công  là một thủ tục trong hoạt động xây dựng công trình nhằm xác nhận sự kiện chủ đầu tư, đơn vị thi công đã hoàn thành công trình xây dựng sau khi được cấp giấy phép xây dựng. Hoàn công có ý nghĩa là điều kiện bắt buộc để được cơ quan nhà nước có thẩm quyền cấp chứng nhận quyền sở hữu nhà ở, công trình khi có sự thay đổi do xây dựng.</textarea>
+                                                    <textarea class="form-control for-seo " name="describe" id="motavi" rows="5" placeholder="Mô tả (vi)">{{ old('describe') ?? $procedure->describe }}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"><p><span style="font-size:16px;">Hoàn công là gì?</span></p>
-
-        <p><span style="font-size:16px;">Hoàn công  là một thủ tục trong hoạt động xây dựng công trình nhằm xác nhận sự kiện chủ đầu tư, đơn vị thi công đã hoàn thành công trình xây dựng sau khi được cấp giấy phép xây dựng. Hoàn công có ý nghĩa là điều kiện bắt buộc để được cơ quan nhà nước có thẩm quyền cấp chứng nhận quyền sở hữu nhà ở, công trình khi có sự thay đổi do xây dựng.</span></p>
-
-        <p><span style="font-size:16px;">Tại sao bạn phải hoàn công?</span></p>
-
-        <p><span style="font-size:16px;">Việc thực hiện thủ tục hoàn công và chứng nhận sự thay đổi tài sản trên đất do xây dựng là rất cần thiết. Đặc biệt trong trường hợp các cá nhân, tổ chức tiến hành thế chấp tài sản, chuyển dịch tài sản. Việc chứng nhận tài sản trên đất vào giấy chứng nhận làm tăng giá trị của tài sản. Khi thực hiện thủ tục chuyển nhượng thì tài sản trên đất cần được chứng nhận để đủ điều kiện chuyển nhượng và tránh những rắc rối về mặt pháp lý.</span></p>
-
-        <p><span style="font-size:16px;">Những giấy tờ cần thiết để thực hiện thủ tục hoàn công:</span></p>
-
-        <p><span style="font-size:16px;">Giấy chứng nhận (sổ hồng, sổ đỏ)<br />
-        Tờ khai (thông báo) nộp lệ phí trước bạ<br />
-        Quyết định cấp số nhà (nếu có)<br />
-        Giấy phép xây dựng<br />
-        Bản vẽ xin phép xây dựng<br />
-        Bản vẽ hoàn công công trình<br />
-        Biên bản nghiệm thu hoàn thành công trình<br />
-        Hợp đồng thi công<br />
-        Hóa đơn thi công<br />
-        Bản vẽ sơ đồ nhà ở, đất ở (trong trường hợp cấp đổi chủ quyền)<br />
-        Tuy những giấy tờ cần thiết như vậy nhưng không phải ai cũng biết và có thời gian để thực hiện thủ tục hoàn công và cấp chứng nhận sở hữu nhà. Nhà đất Minh Phát là đơn vị chuyên thực hiện hoàn công cho khách hàng nên chúng tôi sẽ giúp cho khách hàng của mình:</span></p>
-
-        <p><span style="font-size:16px;">Tư vấn các quy định của pháp luật liên quan đến hoàn công<br />
-        Liên hệ với các đơn vị, tổ chức để lập bản vẽ, hoàn thiện hồ sơ hoàn công<br />
-        Thay mặt khách hàng liên hệ với cơ quan nhà nước có thẩm quyền để thực hiện việc cập nhật biến động tài sản vào chủ quyền hoặc cấp đổi giấy chứng nhận</span></p>
-
-        <p><strong><span style="font-size:16px;">Bảng giá phí dịch vụ hoàn công công trình:</span></strong></p>
-
-        <p><span style="font-size:16px;">Dưới 100m2 sàn                 : 15.000.000 VNĐ<br />
-        Từ 100m2 đến dưới 200m2: 18.000.000 VNĐ<br />
-        Từ 200m2 đến dưới 300m2: 25.000.000 VNĐ<br />
-        Từ 300m2 đến dưới 400m2: 29.000.000 VNĐ<br />
-        Từ 400m2 đến 500m2        : 32.000.000 VNĐ<br />
-        Từ 500m2 trở lên                :  báo giá riêng theo từng quy mô công trình</span></p>
-
-        <p><span style="font-size: 16px;">Chi phí dịch vụ hoàn công bao gồm những nội dung sau:</span></p>
-
-        <p><span style="font-size:16px;">+ Tư vấn cho khách hàng các quy định của pháp luật về hoàn công nhà, đăng ký biến động tài sản vào chủ quyền hoặc cấp đổi chủ quyền;</span></p>
-
-        <p><span style="font-size:16px;">+ Thẩm định hồ sơ và đưa ra phương hướng giải quyết phù hợp quy định pháp luật;</span></p>
-
-        <p><span style="font-size:16px;">+ Thiết lập bản Bản vẽ hoàn công: 15.000đ/m2 (không bao gồm trong phí dịch vụ)</span></p>
-
-        <p><span style="font-size:16px;">+ Biên bản nghiệm thu theo thực tế và phù hợp các quy định của pháp luật;</span></p>
-
-        <p><span style="font-size:16px;">+ Thiết lập bản vẽ sơ đồ nhà ở và đất ở(nếu có): 15.000đ/m2</span></p>
-
-        <p><span style="font-size:16px;">+ Chuẩn bị hồ sơ, mẫu đơn theo quy định;</span></p>
-
-        <p><span style="font-size:16px;">+ Thay mặt hoặc cùng khách hàng liên hệ với UBND quận cập nhật thay đổi tài sản hoặc cấp đổi chủ quyền;</span></p>
-
-        <p><span style="font-size:16px;">+ Liên hệ cơ quan thuế kê khai, nộp thuế theo quy định của pháp luật.</span></p>
-
-        <p><span style="font-size:16px;">+Hoàn tất thủ tục hoàn công và bàn giao giấy tờ nhà cho khách hàng.</span></p>
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $procedure->content }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -557,10 +508,10 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="../upload/news/timthumb-6795.jpg"
-                                            onerror="src='assets/images/noimage.png'" alt="Alt Photo" /></div>
+                                            src="{{ asset('products/' . $procedure->image) }}" alt="Alt Photo" />
+                                    </div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="file" id="file-zone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -590,16 +541,17 @@
                         <div class="form-group">
                             <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
                             <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                    name="data[hienthi]" id="hienthi-checkbox" checked>
+                                <input type="checkbox" class="custom-control-input hienthi-checkbox" name="display"
+                                    id="hienthi-checkbox"
+                                    value="{{ old('display') ?? $procedure->display }}"{{ $procedure->display == 1 ? 'checked' : '' }}>
                                 <label for="hienthi-checkbox" class="custom-control-label"></label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
                             <input type="number" class="form-control form-control-mini d-inline-block align-middle"
-                                min="0" name="data[stt]" id="stt" placeholder="Số thứ tự"
-                                value="1">
+                                min="0" name="number" id="stt" placeholder="Số thứ tự"
+                                value="{{ old('number') ?? $procedure->number }}">
                         </div>
                     </div>
                 </div>
@@ -633,8 +585,8 @@
                                                     <strong class="count-seo"><span>9</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
-                                                    name="dataSeo[titlevi]" id="titlevi"
-                                                    placeholder="SEO Title (vi)" value="Hoàn công">
+                                                    name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
+                                                    value="{{ old('seo_tittle') ?? $procedure->seo->seo_tittle }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -642,16 +594,17 @@
                                                     <strong class="count-seo"><span>9</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
-                                                    name="dataSeo[keywordsvi]" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value="Hoàn công">
+                                                    name="seo_keyword" id="keywordsvi"
+                                                    placeholder="SEO Keywords (vi)"
+                                                    value="{{ old('seo_keyword') ?? $procedure->seo->seo_keyword }}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
                                                     <strong class="count-seo"><span>160</span>/160 ký tự</strong>
                                                 </div>
-                                                <textarea class="form-control check-seo description-seo" name="dataSeo[descriptionvi]" id="descriptionvi"
-                                                    rows="5" placeholder="SEO Description (vi)">Hoàn công  là một thủ tục trong hoạt động xây dựng công trình nhằm xác nhận sự kiện chủ đầu tư, đơn vị thi công đã hoàn thành công trình xây dựng sau khi được c</textarea>
+                                                <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
+                                                    placeholder="SEO Description (vi)">{{ old('seo_description') ?? $procedure->seo->seo_description }}</textarea>
                                             </div>
 
                                         </div>

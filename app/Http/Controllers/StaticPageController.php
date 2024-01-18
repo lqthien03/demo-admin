@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Customer_support;
+use App\Models\Footer;
 use App\Models\Introduce;
 use App\Models\Register_advise;
 use Illuminate\Http\Request;
@@ -82,21 +84,36 @@ class StaticPageController extends Controller
     }
     public function update_register_advise(Request $request, $id)
     {
-        $register_advise = Contact::findOrFail($id);
+        $register_advise = Register_advise::findOrFail($id);
         $register_advise->content = $request->input('content');
+        $register_advise->display = $request->has('display');
         $register_advise->save();
         return back();
     }
     public function edit_customer_support($id)
     {
+        $customer_support = Customer_support::find($id);
+        return view('static_page.customer_support', compact('customer_support'));
     }
     public function update_customer_support(Request $request, $id)
     {
+        $customer_support = Customer_support::findOrFail($id);
+        $customer_support->content = $request->input('content');
+        $customer_support->display = $request->has('display');
+        $customer_support->save();
+        return back();
     }
     public function edit_footer($id)
     {
+        $footer = Footer::find($id);
+        return view('static_page.footer', compact('footer'));
     }
     public function update_footer(Request $request, $id)
     {
+        $footer = Footer::findOrFail($id);
+        $footer->content = $request->input('content');
+        $footer->display = $request->has('display');
+        $footer->save();
+        return back();
     }
 }

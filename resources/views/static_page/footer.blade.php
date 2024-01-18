@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -367,8 +369,10 @@
 
         <!-- Main content -->
         <section class="content">
-            <form class="validation-form" novalidate method="post"
-                action="index.php?com=static&act=save&type=footer" enctype="multipart/form-data">
+            <form class="validation-form" novalidate method="post" action="{{ route('update.footer', $footer) }}"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -391,7 +395,11 @@
                                         thị:</label>
                                     <div class="custom-control custom-checkbox d-inline-block align-middle">
                                         <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="data[hienthi]" id="hienthi-checkbox" checked>
+                                            name="display" id="hienthi-checkbox"
+                                            value="{{ old('display') ?? $footer->display }}"{{ $footer->display == 1 ? 'checked' : '' }}>
+                                        @if (!$footer)
+                                            <input type="hidden" name="display" value="0">
+                                        @endif
                                         <label for="hienthi-checkbox" class="custom-control-label"></label>
                                     </div>
                                 </div>
@@ -411,23 +419,8 @@
                                                 aria-labelledby="tabs-lang">
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="data[noidungvi]" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)"><p><span style="font-size:24px;"><span style="line-height:2;"><strong>NHÀ ĐẤT MINH PHÁT</strong></span></span></p>
-
-        <h4><span style="font-size:14px;"><span style="line-height:2;">Địa Chỉ: 740/11 Lê Trọng Tấn, P. Bình Hưng Hòa, Q. Bình Tân, TP. HCM</span></span></h4>
-
-        <p><span style="font-size:14px;"><span style="line-height:2;">Hotline: <strong>0935.613.986 - 0903.250.446</strong></span></span></p>
-
-        <h5><span style="font-size:14px;"><span style="line-height:2;">Email: <a>phuong 280280@gmail.com</a></span></span></h5>
-
-        <h2><span style="font-size:14px;"><span style="line-height:2;">Website: <a>nhadatminhphat.com.vn</a></span></span></h2>
-
-        <p><span style="line-height:2;"><a href="http://www.dmca.com/Protection/Status.aspx?ID=09db14cc-6ae5-455f-b21a-b4eabbb921ee&amp;refurl=http://nhadatminhphat.com.vn/" title="DMCA.com Protection Status"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120b.png?ID=09db14cc-6ae5-455f-b21a-b4eabbb921ee" /></a> </span></p>
-
-        <p><u>MẠNG XÃ HỘI: </u></p>
-
-        <p style="box-sizing: border-box; padding: 0px; outline: none; color: rgb(51, 51, 51); font-family: body; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial;"><a href="https://www.google.com/" style="box-sizing:border-box;padding:0px;outline:none;cursor:pointer;text-decoration:none;" title=""><img alt="NHÀ ĐẤT MINH PHÁT" onerror="this.src='/assets/images/noimage.png';" original="upload/photo/mxh1-1-1957.png" src="https://demo-saigonwebsite.com/bds/upload/photo/mxh1-1-1957.png" style="box-sizing:border-box;margin:0px 2px;padding:0px;outline:none;max-width:100%;height:auto !important;max-height:35px;display:inline;" title="" /></a> <a href="https://www.google.com/" style="box-sizing:border-box;padding:0px;outline:none;cursor:pointer;text-decoration:none;" title=""><img alt="NHÀ ĐẤT MINH PHÁT" onerror="this.src='/assets/images/noimage.png';" original="upload/photo/mxh1-2-1178.png" src="https://demo-saigonwebsite.com/bds/upload/photo/mxh1-2-1178.png" style="box-sizing:border-box;margin:0px 2px;padding:0px;outline:none;max-width:100%;height:auto !important;max-height:35px;display:inline;" title="" /></a> <a href="https://www.google.com/" style="box-sizing:border-box;padding:0px;outline:none;cursor:pointer;text-decoration:none;" title=""><img alt="NHÀ ĐẤT MINH PHÁT" onerror="this.src='/assets/images/noimage.png';" original="upload/photo/mxh1-3-4655.png" src="https://demo-saigonwebsite.com/bds/upload/photo/mxh1-3-4655.png" style="box-sizing:border-box;margin:0px 2px;padding:0px;outline:none;max-width:100%;height:auto !important;max-height:35px;display:inline;" title="" /></a> <a href="https://www.google.com/" style="box-sizing:border-box;padding:0px;outline:none;cursor:pointer;text-decoration:none;" title=""><img alt="NHÀ ĐẤT MINH PHÁT" onerror="this.src='/assets/images/noimage.png';" original="upload/photo/mxh1-4-6766.png" src="https://demo-saigonwebsite.com/bds/upload/photo/mxh1-4-6766.png" style="box-sizing:border-box;margin:0px 2px;padding:0px;outline:none;max-width:100%;height:auto !important;max-height:35px;display:inline;" title="" /></a></p>
-        </textarea>
+                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
+                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $footer->content }}</textarea>
                                                 </div>
                                             </div>
                                         </div>

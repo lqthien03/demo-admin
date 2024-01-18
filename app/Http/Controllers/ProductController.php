@@ -84,7 +84,7 @@ class ProductController extends Controller
     }
     public function edit($id)
     {
-        $product = Product::with(['seo'])->find($id);
+        $product = Product::with(['seo', 'level1_product', 'level2_product'])->find($id);
         $category_level1 = Category_level1::all();
         $category_level2 = Category_level2::all();
         return view('real_estate.product_edit', compact('product', 'category_level1', 'category_level2'));
@@ -92,7 +92,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request);
-        $product = Category_level1::findOrFail($id);
+        $product = Product::findOrFail($id);
         $seo = $product->seo;
 
         if ($request->hasFile('image')) {
@@ -106,7 +106,7 @@ class ProductController extends Controller
             $file_name = 'default_image.jpg';
         }
 
-        $product = new Product();
+        
         $product->image = $file_name;
         $product->link = $request->input('link');
         $product->tittle = $request->input('tittle');
@@ -126,6 +126,7 @@ class ProductController extends Controller
         $product->level1_product_id = $request->input('level1_product_id');
         $product->level2_product_id = $request->input('level2_product_id');
         $product->save();
+
         $seo->seo_tittle = $request->input('seo_tittle');
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');

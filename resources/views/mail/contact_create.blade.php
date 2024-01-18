@@ -112,8 +112,8 @@
 
                     <!-- Group -->
 
-                     <!-- Sản phẩm -->
-                     <li class="nav-item has-treeview  ">
+                    <!-- Sản phẩm -->
+                    <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
                             <p>
@@ -121,16 +121,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="/real_estate/product" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -221,13 +221,15 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
@@ -296,8 +298,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -369,8 +371,8 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="index.php?com=newsletter&act=save&type=lien-he&p=1"
-                enctype="multipart/form-data">
+            <form method="post" action="{{ route('store.mail.contact') }}" enctype="multipart/form-data">
+                @csrf
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -387,61 +389,85 @@
                         <div class="form-group-category row">
                             <div class="form-group col-md-4">
                                 <label for="ten">Họ tên:</label>
-                                <input type="text" class="form-control" name="data[ten]" id="ten"
+                                <input type="text" class="form-control" name="name" id="ten"
                                     placeholder="Họ tên" value="">
+                                @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="dienthoai">Điện thoại:</label>
-                                <input type="text" class="form-control" name="data[dienthoai]" id="dienthoai"
+                                <input type="text" class="form-control" name="phone" id="dienthoai"
                                     placeholder="Điện thoại" value="">
+                                @error('phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="email">Email:</label>
-                                <input type="email" class="form-control" name="data[email]" id="email"
+                                <input type="email" class="form-control" name="email" id="email"
                                     placeholder="Email" value="">
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="chude">Chủ đề:</label>
-                                <input type="chude" class="form-control" name="data[chude]" id="chude"
+                                <input type="chude" class="form-control" name="topic" id="chude"
                                     placeholder="Chủ đề" value="">
+                                @error('topic')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="diachi">Địa chỉ:</label>
-                                <input type="text" class="form-control" name="data[diachi]" id="diachi"
+                                <input type="text" class="form-control" name="address" id="diachi"
                                     placeholder="Địa chỉ" value="">
+                                @error('address')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="chude">Chủ đề:</label>
-                                <input type="text" class="form-control" name="data[chude]" id="chude"
+                                <input type="text" class="form-control" name="" id="chude"
                                     placeholder="Chủ đề" value="">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="tinhtrang">Tình trạng:</label>
-                                <select id="tinhtrang" name="data[tinhtrang]" class="form-control select2">
+                                <select id="tinhtrang" name="status" class="form-control select2">
                                     <option value="0">Cập nhật tình trạng</option>
                                     <option value="0">Chưa xem</option>
                                     <option value="1">Đã xem</option>
                                     <option value="2">Đã liên hệ</option>
                                 </select>
+                                @error('status')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="noidung">Nội dung:</label>
-                            <textarea class="form-control" name="data[noidung]" id="noidung" rows="5" placeholder="Nội dung"></textarea>
+                            <textarea class="form-control" name="content" id="noidung" rows="5" placeholder="Nội dung"></textarea>
+                            @error('content')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="ghichu">Ghi chú:</label>
-                            <textarea class="form-control" name="data[ghichu]" id="ghichu" rows="5" placeholder="Ghi chú"></textarea>
+                            <textarea class="form-control" name="note" id="ghichu" rows="5" placeholder="Ghi chú"></textarea>
+                            @error('note')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
 
                         <div class="form-group">
                             <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
                             <input type="number" class="form-control form-control-mini d-inline-block align-middle"
-                                min="0" name="data[stt]" id="stt" placeholder="Số thứ tự"
-                                value="1">
+                                min="0" name="number" id="stt" placeholder="Số thứ tự"
+                                value="">
                         </div>
                     </div>
                 </div>
