@@ -104,7 +104,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -209,33 +209,35 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce/1" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/contact/1" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise"
+                                <a class="nav-link " href="/static-page/register_advise/1"
                                     title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support"
+                                <a class="nav-link "
+                                    href="/static-page/customer-support/1
+                                "
                                     title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer/1" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -254,19 +256,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo/1" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner/1" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon/1" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
@@ -298,7 +300,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                            <li class="nav-item"><a class="nav-link " href="/users/information/1"
                                     title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
@@ -318,35 +320,34 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate/1" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news/1" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure/1" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise/1" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
                     <!-- Thiết lập thông tin -->
                     <li class="nav-item  ">
-                        <a class="nav-link " href="" title="Thiết lập thông tin">
+                        <a class="nav-link " href="/setting/1" title="Thiết lập thông tin">
                             <i class="nav-icon text-sm fas fa-cogs"></i>
                             <p>Thiết lập thông tin</p>
                         </a>
@@ -359,7 +360,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Quản lý trang tĩnh</li>
                     </ol>
@@ -442,7 +443,8 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="{{ asset('products/' . $contact->image) }}" alt="Alt Photo" /></div>
+                                            id="uploaded-image" src="{{ asset('products/' . $contact->image) }}"
+                                            alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
@@ -486,7 +488,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="titlevi">SEO Title (vi):</label>
-                                                    <strong class="count-seo"><span>17</span>/70 ký tự</strong>
+                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
                                                     name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
@@ -495,7 +497,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="keywordsvi">SEO Keywords (vi):</label>
-                                                    <strong class="count-seo"><span>11</span>/70 ký tự</strong>
+                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
                                                     name="seo_keyword" id="keywordsvi"
@@ -505,7 +507,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
-                                                    <strong class="count-seo"><span>179</span>/160 ký tự</strong>
+                                                    <strong class="count-seo"><span>0</span>/160 ký tự</strong>
                                                 </div>
                                                 <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
                                                     placeholder="SEO Description (vi)">{{ old('seo_description') ?? $contact->seo->seo_description }}</textarea>
@@ -528,6 +530,23 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 
 </html>

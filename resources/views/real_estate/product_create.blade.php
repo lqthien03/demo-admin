@@ -105,7 +105,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -210,33 +210,35 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce/1" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/contact/1" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise"
+                                <a class="nav-link " href="/static-page/register_advise/1"
                                     title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support"
+                                <a class="nav-link "
+                                    href="/static-page/customer-support/1
+                                "
                                     title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer/1" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -255,19 +257,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo/1" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner/1" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon/1" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
@@ -299,7 +301,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                            <li class="nav-item"><a class="nav-link " href="/users/information/1"
                                     title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
@@ -319,25 +321,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate/1" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news/1" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure/1" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise/1" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -346,7 +348,7 @@
                     </li>
                     <!-- Thiết lập thông tin -->
                     <li class="nav-item  ">
-                        <a class="nav-link " href="" title="Thiết lập thông tin">
+                        <a class="nav-link " href="/setting/1" title="Thiết lập thông tin">
                             <i class="nav-icon text-sm fas fa-cogs"></i>
                             <p>Thiết lập thông tin</p>
                         </a>
@@ -379,8 +381,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=product&act=man&type=san-pham&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/product" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">
                     <div class="col-xl-8">
@@ -413,7 +415,8 @@
                                                     <label class="d-block">Đường dẫn mẫu (vi):<span
                                                             class="pl-2 font-weight-normal"
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
-                                                                class="text-info"></strong></span></label>
+                                                                class="text-info"
+                                                                id="slugPreview"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
                                                         name="link" id="slugvi" placeholder="Đường dẫn (vi)"
                                                         value="">
@@ -475,10 +478,11 @@
                                                     <label for="motavi">Mô tả (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="motavi" rows="5"
                                                         placeholder="Mô tả (vi)"></textarea>
+                                                    @error('describe')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </div>
-                                                @error('describe')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
+
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
@@ -585,7 +589,7 @@
                                 <label class="d-block" for="masp">Mã sản phẩm:</label>
                                 <input type="text" class="form-control" name="product_code" id="masp"
                                     placeholder="Mã sản phẩm" value="">
-                                @error('product_cod e')
+                                @error('product_code')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -668,26 +672,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="card card-primary card-outline text-sm">
-                    <div class="card-header">
-                        <h3 class="card-title">Bộ sưu tập Nhà đất</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                    class="fas fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="filer-gallery" class="label-filer-gallery mb-3">Album hình:
-                                (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</label>
-                            <input type="file" name="file" id="filer-gallery" multiple="multiple">
-                            <input type="hidden" class="col-filer"
-                                value="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
-                            <input type="hidden" class="act-filer" value="man">
-                            <input type="hidden" class="folder-filer" value="product">
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="card card-primary card-outline text-sm">
                     <div class="card-header">
                         <h3 class="card-title">Nội dung SEO</h3>
@@ -715,7 +699,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="titlevi">SEO Title (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-tittle"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
                                                     name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
@@ -724,7 +708,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="keywordsvi">SEO Keywords (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-keywords"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
                                                     name="seo_keyword" id="keywordsvi"
@@ -733,7 +717,8 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/160 ký tự</strong>
+                                                    <strong class="count-seo-description"><span>0</span>/160 ký
+                                                        tự</strong>
                                                 </div>
                                                 <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
                                                     placeholder="SEO Description (vi)"></textarea>
@@ -754,8 +739,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=product&act=man&type=san-pham&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/product" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>
             </form>
@@ -777,6 +762,98 @@
 
                 reader.readAsDataURL(file);
             }
+        });
+    </script>
+    {{-- Đếm kí tự --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.title-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-tittle span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.keywords-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-keywords span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.description-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-description span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 160) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 160);
+                    inputLength = 160; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    {{-- Nối chuỗi --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var slugInput = document.getElementById('slugvi');
+            var slugPreview = document.getElementById('slugPreview');
+
+            // Xác định khi người dùng nhập liệu
+            slugInput.addEventListener('input', function() {
+                var inputValue = slugInput.value;
+                // Nối thêm đoạn "https://nhadatminhphat.com.vn/" vào giá trị nhập vào
+                var fullUrl = 'https://nhadatminhphat.com.vn/' + inputValue;
+                // Hiển thị giá trị đã nối trong phần xem trước
+                slugPreview.textContent = inputValue;
+            });
         });
     </script>
 </body>

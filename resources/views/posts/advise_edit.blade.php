@@ -104,7 +104,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -382,8 +382,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tutu-van&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/posts/advise" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">
                     <div class="col-xl-8">
@@ -621,8 +621,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tutu-van&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/posts/advise" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="61">
                 </div>
             </form>

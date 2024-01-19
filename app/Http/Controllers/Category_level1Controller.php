@@ -30,6 +30,10 @@ class Category_level1Controller extends Controller
             'describe' => 'required',
             'number' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
+            'describe.required' => 'Ô này không được bỏ trống',
         ]);
         // Tìm hoặc tạo một đối tượng Seo
         $seo = new Seo;

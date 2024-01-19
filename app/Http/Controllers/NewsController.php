@@ -28,6 +28,12 @@ class NewsController extends Controller
             'number' => 'required',
             'display' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
+            'describe.required' => 'Ô này không được bỏ trống',
+            'content.required' => 'Ô này không được bỏ trống',
+            'number.required' => 'Ô này không được bỏ trống',
         ]);
         $seo = new Seo;
         $seo->seo_tittle = $request->input('seo_tittle');

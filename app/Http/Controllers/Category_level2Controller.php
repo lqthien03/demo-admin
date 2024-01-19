@@ -27,6 +27,13 @@ class Category_level2Controller extends Controller
             'tittle' => 'required',
             'describe' => 'required',
             'number' => 'required',
+            'level1_product_id' => 'required',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
+            'describe.required' => 'Ô này không được bỏ trống',
+            'number.required' => 'Ô này không được bỏ trống',
+            'level1_product_id.required' => 'Ô này không được bỏ trống',
         ]);
         $seo = new Seo;
         $seo->seo_tittle = $request->input('seo_tittle');
@@ -71,6 +78,12 @@ class Category_level2Controller extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
+        return back();
+    }
+    public function destroy($id)
+    {
+        $category_level2 = Category_level2::find($id);
+        $category_level2->delete();
         return back();
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category_level1;
 use App\Models\Category_level2;
+use App\Models\Mail;
 use App\Models\Product;
 use App\Models\Seo;
 use Illuminate\Http\Request;
@@ -41,6 +42,19 @@ class ProductController extends Controller
             'direction' => 'required',
             'location' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
+            'describe.required' => 'Ô này không được bỏ trống',
+            'content.required' => 'Ô này không được bỏ trống',
+            'product_code.required' => 'Ô này không được bỏ trống',
+            'price.required' => 'Ô này không được bỏ trống',
+            'address.required' => 'Ô này không được bỏ trống',
+            'size.required' => 'Ô này không được bỏ trống',
+            'acreage.required' => 'Ô này không được bỏ trống',
+            'contact.required' => 'Ô này không được bỏ trống',
+            'direction.required' => 'Ô này không được bỏ trống',
+            'location.required' => 'Ô này không được bỏ trống',
         ]);
         $seo = new Seo;
         $seo->seo_tittle = $request->input('seo_tittle');
@@ -106,7 +120,7 @@ class ProductController extends Controller
             $file_name = 'default_image.jpg';
         }
 
-        
+
         $product->image = $file_name;
         $product->link = $request->input('link');
         $product->tittle = $request->input('tittle');
@@ -133,7 +147,10 @@ class ProductController extends Controller
         $seo->save();
         return back();
     }
-    public function destroy()
+    public function destroy($id)
     {
+        $product = Product::find($id);
+        $product->delete();
+        return back();
     }
 }

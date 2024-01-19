@@ -104,7 +104,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -228,7 +228,8 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support/1
+                                <a class="nav-link "
+                                    href="/static-page/customer-support/1
                                 "
                                     title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
@@ -423,8 +424,10 @@
                                             data-table="">
                                     </td>
                                     <td class="align-middle">
-                                        <a href="" title=""><img class="rounded img-preview"
-                                                src="{{ URL::asset('uploads/' . $item->image) }}" alt=""></a>
+                                        <a href="#" title="{{ $item->tittle }}"><img
+                                                class="rounded img-preview"
+                                                src="{{ URL::asset('products/' . $item->image) }}"
+                                                alt="{{ $item->tittle }}"></a>
                                     </td>
                                     <td class="align-middle">
                                         <a class="text-dark"
@@ -446,7 +449,7 @@
                                         <td class="align-middle text-center text-md text-nowrap">
                                             <a class="text-primary mr-2"
                                                 href="/real_estate/category-level1/edit/{{ $item->id }}"
-                                                title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                                title=""><i class="fas fa-edit"></i></a>
 
                                             <button
                                                 type="submit"style="background: none; border: none; cursor: pointer;">

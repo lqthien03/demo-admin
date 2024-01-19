@@ -108,6 +108,7 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
+                    <!-- Sản phẩm -->
                     <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
@@ -116,16 +117,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -144,19 +145,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tin tức"><i
+                                <a class="nav-link " href="/posts/news" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/posts/procedure" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tư vấn"><i
+                                <a class="nav-link " href="/posts/advise" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -179,13 +180,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thư liên hệ"><i
+                                <a class="nav-link " href="/mail/contact" title="Thư liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thư liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Đăng ký tư vấn"><i
+                                <a class="nav-link " href="mail/register-advise" title="Đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Đăng ký tư vấn</p>
                                 </a>
@@ -204,31 +205,33 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -247,31 +250,31 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Slideshow"><i
+                                <a class="nav-link " href="/image-video/slideshow" title="Slideshow"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Slideshow</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Mạng xã hội"><i
+                                <a class="nav-link " href="/image-video/social_network" title="Mạng xã hội"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Mạng xã hội</p>
                                 </a>
@@ -291,8 +294,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -311,25 +314,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -352,7 +355,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item"><a href="index.php?com=photo&act=man_photo&type=slide&p=1"
                                 title="Slideshow">Quản lý Slideshow</a></li>
@@ -364,15 +367,15 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="index.php?com=photo&act=save_photo&type=slide&p=1"
-                enctype="multipart/form-data">
+            <form method="post" action="{{ route('store.slideshow') }}" enctype="multipart/form-data">
+                @csrf
                 <div class="card-footer text-sm sticky-top">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=photo&act=man_photo&type=slide&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/image-video/slideshow" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="card card-primary card-outline text-sm">
                     <div class="card-header">
@@ -384,11 +387,10 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label class="change-photo" for="file0">
+                            <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload" src=""
-                                        onerror="src='assets/images/noimage.png'" alt="Alt Photo" />
+                                    <img class="rounded img-upload" src="" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i
@@ -399,28 +401,34 @@
                             <strong class="d-block mt-2 mb-2 text-sm">Width: 1366 px - Height: 500 px
                                 (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
                             <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="file0" id="file0">
-                                <label class="custom-file-label" for="file0">Chọn file</label>
+                                <input type="file" class="custom-file-input" name="image" id="file">
+                                <label class="custom-file-label" for="file">Chọn file</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="link0">Link:</label>
-                            <input type="text" class="form-control" name="dataMulti[0][link]" id="link0"
+                            <label for="link">Link:</label>
+                            <input type="text" class="form-control" name="link" id="link"
                                 placeholder="Link">
+                            @error('link')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="hienthi0" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
                             <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                    name="dataMulti[0][hienthi]" id="hienthi-checkbox0" checked>
+                                <input type="checkbox" class="custom-control-input hienthi-checkbox" name="display"
+                                    id="hienthi-checkbox0" checked>
                                 <label for="hienthi-checkbox0" class="custom-control-label"></label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="stt0" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
                             <input type="number" class="form-control form-control-mini d-inline-block align-middle"
-                                min="0" name="dataMulti[0][stt]" id="stt0" placeholder="Số thứ tự"
+                                min="0" name="number" id="stt0" placeholder="Số thứ tự"
                                 value="1">
+                            @error('number')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="card card-primary card-outline card-outline-tabs">
                             <div class="card-header p-0 border-bottom-0">
@@ -438,81 +446,11 @@
                                         aria-labelledby="tabs-lang">
                                         <div class="form-group">
                                             <label for="tenvi0">Tiêu đề (vi):</label>
-                                            <input type="text" class="form-control" name="dataMulti[0][tenvi]"
-                                                id="tenvi0" placeholder="Tiêu đề (vi)">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card-primary card-outline text-sm">
-                    <div class="card-header">
-                        <h3 class="card-title">Slideshow: 2</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                    class="fas fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label class="change-photo" for="file1">
-                                <p>Upload hình ảnh:</p>
-                                <div class="rounded">
-                                    <img class="rounded img-upload" src=""
-                                        onerror="src='assets/images/noimage.png'" alt="Alt Photo" />
-                                    <strong>
-                                        <b class="text-sm text-split"></b>
-                                        <span class="btn btn-sm bg-gradient-success"><i
-                                                class="fas fa-camera mr-2"></i>Chọn hình</span>
-                                    </strong>
-                                </div>
-                            </label>
-                            <strong class="d-block mt-2 mb-2 text-sm">Width: 1366 px - Height: 500 px
-                                (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
-                            <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="file1" id="file1">
-                                <label class="custom-file-label" for="file1">Chọn file</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="link1">Link:</label>
-                            <input type="text" class="form-control" name="dataMulti[1][link]" id="link1"
-                                placeholder="Link">
-                        </div>
-                        <div class="form-group">
-                            <label for="hienthi1" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
-                            <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                    name="dataMulti[1][hienthi]" id="hienthi-checkbox1" checked>
-                                <label for="hienthi-checkbox1" class="custom-control-label"></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="stt1" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-                            <input type="number" class="form-control form-control-mini d-inline-block align-middle"
-                                min="0" name="dataMulti[1][stt]" id="stt1" placeholder="Số thứ tự"
-                                value="1">
-                        </div>
-                        <div class="card card-primary card-outline card-outline-tabs">
-                            <div class="card-header p-0 border-bottom-0">
-                                <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="tabs-lang" data-toggle="pill"
-                                            href="#tabs-lang-vi-1" role="tab" aria-controls="tabs-lang-vi-1"
-                                            aria-selected="true">Tiếng Việt</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <div class="tab-content" id="custom-tabs-three-tabContent-lang">
-                                    <div class="tab-pane fade show active" id="tabs-lang-vi-1" role="tabpanel"
-                                        aria-labelledby="tabs-lang">
-                                        <div class="form-group">
-                                            <label for="tenvi1">Tiêu đề (vi):</label>
-                                            <input type="text" class="form-control" name="dataMulti[1][tenvi]"
-                                                id="tenvi1" placeholder="Tiêu đề (vi)">
+                                            <input type="text" class="form-control" name="tittle" id="tenvi0"
+                                                placeholder="Tiêu đề (vi)">
+                                            @error('tittle')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -525,12 +463,29 @@
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=photo&act=man_photo&type=slide&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/image-video/slideshow" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 
 </html>

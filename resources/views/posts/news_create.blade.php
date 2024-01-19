@@ -360,7 +360,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Thêm mới Tin tức</li>
                     </ol>
@@ -416,7 +416,8 @@
                                                     <label class="d-block">Đường dẫn mẫu (vi):<span
                                                             class="pl-2 font-weight-normal"
                                                             id="slugurlpreviewvi">https://nhadatminhphat.com.vn/<strong
-                                                                class="text-info" id="slugPreview"></strong></span></label>
+                                                                class="text-info"
+                                                                id="slugPreview"></strong></span></label>
                                                     <input type="text" class="form-control slug-input no-validate"
                                                         name="link" id="slugvi" placeholder="Đường dẫn (vi)"
                                                         value="">
@@ -581,7 +582,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="titlevi">SEO Title (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-tittle"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
                                                     name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
@@ -590,7 +591,7 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="keywordsvi">SEO Keywords (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/70 ký tự</strong>
+                                                    <strong class="count-seo-keywords"><span>0</span>/70 ký tự</strong>
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
                                                     name="seo_keyword" id="keywordsvi"
@@ -599,7 +600,8 @@
                                             <div class="form-group">
                                                 <div class="label-seo">
                                                     <label for="descriptionvi">SEO Description (vi):</label>
-                                                    <strong class="count-seo"><span>0</span>/160 ký tự</strong>
+                                                    <strong class="count-seo-description"><span>0</span>/160 ký
+                                                        tự</strong>
                                                 </div>
                                                 <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
                                                     placeholder="SEO Description (vi)"></textarea>
@@ -658,6 +660,82 @@
                 var fullUrl = 'https://nhadatminhphat.com.vn/' + inputValue;
                 // Hiển thị giá trị đã nối trong phần xem trước
                 slugPreview.textContent = inputValue;
+            });
+        });
+    </script>
+    {{-- Đếm kí tự --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.title-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-tittle span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.keywords-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-keywords span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 70) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 70);
+                    inputLength = 70; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy phần tử input
+            var titleInput = document.querySelector('.description-seo', '');
+
+            // Lấy phần tử hiển thị số ký tự
+            var countElement = document.querySelector('.count-seo-description span');
+
+            // Gắn sự kiện 'input' để theo dõi sự thay đổi
+            titleInput.addEventListener('input', function() {
+                // Lấy độ dài của giá trị đang nhập
+                var inputLength = titleInput.value.length;
+
+                // Kiểm tra nếu độ dài vượt quá giới hạn
+                if (inputLength > 160) {
+                    // Cắt bớt giá trị nhập vào để chỉ giữ lại 70 ký tự
+                    titleInput.value = titleInput.value.substring(0, 160);
+                    inputLength = 160; // Cập nhật lại độ dài sau khi cắt bớt
+                }
+
+                // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
+                countElement.textContent = inputLength;
             });
         });
     </script>

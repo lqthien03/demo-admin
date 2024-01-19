@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 17, 2024 lúc 08:42 AM
+-- Thời gian đã tạo: Th1 18, 2024 lúc 09:58 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -24,6 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `advises`
+--
+
+CREATE TABLE `advises` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tittle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `describe` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `display` tinyint(4) NOT NULL,
+  `outstand` tinyint(4) DEFAULT NULL,
+  `number` int(11) NOT NULL,
+  `seo_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `advises`
+--
+
+INSERT INTO `advises` (`id`, `link`, `tittle`, `describe`, `content`, `image`, `display`, `outstand`, `number`, `seo_id`) VALUES
+(1, 'fsager', 'adgerg', 'dagerg', 'gaergdf', 'eragdfgad', 1, NULL, 1, 1),
+(2, 'https://youtu.be/PZp', 'Thiết bị âm Thanh-Loa VI TÍNH', 'wqef', 'eqrg', 'images (2).jpeg', 1, NULL, 1, 92);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `banners`
 --
 
@@ -40,7 +67,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image`, `tittle`, `link`, `display`) VALUES
-(1, 'images.jpeg', 'banner1', '', 0),
+(1, 'images (1).jpeg', 'banner1', '', 1),
 (2, 'banner2.jpg', 'banner2', '', 1),
 (3, 'banner3.jpg', 'banner3', '', 1),
 (4, 'banner4.jpg', 'banner4', '', 1);
@@ -88,7 +115,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `content`, `image`, `display`, `seo_id`) VALUES
-(1, 'wagwfw', 'default_image.jpg', 1, 19);
+(1, 'wagwfwqrt34et', 'images (5).jpeg', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -138,18 +165,19 @@ CREATE TABLE `criterias` (
 
 CREATE TABLE `customer_supports` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display` tinyint(4) NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `zalo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zalo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `customer_supports`
 --
 
-INSERT INTO `customer_supports` (`id`, `tittle`, `display`, `phone`, `zalo`) VALUES
-(1, 'Hỗ trợ khách hàng', 0, '0363008204', '0363008204');
+INSERT INTO `customer_supports` (`id`, `tittle`, `display`, `phone`, `zalo`, `content`) VALUES
+(1, 'Hỗ trợ khách hàng', 1, '0363008204', '0363008204', 'aegrrr23542');
 
 -- --------------------------------------------------------
 
@@ -190,7 +218,7 @@ CREATE TABLE `detail_products` (
 --
 
 INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `content`, `describe`, `outstand`, `discount`, `display`, `new`, `product_code`, `price`, `address`, `size`, `acreage`, `contact`, `direction`, `location`, `new_price`, `level2_product_id`, `seo_id`, `level3_product_id`, `level1_product_id`, `tag_product_id`) VALUES
-(475, 1, 'g5400v-6520.jpg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, 1, 86, 5, 1),
+(475, 1, 'images (3).jpeg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', 'aege', 'veag', 1, '', 1, 0, 'aerg', 'earg', 'eg', 'erg', 'dfg', 'dfg', 'erg', 'dfg', '', 42, 1, 86, 5, 1),
 (476, 1, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 29, NULL, 85, 1, 1),
 (534, 1, '2872913156861378590-5985.png', 'DDR4-TEAMGROUP Elite Plus 4GB', 'ddr4-teamgroup-elite-plus-4gb', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 35, 1, 105, 2, 1),
 (535, 2, '8ba249a3ab67321494cf6123e9670fdd-2677.jpg', 'CPU-I3 6100', 'cpu-i3-6100', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, NULL, 102, 2, 1),
@@ -232,7 +260,9 @@ INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `conte
 (572, 0, 'linh-kien-laptop-hcm-hienlaptop-01-7371.png', 'CHUYÊN NÂNG CẤP LAPTOP, THAY THẾ LINH KIỆN. GIÁ TỐT NHẤT BÌNH DƯƠNG', 'chuyen-nang-cap-laptop-thay-the-linh-kien-gia-tot-nhat-binh-duong', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 40, NULL, NULL, 6, 1),
 (573, 0, 'heaphone-run-mus-k804-1-2320.jpg', 'PHONE RUN MUS K8 LED GAMING', 'phone-run-mus-k8-led-gaming', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, NULL, NULL, 5, 1),
 (574, 0, '6fe4382b7be81732a1300a1585429f391-1-5201 (1).jpg', 'Phát Wifi PIX-LINK LV-WR08', 'phat-wifi-pix-link-lv-wr08', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1),
-(579, 3, 'images (3).jpeg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'iii', 'iiii', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 29, 91, NULL, 1, NULL);
+(579, 3, 'images (5).jpeg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrgG', 'iii', 'iiiiwagwr', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 29, 91, NULL, 2, NULL),
+(584, 3, 'default_image.jpg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'iii', 'iiii', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 30, 91, NULL, 2, NULL),
+(585, 3, 'default_image.jpg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'iii', 'iiii', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiiityjte', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 29, 91, NULL, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -702,7 +732,7 @@ CREATE TABLE `footers` (
 --
 
 INSERT INTO `footers` (`id`, `tittle`, `content`, `display`) VALUES
-(1, 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG', 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG', 1);
+(1, 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG', 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG 325', 1);
 
 -- --------------------------------------------------------
 
@@ -786,7 +816,7 @@ CREATE TABLE `level1_products` (
 
 INSERT INTO `level1_products` (`id`, `number`, `image`, `link`, `tittle`, `describe`, `outstand`, `new`, `display`, `seo_id`) VALUES
 (1, 1, 'images (5).jpeg', 'link-mau4444', 'LINH KIỆN MỚI', 'fwefw', 1, 1, 1, 1),
-(2, 2, 'linhkiencu.png', '', 'LINH KIỆN CŨ', '', 1, 1, 0, 4),
+(2, 2, 'img_20200617093732.jpg', 'fwefwq', 'LINH KIỆN CŨ', 'werferg', 1, 1, 0, 4),
 (3, 3, 'thanhlyphongnet.png', '', 'THANH LÝ PHÒNG NET', '', 1, 1, 0, 5),
 (4, 4, 'manhinhmaytinh.png', '', 'MÀN HÌNH MÁY TÍNH', '', 1, 1, 1, 6),
 (5, 5, 'thietbiamthanh.png', '', 'THIẾT BỊ ÂM THANH', '', 1, 1, 1, 7),
@@ -866,7 +896,7 @@ CREATE TABLE `level2_products` (
 
 INSERT INTO `level2_products` (`id`, `link`, `number`, `tittle`, `describe`, `display`, `level1_product_id`, `seo_id`) VALUES
 (29, '', 1, 'CPU-BỘ XỬ LÝ', 'agergaerr', 1, 1, 1),
-(30, '', 3, 'CPU-BỘ XỬ LÝ', '', 1, 2, 2),
+(30, 'awerg', 3, 'CPU-BỘ XỬ LÝ', 'aewrgaer', 1, 1, 2),
 (31, '', 2, 'MAINBOARD-BO MẠCH CHỦ CŨ', '', 1, 2, 2),
 (32, '', 1, 'BỘ NHỚ RAM', '', 1, 1, 18),
 (33, '', 1, 'VGA-CARD MÀN HÌNH', '', 1, 1, 22),
@@ -982,7 +1012,35 @@ CREATE TABLE `logos` (
 --
 
 INSERT INTO `logos` (`id`, `image`, `display`) VALUES
-(1, 'default_image.jpg', 0);
+(1, 'images (2).jpeg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `mails`
+--
+
+CREATE TABLE `mails` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(225) COLLATE utf8_unicode_ci NOT NULL,
+  `topic` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(225) COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `note` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `number` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `mails`
+--
+
+INSERT INTO `mails` (`id`, `name`, `phone`, `email`, `topic`, `address`, `status`, `content`, `note`, `number`, `created_at`) VALUES
+(1, 'thienbodoi', '0363008204', 'quocthien0404@gmail.com', 'erg', 'Thienes Avenue', 1, 'eargea', 'aeg', 1, '2024-01-18 02:38:11'),
+(2, 'lê quốc thiện@', '0363008204', 'quocthien@gmail.com', 'mua nè', '1', 2, '...', '....', 1, '2024-01-18 07:48:20');
 
 -- --------------------------------------------------------
 
@@ -1061,7 +1119,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `image`, `link`, `tittle`, `describe`, `content`, `outstand`, `display`, `number`, `seo_id`) VALUES
-(2, 'img_20200617093732.jpg', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'eqrgq', 'yeh', 'etyj', NULL, 1, '1', 69),
+(2, 'images (2).jpeg', 'https://youtu.be/PZ', 'eqrgq2', 'yeh2', 'etyj2', NULL, 0, '1', 69),
 (3, 'images.jpeg', 'rshrth', 'rthsrt', 'hrtfh', 'rths', NULL, 1, '1', 70);
 
 -- --------------------------------------------------------
@@ -1125,6 +1183,33 @@ INSERT INTO `policies` (`id`, `image`, `tittle`, `display`, `seo_id`, `content`)
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `procedures`
+--
+
+CREATE TABLE `procedures` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tittle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `describe` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `display` tinyint(4) NOT NULL,
+  `outstand` tinyint(4) DEFAULT NULL,
+  `number` int(11) NOT NULL,
+  `seo_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `procedures`
+--
+
+INSERT INTO `procedures` (`id`, `link`, `tittle`, `describe`, `content`, `image`, `display`, `outstand`, `number`, `seo_id`) VALUES
+(1, 'qger', 'gerg', 'ergwe', 'brthgw', 'img_20200617093732.jpg', 1, 1, 3, 1),
+(2, 'https://youtu.be/PZ', 'wegtr2354', 'hrytjh24', 'tyedfgh24', 'images (5).jpeg', 0, NULL, 3, 95);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `register_advise`
 --
 
@@ -1139,7 +1224,7 @@ CREATE TABLE `register_advise` (
 --
 
 INSERT INTO `register_advise` (`id`, `content`, `display`) VALUES
-(1, 'wagwfw', 0);
+(1, 'wagwfwww243534', 0);
 
 -- --------------------------------------------------------
 
@@ -1227,7 +1312,7 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (66, 'ẻtgewrtye', 'ẺG', 'HT'),
 (67, 'ưef', 'ưef', 'ưefw'),
 (68, NULL, NULL, NULL),
-(69, 'qưerg', 'qẻg', 'geg'),
+(69, 'qưerg2', 'qẻg2', 'geg2'),
 (70, 'srhrsth', 'rthfg', 'rthr'),
 (71, 'egdf', 'ẻg', NULL),
 (72, 'ưthrt', 'reth', NULL),
@@ -1249,7 +1334,11 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (88, 'sfg', 'dfgj', 'srt'),
 (89, 'iiii', 'iiii', 'iii'),
 (90, 'iiii', 'iiii', 'iii'),
-(91, 'iiii', 'iiii', 'iii');
+(91, 'iiii', 'iiii', 'iii'),
+(92, 'mmmm222', 'mm', 'mm'),
+(93, 'er', 'ter', 'tert'),
+(94, 'er', 'ter', 'tert'),
+(95, 'er3', 'ter3', 'tert3');
 
 -- --------------------------------------------------------
 
@@ -1287,7 +1376,7 @@ CREATE TABLE `seo_estate` (
 --
 
 INSERT INTO `seo_estate` (`id`, `image`, `seo_id`) VALUES
-(1, 'images (4).jpeg', 46);
+(1, 'images.jpeg', 46);
 
 -- --------------------------------------------------------
 
@@ -1543,6 +1632,13 @@ CREATE TABLE `videos` (
 --
 
 --
+-- Chỉ mục cho bảng `advises`
+--
+ALTER TABLE `advises`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `advises_id_seo` (`seo_id`);
+
+--
 -- Chỉ mục cho bảng `banners`
 --
 ALTER TABLE `banners`
@@ -1682,6 +1778,12 @@ ALTER TABLE `logos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `mails`
+--
+ALTER TABLE `mails`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
@@ -1714,6 +1816,13 @@ ALTER TABLE `personal_access_tokens`
 ALTER TABLE `policies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `policies_seo_id_foreign` (`seo_id`);
+
+--
+-- Chỉ mục cho bảng `procedures`
+--
+ALTER TABLE `procedures`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `procedure_id_seo` (`seo_id`);
 
 --
 -- Chỉ mục cho bảng `register_advise`
@@ -1826,6 +1935,12 @@ ALTER TABLE `videos`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `advises`
+--
+ALTER TABLE `advises`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `banners`
 --
 ALTER TABLE `banners`
@@ -1865,7 +1980,7 @@ ALTER TABLE `customer_supports`
 -- AUTO_INCREMENT cho bảng `detail_products`
 --
 ALTER TABLE `detail_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=580;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=587;
 
 --
 -- AUTO_INCREMENT cho bảng `detail_quotations`
@@ -1946,6 +2061,12 @@ ALTER TABLE `logos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT cho bảng `mails`
+--
+ALTER TABLE `mails`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
@@ -1970,6 +2091,12 @@ ALTER TABLE `policies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT cho bảng `procedures`
+--
+ALTER TABLE `procedures`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `register_advise`
 --
 ALTER TABLE `register_advise`
@@ -1979,7 +2106,7 @@ ALTER TABLE `register_advise`
 -- AUTO_INCREMENT cho bảng `seos`
 --
 ALTER TABLE `seos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT cho bảng `seo_advise`
@@ -2070,6 +2197,12 @@ ALTER TABLE `videos`
 --
 
 --
+-- Các ràng buộc cho bảng `advises`
+--
+ALTER TABLE `advises`
+  ADD CONSTRAINT `advises_id_seo` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`);
+
+--
 -- Các ràng buộc cho bảng `contacts`
 --
 ALTER TABLE `contacts`
@@ -2148,6 +2281,12 @@ ALTER TABLE `news`
 --
 ALTER TABLE `policies`
   ADD CONSTRAINT `policies_seo_id_foreign` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`);
+
+--
+-- Các ràng buộc cho bảng `procedures`
+--
+ALTER TABLE `procedures`
+  ADD CONSTRAINT `procedure_id_seo` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`);
 
 --
 -- Các ràng buộc cho bảng `seo_advise`

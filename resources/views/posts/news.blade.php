@@ -104,7 +104,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -373,9 +373,8 @@
             <div class="card-footer text-sm sticky-top">
                 <a class="btn btn-sm bg-gradient-primary text-white" href="/posts/news/create" title="Thêm mới"><i
                         class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=news&act=delete&type=tin-tuc&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
@@ -429,21 +428,19 @@
                                     </td>
                                     <td class="align-middle">
                                         <a href="" title=""><img class="rounded img-preview"
-                                                src="{{ URL::asset('uploads/images/' . $item->image) }}"
-                                                alt="4 lý do nên thận trọng khi đầu tư bất động sản năm 2018"></a>
+                                                src="{{ URL::asset('products/' . $item->image) }}"
+                                                alt="{{ $item->tittle }}"></a>
                                     </td>
+
                                     <td class="align-middle">
-                                        <a class="text-dark" href="index.php?com=news&act=edit&type=tin-tuc&p=1&id=63"
-                                            title="">{{ $item->tittle }}</a>
+                                        <a class="text-dark" href="#" title="">{{ $item->tittle }}</a>
                                         <div class="tool-action mt-2 w-clear">
                                             <a class="text-primary mr-3"
-                                                href="https://nhadatminhphat.com.vn/4-ly-do-nen-than-trong-khi-dau-tu-bat-dong-san-nam-2018"
-                                                target="_blank"
-                                                title="4 lý do nên thận trọng khi đầu tư bất động sản năm 2018"><i
+                                                href="https://nhadatminhphat.com.vn/{{ $item->link }}"
+                                                target="_blank" title=""><i
                                                     class="far fa-eye mr-1"></i>View</a>
-                                            <a class="text-info mr-3" href=""
-                                                title="4 lý do nên thận trọng khi đầu tư bất động sản năm 2018"><i
-                                                    class="far fa-edit mr-1"></i>Edit</a>
+                                            <a class="text-info mr-3" href="/posts/news/edit/{{ $item->id }}"
+                                                title="{{ $item->tittle }}"><i class="far fa-edit mr-1"></i>Edit</a>
                                             <div class="dropdown">
                                                 <a id="dropdownCopy" href="#" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="false"
@@ -455,18 +452,27 @@
                                                             data-id="63" data-table="news" data-copyimg=""><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Sao
                                                             chép ngay</a></li>
-                                                    <li><a href="index.php?com=news&act=copy&type=tin-tuc&p=1&id_copy=63"
+                                                    <li><a href="/posts/news/edit/{{ $item->id }}"
                                                             class="dropdown-item"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
                                                             sửa thông tin</a></li>
                                                 </ul>
                                             </div>
-                                            <a class="text-danger" id="delete-item"
-                                                data-url="index.php?com=news&act=delete&type=tin-tuc&p=1&id=63"
-                                                title="4 lý do nên thận trọng khi đầu tư bất động sản năm 2018"><i
-                                                    class="far fa-trash-alt mr-1"></i>Delete</a>
+                                            <form action="{{ route('delete.news', ['id' => $item->id]) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('PUT')
+                                                <button
+                                                    type="submit"style="background: none; border: none; cursor: pointer;">
+                                                    <a class="text-danger" id="delete-item" data-url=""
+                                                        title=""
+                                                        href="/posts/news/delete/{{ $item->id }}"><i
+                                                            class="far fa-trash-alt mr-1"></i>Delete</a>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
+
                                     <td class="align-middle text-center">
                                         <div class="custom-control custom-checkbox my-checkbox">
                                             <input type="checkbox" class="custom-control-input show-checkbox"
@@ -484,7 +490,6 @@
                                         </div>
                                     </td>
                                     <td class="align-middle text-center text-md text-nowrap">
-
                                         <form action="{{ route('delete.news', ['id' => $item->id]) }}"
                                             method="post">
                                             @csrf
@@ -500,7 +505,7 @@
                                                             data-id="63" data-table="news"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Sao
                                                             chép ngay</a></li>
-                                                    <li><a href="index.php?com=news&act=copy&type=tin-tuc&p=1&id=63"
+                                                    <li><a href="/posts/news/edit/{{ $item->id }}"
                                                             class="dropdown-item"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
                                                             sửa thông tin</a></li>
@@ -510,8 +515,7 @@
                                                 title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
                                             <button
                                                 type="submit"style="background: none; border: none; cursor: pointer;">
-                                                <a class="text-danger" id="delete-item"
-                                                    data-url="index.php?com=news&act=delete&type=tin-tuc&p=1&id=63"
+                                                <a class="text-danger" id="delete-item" data-url=""
                                                     title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                             </button>
 

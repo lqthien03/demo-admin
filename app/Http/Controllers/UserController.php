@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -24,5 +25,29 @@ class UserController extends Controller
         $user->address = $request->input('address');
         $user->save();
         return back();
+    }
+    public function edit_password($id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.resset-password', compact('user'));
+    }
+    public function update_password(Request $request)
+    {
+        // dd($request);
+        $request->validate([
+            'old_password' => 'required|min:6|max:100',
+            'new_password' => 'required|min:6|max:100',
+            'confirm_password' => 'required|same:new_password',
+        ]);
+        $current_user = Auth()->user();
+        // dd($current_user);
+        if (Hash::check($request->old_password, $current_user->password)) {
+            $current_user->update([
+                'password' => bcrypt($request->new_password)
+            ]);
+            return view('dashboard');
+        } else {
+            return back();
+        }
     }
 }

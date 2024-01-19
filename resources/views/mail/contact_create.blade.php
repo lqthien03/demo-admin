@@ -113,6 +113,7 @@
                     <!-- Group -->
 
                     <!-- Sản phẩm -->
+                    <!-- Sản phẩm -->
                     <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
                             <i class="nav-icon text-sm fas fa-boxes"></i>
@@ -359,7 +360,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item"><a href="index.php?com=newsletter&act=man&type=lien-he&p=1"
                                 title="Quản lý Thư liên hệ">Quản lý Thư liên hệ</a></li>
@@ -378,8 +379,8 @@
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=newsletter&act=man&type=lien-he&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/mail/contact" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="card card-primary card-outline text-sm">
                     <div class="card-header">
@@ -467,7 +468,7 @@
                             <label for="stt" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
                             <input type="number" class="form-control form-control-mini d-inline-block align-middle"
                                 min="0" name="number" id="stt" placeholder="Số thứ tự"
-                                value="">
+                                value="1">
                         </div>
                     </div>
                 </div>
@@ -476,8 +477,8 @@
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=newsletter&act=man&type=lien-he&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/mail/contact" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>
             </form>

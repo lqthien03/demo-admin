@@ -31,6 +31,16 @@ class MailController extends Controller
             'content' => 'required',
             'note' => 'required',
             'number' => 'required',
+        ], [
+            'name.required' => 'Ô này không được bỏ trống',
+            'phone.required' => 'Ô này không được bỏ trống',
+            'email.required' => 'Ô này không được bỏ trống',
+            'topic.required' => 'Ô này không được bỏ trống',
+            'address.required' => 'Ô này không được bỏ trống',
+            'number.required' => 'Ô này không được bỏ trống',
+            'status.required' => 'Ô này không được bỏ trống',
+            'content.required' => 'Ô này không được bỏ trống',
+            'note.required' => 'Ô này không được bỏ trống',
         ]);
         $contact = new Mail();
         $contact->name = $request->input('name');
@@ -69,7 +79,15 @@ class MailController extends Controller
         return back();
     }
 
-    public function show_register_advise(){
+    public function show_register_advise()
+    {
         $register_advise = Register_advise::all();
+    }
+
+    public function destroy($id)
+    {
+        $contact = Mail::find($id);
+        $contact->delete();
+        return back();
     }
 }

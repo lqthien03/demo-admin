@@ -360,9 +360,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item active">Quản lý trang tĩnh</li>
+                        <li class="breadcrumb-item active">Thông tin tài khoản</li>
                     </ol>
                 </div>
             </div>
@@ -370,79 +370,58 @@
 
         <!-- Main content -->
         <section class="content">
-            <form class="validation-form" novalidate method="post"
-                action="{{ route('update.register_advise', $register_advise) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('update.resset-password', $user) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-footer text-sm sticky-top">
-                    <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
+                    <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card card-primary card-outline text-sm">
-                            <div class="card-header">
-                                <h3 class="card-title">Nội dung Text đăng ký tư vấn</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i></button>
+                <div class="card card-primary card-outline text-sm">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin admin</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-xl-4 col-lg-6 col-md-6">
+                                <label for="old-password">Mật khẩu cũ:</label>
+                                <input type="password" class="form-control" name="old_password" id="old-password"
+                                    placeholder="Mật khẩu cũ">
+                            </div>
+                            <div class="form-group col-xl-4 col-lg-6 col-md-6">
+                                <label for="new-password">
+                                    <span class="d-inline-block align-middle">Mật khẩu mới:</span>
+                                    <span class="text-danger ml-2" id="show-password"></span>
+                                </label>
+                                <div class="row align-items-center">
+                                    <div class="col-6"><input type="password" class="form-control"
+                                            name="new_password" id="new_password" placeholder="Mật khẩu mới"></div>
+                                    <div class="col-6"><a class="btn btn-sm bg-gradient-primary text-sm"
+                                            href="#" onclick="randomPassword()"><i
+                                                class="fas fa-random mr-2"></i>Tạo mật khẩu</a></div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="hienthi" class="d-inline-block align-middle mb-0 mr-2">Hiển
-                                        thị:</label>
-                                    <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                        <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                            name="display" id="hienthi-checkbox"
-                                            value="{{ old('display') ?? $register_advise->display }}"{{ $register_advise->display == 1 ? 'checked' : '' }}>
-                                        @if (!$register_advise)
-                                            <input type="hidden" name="display" value="0">
-                                        @endif
-                                        <label for="hienthi-checkbox" class="custom-control-label"></label>
-                                    </div>
-                                </div>
-                                <div class="card card-primary card-outline card-outline-tabs">
-                                    <div class="card-header p-0 border-bottom-0">
-                                        <ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="tabs-lang" data-toggle="pill"
-                                                    href="#tabs-lang-vi" role="tab" aria-controls="tabs-lang-vi"
-                                                    aria-selected="true">Tiếng Việt</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="card-body card-article">
-                                        <div class="tab-content" id="custom-tabs-three-tabContent-lang">
-                                            <div class="tab-pane fade show active" id="tabs-lang-vi" role="tabpanel"
-                                                aria-labelledby="tabs-lang">
-                                                <div class="form-group">
-                                                    <label for="noidungvi">Nội dung (vi):</label>
-                                                    <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
-                                                        placeholder="Nội dung (vi)">{{ old('content') ?? $register_advise->content }}</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="form-group col-xl-4 col-lg-6 col-md-6">
+                                <label for="renew-password">Nhập lại mật khẩu mới:</label>
+                                <input type="password" class="form-control" name="renew-password"
+                                    id="confirm_password" placeholder="Nhập lại mật khẩu mới">
                             </div>
                         </div>
                     </div>
-                    <div class="d-none">
-                    </div>
                 </div>
-
-
                 <div class="card-footer text-sm">
-                    <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
+                    <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
+                    <input type="hidden" name="id" value="1">
                 </div>
             </form>
         </section>
+
+
     </div>
 </body>
 

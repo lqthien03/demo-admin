@@ -26,6 +26,11 @@ class ProcedureController extends Controller
             'content' => 'required',
             'number' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
+            'describe.required' => 'Ô này không được bỏ trống',
+            'content.required' => 'Ô này không được bỏ trống',
         ]);
         $seo = new Seo;
         $seo->seo_tittle = $request->input('seo_tittle');
@@ -93,6 +98,12 @@ class ProcedureController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
+        return back();
+    }
+    public function destroy($id)
+    {
+        $procedure = Procedure::find($id);
+        $procedure->delete();
         return back();
     }
 }

@@ -16,6 +16,8 @@ use App\Http\Controllers\SeoEstateController;
 use App\Http\Controllers\SeoNewsController;
 use App\Http\Controllers\SeoProcedureController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SlideShowController;
+use App\Http\Controllers\Social_networkController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
 use App\Models\Setting;
@@ -77,7 +79,7 @@ Route::controller(NewsController::class)->group(function () {
     Route::post('/posts/news/create', 'store')->name('store.news');
     Route::get('/posts/news/edit/{news}', 'edit')->name('edit.news');
     Route::put('/posts/news/edit/{news}', 'update')->name('update.news');
-    Route::delete('/posts/news/{id}', 'destroy')->name('delete.news');
+    Route::delete('/posts/news/delete/{id}', 'destroy')->name('delete.news');
 });
 //tư vấn
 Route::controller(AdviseController::class)->group(function () {
@@ -86,7 +88,7 @@ Route::controller(AdviseController::class)->group(function () {
     Route::post('/posts/advise/create', 'store')->name('store.advise');
     Route::get('/posts/advise/edit/{advise}', 'edit')->name('edit.advise');
     Route::put('/posts/advise/edit/{advise}', 'update')->name('update.advise');
-    Route::delete('/posts/advise/{id}', 'destroy')->name('delete.advise');
+    Route::delete('/posts/advise/delete/{id}', 'destroy')->name('delete.advise');
 });
 //thủ tục
 Route::controller(ProcedureController::class)->group(function () {
@@ -95,7 +97,7 @@ Route::controller(ProcedureController::class)->group(function () {
     Route::post('/posts/procedure/create', 'store')->name('store.procedure');
     Route::get('/posts/procedure/edit/{procedure}', 'edit')->name('edit.procedure');
     Route::put('/posts/procedure/edit/{procedure}', 'update')->name('update.procedure');
-    Route::delete('/posts/procedure/{id}', 'destroy')->name('delete.procedure');
+    Route::delete('/posts/procedure/delete/{id}', 'destroy')->name('delete.procedure');
 });
 
 
@@ -117,25 +119,6 @@ Route::controller(MailController::class)->group(function () {
     Route::put('/mail/register-advise/edit/{register-advise}', 'update_register_advise')->name('update.mail.register-advise');
     Route::delete('/mail/register-advise/{id}', 'destroy_register_advise')->name('delete.mail.register-advise');
 });
-// Route::get('/mail/contact', function () {
-//     return view('mail.contact');
-// });
-// Route::get('/mail/contact/create', function () {
-//     return view('mail.contact_create');
-// });
-// Route::get('/mail/contact/edit', function () {
-//     return view('mail.contact_edit');
-// });
-///
-// Route::get('/mail/register-advise', function () {
-//     return view('mail.register_advise');
-// });
-// Route::get('/mail/register-advise/create', function () {
-//     return view('mail.register_advise_create');
-// });
-// Route::get('/mail/register-advise/edit', function () {
-//     return view('mail.register_advise_edit');
-// });
 ///end
 
 ///Quản lý trang tĩnh
@@ -169,24 +152,22 @@ Route::controller(FaviconController::class)->group(function () {
 });
 
 ///
-Route::get('/image-video/slideshow', function () {
-    return view('image_video.slideshow');
-});
-Route::get('/image-video/slideshow/create', function () {
-    return view('image_video.slideshow_create');
-});
-Route::get('/image-video/slideshow/edit', function () {
-    return view('image_video.slideshow_edit');
+Route::controller(SlideShowController::class)->group(function () {
+    Route::get('/image-video/slideshow', 'show')->name('show.slideshow');
+    Route::get('/image-video/slideshow/create', 'create')->name('create.slideshow');
+    Route::post('/image-video/slideshow/create', 'store')->name('store.slideshow');
+    Route::get('/image-video/slideshow/edit/{slideshow}', 'edit')->name('edit.slideshow');
+    Route::put('/image-video/slideshow/edit/{slideshow}', 'update')->name('update.slideshow');
+    Route::delete('/image-video/slideshow/delete/{id}', 'destroy')->name('delete.slideshow');
 });
 ///
-Route::get('/image-video/social_network', function () {
-    return view('image_video.social_network');
-});
-Route::get('/image-video/social_network/create', function () {
-    return view('image_video.social_network_create');
-});
-Route::get('/image-video/social_network/edit', function () {
-    return view('image_video.social_network_edit');
+Route::controller(Social_networkController::class)->group(function () {
+    Route::get('/image-video/social_network', 'show')->name('show.social_network');
+    Route::get('/image-video/social_network/create', 'create')->name('create.social_network');
+    Route::post('/image-video/social_network/create', 'store')->name('store.social_network');
+    Route::get('/image-video/social_network/edit/{social_network}', 'edit')->name('edit.social_network');
+    Route::put('/image-video/social_network/edit/{social_network}', 'update')->name('update.social_network');
+    Route::delete('/image-video/social_network/delete/{id}', 'destroy')->name('delete.social_network');
 });
 ///end
 
@@ -194,6 +175,8 @@ Route::get('/image-video/social_network/edit', function () {
 Route::controller(UserController::class)->group(function () {
     Route::get('/users/information/{user}', 'edit')->name('edit.user');
     Route::put('/users/information/{user}', 'update')->name('update.user');
+    Route::get('/users/resset-password/{user}', 'edit_password')->name('edit.resset-password');
+    Route::put('/users/resset-password/{user}', 'update_password')->name('update.resset-password');
 });
 
 

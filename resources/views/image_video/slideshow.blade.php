@@ -99,7 +99,7 @@
                     role="menu" data-accordion="false">
                     <!-- Bảng điều khiển -->
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.php" title="Bảng điều khiển">
+                        <a class="nav-link active" href="/dashboard" title="Bảng điều khiển">
                             <i class="nav-icon text-sm fas fa-tachometer-alt"></i>
                             <p>Bảng điều khiển</p>
                         </a>
@@ -107,6 +107,7 @@
 
                     <!-- Group -->
 
+                    <!-- Sản phẩm -->
                     <!-- Sản phẩm -->
                     <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
@@ -116,16 +117,16 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 1"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level1"
+                                    title="Danh mục cấp 1"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 1</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Danh mục cấp 2"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/category-level2"
+                                    title="Danh mục cấp 2"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Danh mục cấp 2</p>
                                 </a></li>
-                            <li class="nav-item "><a class="nav-link " href="" title="Nhà đất"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item "><a class="nav-link " href="/real_estate/product"
+                                    title="Nhà đất"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a></li>
                         </ul>
@@ -144,19 +145,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tin tức"><i
+                                <a class="nav-link " href="/posts/news" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/posts/procedure" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tư vấn"><i
+                                <a class="nav-link " href="/posts/advise" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -179,13 +180,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thư liên hệ"><i
+                                <a class="nav-link " href="/mail/contact" title="Thư liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thư liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Đăng ký tư vấn"><i
+                                <a class="nav-link " href="mail/register-advise" title="Đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Đăng ký tư vấn</p>
                                 </a>
@@ -204,31 +205,33 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Text đăng ký tư vấn"><i
+                                <a class="nav-link " href="/static-page/register_advise"
+                                    title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Hỗ trợ khách hàng"><i
+                                <a class="nav-link " href="/static-page/customer-support"
+                                    title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -247,31 +250,31 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Slideshow"><i
+                                <a class="nav-link " href="/image-video/slideshow" title="Slideshow"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Slideshow</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Mạng xã hội"><i
+                                <a class="nav-link " href="/image-video/social_network" title="Mạng xã hội"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Mạng xã hội</p>
                                 </a>
@@ -291,8 +294,8 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="" title="Thông tin admin"><i
-                                        class="nav-icon text-sm far fa-caret-square-right"></i>
+                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                                    title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
                         </ul>
@@ -311,25 +314,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
@@ -363,12 +366,10 @@
         <!-- Main content -->
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=photo&act=add_photo&type=slide&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=photo&act=delete_photo&type=slide&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/image-video/slideshow/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
             <div class="card card-primary card-outline text-sm mb-0">
                 <div class="card-header">
@@ -393,140 +394,67 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-81" value="81">
-                                        <label for="select-checkbox-81" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="81" data-table="photo">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <a href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=81"
-                                        title=""><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/200x100x1/upload/photo/558190331086902-31111.jpg"
-                                            alt=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=81"
-                                        title=""></a>
-                                </td>
-                                <td class="align-middle"></td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-81" data-table="photo" data-id="81"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-81" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=81"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=photo&act=delete_photo&type=slide&p=1&id=81"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-80" value="80">
-                                        <label for="select-checkbox-80" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="80" data-table="photo">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <a href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=80"
-                                        title=""><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/200x100x1/upload/photo/192328927652645-16630.jpg"
-                                            alt=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=80"
-                                        title=""></a>
-                                </td>
-                                <td class="align-middle"></td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-80" data-table="photo" data-id="80"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-80" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=80"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=photo&act=delete_photo&type=slide&p=1&id=80"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-79" value="79">
-                                        <label for="select-checkbox-79" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="1" data-id="79" data-table="photo">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <a href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=79"
-                                        title=""><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/200x100x1/upload/photo/slider-27560.jpg"
-                                            alt=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=79"
-                                        title=""></a>
-                                </td>
-                                <td class="align-middle"></td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-79" data-table="photo" data-id="79"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-79" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=photo&act=edit_photo&type=slide&p=1&id=79"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=photo&act=delete_photo&type=slide&p=1&id=79"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                            @foreach ($slideshow as $item)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-81" value="{{ $item->id }}">
+                                            <label for="select-checkbox-81" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $item->number }}" data-id=""
+                                            data-table="photo">
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <a href="/image-video/slideshow/edit/{{ $item->id }}"
+                                            title="{{ $item->tittle }}"><img class="rounded img-preview"
+                                                src="{{ URL::asset('products/' . $item->image) }}"
+                                                alt="{{ $item->tittle }}"></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark" href="/image-video/slideshow/edit/{{ $item->id }}"
+                                            title="">{{ $item->tittle }}</a>
+                                    </td>
+                                    <td class="align-middle">{{ $item->link }}</td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-81" data-table="photo" data-id="81"
+                                                data-loai="hienthi" {{ $item->display == 1 ? 'checked' : '' }}>
+                                            <label for="show-checkbox-81" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <form action="{{ route('delete.slideshow', ['id' => $item->id]) }}"
+                                        method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <td class="align-middle text-center text-md text-nowrap">
+                                            <a class="text-primary mr-2"
+                                                href="/image-video/slideshow/edit/{{ $item->id }}"
+                                                title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
+                                            <button
+                                                type="submit"style="background: none; border: none; cursor: pointer;">
+                                                <a class="text-danger" id="delete-item" data-url=" "
+                                                    title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                            </button>
+
+                                        </td>
+                                    </form>
+
+                                </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=photo&act=add_photo&type=slide&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/image-video/slideshow/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
                     data-url="index.php?com=photo&act=delete_photo&type=slide&p=1" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>

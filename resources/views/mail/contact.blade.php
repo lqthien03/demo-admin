@@ -91,6 +91,8 @@
     </nav><!-- Main Sidebar -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4 text-sm">
         <!-- Logo -->
+
+
         <!-- Sidebar -->
         <img src="../assets/images/logo-admin.png" alt="Mô tả hình ảnh"
             style="width: 190px; margin-top: 45px; margin-left: 20px;">
@@ -358,7 +360,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Quản lý nhận tin</li>
                     </ol>
@@ -453,13 +455,24 @@
                                             {{ 'Đã liên hệ' }}
                                         @endif
                                     </td>
-                                    <td class="align-middle text-center text-md text-nowrap">
-                                        <a class="text-primary mr-2" href="/mail/contact/edit/{{ $item->id }}"
-                                            title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                        <a class="text-danger" id="delete-item"
-                                            data-url="index.php?com=newsletter&act=delete&type=lien-he&p=1&id=7"
-                                            title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                    </td>
+                                    <form action="{{ route('delete.mail.contact', ['id' => $item->id]) }}"
+                                        method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <td class="align-middle text-center text-md text-nowrap">
+                                            <a class="text-primary mr-2"
+                                                href="/mail/contact/edit/{{ $item->id }}" title="Chỉnh sửa"><i
+                                                    class="fas fa-edit"></i></a>
+                                            <button
+                                                type="submit"style="background: none; border: none; cursor: pointer;">
+                                                <a class="text-danger" id="delete-item"
+                                                    data-url=""
+                                                    title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                        </button>
+
+                                    </form>
+
                                 </tr>
                             @endforeach
 
