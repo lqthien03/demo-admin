@@ -41,21 +41,21 @@
                     aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-cogs"></i></a>
                 <ul aria-labelledby="dropdownSubMenu-info" class="dropdown-menu dropdown-menu-right border-0 shadow">
                     <li>
-                        <a href="index.php?com=user&act=admin_edit" class="dropdown-item">
+                        <a href="/users/information/1" class="dropdown-item">
                             <i class="fas fa-user-cog"></i>
                             <span>Thông tin admin</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=user&act=admin_edit&changepass=1" class="dropdown-item">
+                        <a href="/users/resset-password/1" class="dropdown-item">
                             <i class="fas fa-key"></i>
                             <span>Đổi mật khẩu</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=cache&act=delete" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="far fa-trash-alt"></i>
                             <span>Xóa bộ nhớ tạm</span>
                         </a>
@@ -72,29 +72,33 @@
 
 
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=lien-he" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Thư
+                    <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=dangkynhantin" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Đăng ký
+                    <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Đăng ký
                         tư vấn</a>
                     <div class="dropdown-divider"></div>
 
                 </div>
             </li>
             <li class="nav-item d-sm-inline-block">
-                <a href="index.php?com=user&act=logout" class="nav-link"><i class="fas fa-sign-out-alt mr-1"></i>Đăng
+                <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="nav-link"><i class="fas fa-sign-out-alt mr-1"></i>Đăng
                     xuất</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
-    </nav>
+    </nav><!-- Main Sidebar -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4 text-sm">
         <!-- Logo -->
 
 
         <!-- Sidebar -->
-        <img src="../assets/images/logo-admin.png" alt="Mô tả hình ảnh"
+        <img src="{{ asset('images/logo-blue.png') }}" alt="logo"
             style="width: 190px; margin-top: 45px; margin-left: 20px;">
 
         <div class="sidebar">
@@ -112,7 +116,6 @@
 
                     <!-- Group -->
 
-                    <!-- Sản phẩm -->
                     <!-- Sản phẩm -->
                     <li class="nav-item has-treeview  ">
                         <a class="nav-link " href="#" title="Quản lý Nhà đất">
@@ -210,33 +213,35 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Giới thiệu"><i
+                                <a class="nav-link " href="/static-page/introduce/1" title="Giới thiệu"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Giới thiệu</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/introduce" title="Liên hệ"><i
+                                <a class="nav-link " href="/static-page/contact/1" title="Liên hệ"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Liên hệ</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise"
+                                <a class="nav-link " href="/static-page/register-advise/1"
                                     title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/customer-support"
+                                <a class="nav-link "
+                                    href="/static-page/customer-support/1
+                                "
                                     title="Hỗ trợ khách hàng"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Hỗ trợ khách hàng</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/footer" title="Footer"><i
+                                <a class="nav-link " href="/static-page/footer/1" title="Footer"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Footer</p>
                                 </a>
@@ -255,19 +260,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/logo" title="Logo"><i
+                                <a class="nav-link " href="/image-video/logo/1" title="Logo"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Logo</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/banner" title="Banner"><i
+                                <a class="nav-link " href="/image-video/banner/1" title="Banner"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Banner</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/image-video/favicon" title="Favicon"><i
+                                <a class="nav-link " href="/image-video/favicon/1" title="Favicon"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Favicon</p>
                                 </a>
@@ -299,7 +304,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a class="nav-link " href="/users/information"
+                            <li class="nav-item"><a class="nav-link " href="/users/information/1"
                                     title="Thông tin admin"><i class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thông tin admin</p>
                                 </a></li>
@@ -319,35 +324,34 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-estate" title="Nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-estate/1" title="Nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-news" title="Tin tức"><i
+                                <a class="nav-link " href="/seopage/seo-news/1" title="Tin tức"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tin tức</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-procedure" title="Thủ tục nhà đất"><i
+                                <a class="nav-link " href="/seopage/seo-procedure/1" title="Thủ tục nhà đất"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Thủ tục nhà đất</p>
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/seopage/seo-advise" title="Tư vấn"><i
+                                <a class="nav-link " href="/seopage/seo-advise/1" title="Tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Tư vấn</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
                     <!-- Thiết lập thông tin -->
                     <li class="nav-item  ">
-                        <a class="nav-link " href="" title="Thiết lập thông tin">
+                        <a class="nav-link " href="/setting/1" title="Thiết lập thông tin">
                             <i class="nav-icon text-sm fas fa-cogs"></i>
                             <p>Thiết lập thông tin</p>
                         </a>
@@ -525,7 +529,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Nội dung SEO</h3>
                         <a class="btn btn-sm bg-gradient-success d-inline-block text-white float-right create-seo"
-                            title="Tạo SEO">Tạo SEO</a>
+                            title="Tạo SEO" onclick="generateSEO()">Tạo SEO</a>
                     </div>
                     <div class="card-body">
                         <!-- SEO -->
@@ -709,6 +713,39 @@
                 slugPreview.textContent = inputValue;
             });
         });
+    </script>
+
+    {{-- tạo seo --}}
+    <script>
+        function generateSEO() {
+            // Lấy giá trị từ tiêu đề và nội dung
+            var titleValue = document.getElementById('tenvi').value;
+            var descriptionValue = document.getElementById('noidungvi').value;
+
+            // Tạo SEO Title
+            var seoTitleInput = document.getElementById('titlevi');
+            seoTitleInput.value = titleValue;
+            updateCharacterCount(seoTitleInput);
+
+            // Tạo SEO Keywords
+            var seoKeywordsInput = document.getElementById('keywordsvi');
+            seoKeywordsInput.value = titleValue;
+            updateCharacterCount(seoKeywordsInput);
+
+            // Tạo SEO Description
+            var seoDescriptionInput = document.getElementById('descriptionvi');
+            seoDescriptionInput.value = descriptionValue;
+            updateCharacterCount(seoDescriptionInput);
+        }
+
+        function updateCharacterCount(inputElement) {
+            // Cập nhật độ dài ký tự
+            var maxLength = inputElement.getAttribute('data-max-characters');
+            var currentLength = inputElement.value.length;
+
+            var countElement = inputElement.parentNode.querySelector('.count-seo-' + inputElement.name);
+            countElement.innerHTML = '<span>' + currentLength + '</span>/' + maxLength + ' ký tự';
+        }
     </script>
 
 

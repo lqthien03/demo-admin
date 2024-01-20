@@ -41,21 +41,21 @@
                     aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-cogs"></i></a>
                 <ul aria-labelledby="dropdownSubMenu-info" class="dropdown-menu dropdown-menu-right border-0 shadow">
                     <li>
-                        <a href="index.php?com=user&act=admin_edit" class="dropdown-item">
+                        <a href="/users/information/1" class="dropdown-item">
                             <i class="fas fa-user-cog"></i>
                             <span>Thông tin admin</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=user&act=admin_edit&changepass=1" class="dropdown-item">
+                        <a href="/users/resset-password/1" class="dropdown-item">
                             <i class="fas fa-key"></i>
                             <span>Đổi mật khẩu</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=cache&act=delete" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="far fa-trash-alt"></i>
                             <span>Xóa bộ nhớ tạm</span>
                         </a>
@@ -72,20 +72,24 @@
 
 
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=lien-he" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Thư
+                    <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=dangkynhantin" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Đăng ký
+                    <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Đăng ký
                         tư vấn</a>
                     <div class="dropdown-divider"></div>
 
                 </div>
             </li>
             <li class="nav-item d-sm-inline-block">
-                <a href="index.php?com=user&act=logout" class="nav-link"><i class="fas fa-sign-out-alt mr-1"></i>Đăng
+                <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="nav-link"><i class="fas fa-sign-out-alt mr-1"></i>Đăng
                     xuất</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
     </nav><!-- Main Sidebar -->
@@ -94,7 +98,7 @@
 
 
         <!-- Sidebar -->
-        <img src="../assets/images/logo-admin.png" alt="Mô tả hình ảnh"
+        <img src="{{ asset('images/logo-blue.png') }}" alt="logo"
             style="width: 190px; margin-top: 45px; margin-left: 20px;">
 
         <div class="sidebar">
@@ -221,7 +225,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link " href="/static-page/register_advise/1"
+                                <a class="nav-link " href="/static-page/register-advise/1"
                                     title="Text đăng ký tư vấn"><i
                                         class="nav-icon text-sm far fa-caret-square-right"></i>
                                     <p>Text đăng ký tư vấn</p>

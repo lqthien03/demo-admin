@@ -6,6 +6,7 @@ use App\Http\Requests\Category1Request;
 use App\Models\Category_level1;
 use App\Models\Seo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class Category_level1Controller extends Controller
@@ -110,5 +111,19 @@ class Category_level1Controller extends Controller
         $category_level1 = Category_level1::find($id);
         $category_level1->delete();
         return back();
+    }
+
+    public function searchProduct(Request $request)
+    {
+        // Lấy từ khóa tìm kiếm từ request
+        $keyword = $request->input('keyword');
+
+        // Thực hiện truy vấn để tìm kiếm sản phẩm theo tiêu đề
+        $products = DB::table('level1_products')
+            ->where('tittle', 'like', '%' . $keyword . '%')
+            ->get();
+
+        // Trả về view hiển thị kết quả tìm kiếm
+        return view('real_estate.category_level1', compact('products'));
     }
 }

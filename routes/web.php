@@ -205,6 +205,7 @@ Route::controller(SettingController::class)->group(function () {
     Route::get('/setting/{setting}', 'edit')->name('edit.setting');
     Route::put('/setting/{setting}', 'update')->name('update.setting');
 });
+// Route::get('/search', 'Category_level1Controller@searchProduct');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -11,13 +11,10 @@ class SettingController extends Controller
 {
     public function edit($id)
     {
-
-
         $setting = Setting::find($id);
-        $category_level1= Category_level1::sum('id');
-        $category_level2= Category_level2::sum('id');
-        
-        return view('setting', compact('setting'));
+        $category_level1 = Category_level1::all();
+        $category_level2 = Category_level2::all();
+        return view('setting', compact('setting', 'category_level1', 'category_level2'));
     }
     public function update(Request $request, $id)
     {

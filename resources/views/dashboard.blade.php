@@ -59,21 +59,21 @@
                     aria-expanded="false" class="nav-link dropdown-toggle"><i class="fas fa-cogs"></i></a>
                 <ul aria-labelledby="dropdownSubMenu-info" class="dropdown-menu dropdown-menu-right border-0 shadow">
                     <li>
-                        <a href="" class="dropdown-item">
+                        <a href="/users/information/1" class="dropdown-item">
                             <i class="fas fa-user-cog"></i>
                             <span>Thông tin admin</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="&changepass=1" class="dropdown-item">
+                        <a href="/users/resset-password/1" class="dropdown-item">
                             <i class="fas fa-key"></i>
                             <span>Đổi mật khẩu</span>
                         </a>
                     </li>
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a href="index.php?com=cache&act=delete" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="far fa-trash-alt"></i>
                             <span>Xóa bộ nhớ tạm</span>
                         </a>
@@ -90,12 +90,12 @@
 
 
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=lien-he" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Thư
+                    <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
-                    <a href="index.php?com=newsletter&act=man&type=dangkynhantin" class="dropdown-item"><i
-                            class="fas fa-mail-bulk mr-2"></i></i><span class="badge badge-danger mr-1">0</span> Đăng ký
+                    <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
+                            class="badge badge-danger mr-1">0</span> Đăng ký
                         tư vấn</a>
                     <div class="dropdown-divider"></div>
 

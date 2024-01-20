@@ -10,15 +10,6 @@ class Category_level1 extends Model
     use HasFactory;
     public $table = "level1_products";
     protected $fillable = [
-        // 'noibat',
-        // 'tenkhongdauvi',
-        // 'tenkhongdauen',
-        // 'noidungvi',
-        // 'noidungen',
-        // 'motavi',
-        // 'motaen',
-        // 'tenen',
-        // 'tenvi',
         'image',
         'number',
         'tittle',
@@ -35,5 +26,9 @@ class Category_level1 extends Model
     public function seo()
     {
         return $this->belongsTo(Seo::class, 'seo_id', 'id');
+    }
+    public static function getTotalQuantityById($id)
+    {
+        return self::where('id', $id)->sum('tittle');
     }
 }
