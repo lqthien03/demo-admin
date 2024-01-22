@@ -364,7 +364,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item"><a href="index.php?com=newsletter&act=man&type=dangkynhantin&p=1"
                                 title="Quản lý Đăng ký tư vấn">Quản lý Đăng ký tư vấn</a></li>

@@ -366,8 +366,8 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="index.php?com=photo&act=man_photo&type=slide&p=1"
-                                title="Slideshow">Quản lý Slideshow</a></li>
+                        <li class="breadcrumb-item"><a href="/image-video/slideshow" title="Slideshow">Quản lý
+                                Slideshow</a></li>
                         <li class="breadcrumb-item active">Thêm mới Slideshow</li>
                     </ol>
                 </div>

@@ -364,7 +364,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Chỉnh sửa Nhà đất</li>
                     </ol>
@@ -386,7 +386,7 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=product&act=man&type=san-pham&p=1"
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/product"
                         title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">

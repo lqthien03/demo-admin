@@ -364,7 +364,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Quản lý Sản phẩm cấp 1</li>
                     </ol>
@@ -375,9 +375,8 @@
             <div class="card-footer text-sm sticky-top">
                 <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level2/create"
                     title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
@@ -475,12 +474,10 @@
                 </div>
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_cat&type=san-pham&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_cat&type=san-pham&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level2/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
     </div>

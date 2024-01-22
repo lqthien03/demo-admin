@@ -482,10 +482,10 @@
             </div>
             <div class="card-footer text-sm">
                 <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=newsletter&act=add&type=lien-he&p=1" title="Thêm mới"><i
+                    href="/mail/contact/create" title="Thêm mới"><i
                         class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=newsletter&act=delete&type=lien-he&p=1" title="Xóa tất cả"><i
+                    data-url="#" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>

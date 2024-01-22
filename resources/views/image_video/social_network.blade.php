@@ -364,7 +364,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Quản lý hình ảnh - video</li>
                     </ol>
@@ -378,7 +378,7 @@
                 <a class="btn btn-sm bg-gradient-primary text-white" href="/image-video/social_network/create"
                     title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=photo&act=delete_photo&type=mangxahoi&p=1" title="Xóa tất cả"><i
+                    data-url="#" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
             <div class="card card-primary card-outline text-sm mb-0">

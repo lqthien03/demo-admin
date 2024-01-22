@@ -364,10 +364,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="index.php?com=photo&act=man_photo&type=slide&p=1"
-                                title="Slideshow">Quản lý Slideshow</a></li>
+                        <li class="breadcrumb-item"><a href="/image-video/slideshow" title="Slideshow">Quản lý
+                                Slideshow</a></li>
                         <li class="breadcrumb-item active">Cập nhật Slideshow</li>
                     </ol>
                 </div>
@@ -396,8 +396,8 @@
                             <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload" src="{{ asset('products/' . $slideshow->image) }}"
-                                        alt="Alt Photo" />
+                                    <img class="rounded img-upload"
+                                        src="{{ asset('products/' . $slideshow->image) }}" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i

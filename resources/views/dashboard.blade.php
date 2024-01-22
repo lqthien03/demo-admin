@@ -431,7 +431,7 @@
                         <h5 class="mb-0">Thống kê truy cập tháng 01/2024</h5>
                     </div>
                     <div class="card-body">
-                        <form class="form-filter-charts row align-items-center mb-1" action="index.php"
+                        <form class="form-filter-charts row align-items-center mb-1" action=""
                             method="get" name="form-thongke" accept-charset="utf-8">
                             <div class="col-md-4">
                                 <div class="form-group">

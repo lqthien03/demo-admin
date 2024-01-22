@@ -594,7 +594,7 @@
                             class="fas fa-redo mr-2"></i>Làm
                         lại</button>
                     <a class="btn btn-sm bg-gradient-danger"
-                        href="index.php?com=product&act=man_list&type=san-pham&p=1" title="Thoát"><i
+                        href="/real_estate/category-level1" title="Thoát"><i
                             class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>

@@ -366,7 +366,7 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="index.php?com=photo&act=man_photo&type=mangxahoi&p=1"
+                        <li class="breadcrumb-item"><a href="/image-video/social_network"
                                 title="Mạng xã hội">Quản lý Mạng xã hội</a></li>
                         <li class="breadcrumb-item active">Cập nhật Mạng xã hội</li>
                     </ol>

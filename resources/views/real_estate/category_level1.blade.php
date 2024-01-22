@@ -474,7 +474,7 @@
                 <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level1/create"
                     title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
                 <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_list&type=san-pham&p=1" title="Xóa tất cả"><i
+                    data-url="#" title="Xóa tất cả"><i
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>

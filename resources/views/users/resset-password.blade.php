@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ url('./css/adminlte-style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-dV1Eu+otQoG88/KANs0GfSPkfQxQ1/b/827m2Gcg5UHCprSsMrT7ch6B/EHszcZcf5ugTKqfyOgBhgm0jH9/1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/adminlte.js') }}"></script>
@@ -364,7 +367,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <ol class="breadcrumb float-sm-left">
-                        <li class="breadcrumb-item"><a href="index.php" title="Bảng điều khiển">Bảng điều khiển</a>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
                         <li class="breadcrumb-item active">Thông tin tài khoản</li>
                     </ol>
@@ -374,7 +377,8 @@
 
         <!-- Main content -->
         <section class="content">
-            <form method="post" action="{{ route('update.resset-password', $user) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('update.resset-password', $user) }}"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-footer text-sm sticky-top">
@@ -424,9 +428,37 @@
                 </div>
             </form>
         </section>
-
-
     </div>
+    {{-- <script>
+        function randomPassword() {
+            var length = 8;
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            document.getElementById("new_password").value = password;
+            document.getElementById("show-password").innerText = "Mật khẩu đã được tạo!";
+        }
+    </script> --}}
+    <script>
+        function randomPassword() {
+            // Tạo mật khẩu ngẫu nhiên 8 chữ số
+            // var newPassword = Math.floor(10000000 + Math.random() * 90000000);
+            var length = 8;
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var newPassword = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                newPassword += charset[randomIndex];
+            }
+            // Hiển thị mật khẩu trong ô input
+            document.getElementById("new_password").value = newPassword;
+            document.getElementById("confirm_password").value = newPassword;
+            document.getElementById("show-password").innerText = "Mật khẩu mới: " + newPassword;
+        }
+    </script>
 </body>
 
 </html>

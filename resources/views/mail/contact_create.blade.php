@@ -366,7 +366,7 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="index.php?com=newsletter&act=man&type=lien-he&p=1"
+                        <li class="breadcrumb-item"><a href="/mail/contact"
                                 title="Quản lý Thư liên hệ">Quản lý Thư liên hệ</a></li>
                         <li class="breadcrumb-item active">Thêm mới Thư liên hệ</li>
                     </ol>
