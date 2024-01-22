@@ -22,6 +22,8 @@ class Social_networkController extends Controller
             'link' => 'required',
             'number' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
         ]);
 
         if ($request->hasFile('image')) {
@@ -35,7 +37,7 @@ class Social_networkController extends Controller
             $file_name = 'default_image.jpg';
         }
 
-        $social_network = new social_network();
+        $social_network = new Social_network();
         $social_network->image = $file_name;
         $social_network->link = $request->input('link');
         $social_network->display = $request->has('display') ? 1 : 0;
@@ -50,7 +52,7 @@ class Social_networkController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $social_network = social_network::findOrFail($id);
+        $social_network = Social_network::findOrFail($id);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $file_name = $file->getClientOriginalName();
@@ -66,6 +68,12 @@ class Social_networkController extends Controller
         $social_network->number = $request->input('number');
         $social_network->display = $request->has('display');
         $social_network->save();
+        return back();
+    }
+    public function destroy($id)
+    {
+        $social_network = social_network::find($id);
+        $social_network->delete();
         return back();
     }
 }

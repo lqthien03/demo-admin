@@ -509,7 +509,9 @@
                                                 id="dropdown-gallery" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">Thêm</button>
                                             <div class="dropdown-menu" aria-labelledby="dropdown-gallery">
-                                                <a class="dropdown-item text-dark" href="#" title="Hình ảnh"><i
+                                                <a class="dropdown-item text-dark"
+                                                    href="/real_estate/product/gallery/{{ $item->id }}"
+                                                    title="Hình ảnh"><i
                                                         class="far fa-caret-square-right text-secondary mr-2"></i>Hình
                                                     ảnh</a>
                                             </div>
@@ -551,11 +553,12 @@
                                                         class="far fa-clone"></i></a>
                                                 <ul aria-labelledby="dropdownCopy"
                                                     class="dropdown-menu border-0 shadow">
-                                                    <li><a href="#" class="dropdown-item copy-now"
+                                                    <li><a href="" class="dropdown-item copy-now"
                                                             data-id="347" data-table="product"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Sao
                                                             chép ngay</a></li>
-                                                    <li><a href="" class="dropdown-item"><i
+                                                    <li><a href="/real_estate/product/edit/{{ $item->id }}"
+                                                            class="dropdown-item"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
                                                             sửa thông tin</a></li>
                                                 </ul>

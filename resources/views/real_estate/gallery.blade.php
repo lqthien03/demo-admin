@@ -375,14 +375,12 @@
         <!-- Main content -->
         <section class="content">
             <div class="card-footer text-sm sticky-top">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1"
-                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1"
+                <a class="btn btn-sm bg-gradient-primary text-white" href="" title="Thêm mới"><i
+                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url=""
                     title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-                <a class="btn btn-sm bg-gradient-secondary" href="index.php?com=product&act=man&type=san-pham&p=1"
-                    title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                <a class="btn btn-sm bg-gradient-secondary" href="" title="Thoát"><i
+                        class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
             </div>
             <div class="card card-primary card-outline text-sm mb-0">
                 <div class="card-header">
@@ -407,64 +405,58 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input select-checkbox"
-                                            id="select-checkbox-1602" value="1602">
-                                        <label for="select-checkbox-1602" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <input type="number" class="form-control form-control-mini m-auto update-stt"
-                                        min="0" value="7" data-id="1602" data-table="gallery">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <a href="index.php?com=product&act=edit_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1&id=1602"
-                                        title=""><img class="rounded img-preview"
-                                            onerror="src='assets/images/noimage.png'"
-                                            src="../thumbs/100x100x1/upload/product/img8112-1997-9359.jpg"
-                                            alt=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <a class="text-dark"
-                                        href="index.php?com=product&act=edit_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1&id=1602"
-                                        title=""></a>
-                                </td>
-                                <td class="align-middle">
-                                    <img class="rounded img-preview" onerror="src='assets/images/noimage.png'"
-                                        src="../upload/color/" alt="">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <div class="custom-control custom-checkbox my-checkbox">
-                                        <input type="checkbox" class="custom-control-input show-checkbox"
-                                            id="show-checkbox-1602" data-table="gallery" data-id="1602"
-                                            data-loai="hienthi" checked>
-                                        <label for="show-checkbox-1602" class="custom-control-label"></label>
-                                    </div>
-                                </td>
-                                <td class="align-middle text-center text-md text-nowrap">
-                                    <a class="text-primary mr-2"
-                                        href="index.php?com=product&act=edit_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1&id=1602"
-                                        title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="text-danger" id="delete-item"
-                                        data-url="index.php?com=product&act=delete_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1&id=1602"
-                                        title="Xóa"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
+                            @foreach (range(1, 3) as $index)
+                                <tr>
+                                    <td class="align-middle">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input select-checkbox"
+                                                id="select-checkbox-1602" value="1602">
+                                            <label for="select-checkbox-1602" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle">
+                                        <input type="number" class="form-control form-control-mini m-auto update-stt"
+                                            min="0" value="{{ $index->image1 }}" data-id=""
+                                            data-table="gallery">
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <a href="" title=""><img class="rounded img-preview"
+                                                src="" alt=""></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="text-dark" href="" title=""></a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <img class="rounded img-preview" src="" alt="">
+                                    </td>
+                                    <td class="align-middle text-center">
+                                        <div class="custom-control custom-checkbox my-checkbox">
+                                            <input type="checkbox" class="custom-control-input show-checkbox"
+                                                id="show-checkbox-1602" data-table="gallery" data-id="1602"
+                                                data-loai="hienthi" checked>
+                                            <label for="show-checkbox-1602" class="custom-control-label"></label>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-center text-md text-nowrap">
+                                        <a class="text-primary mr-2" href="" title="Chỉnh sửa"><i
+                                                class="fas fa-edit"></i></a>
+                                        <a class="text-danger" id="delete-item" data-url="" title="Xóa"><i
+                                                class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1"
-                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete_photo&idc=347&type=san-pham&kind=man&val=san-pham&p=1"
+                <a class="btn btn-sm bg-gradient-primary text-white" href="" title="Thêm mới"><i
+                        class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
                     title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-                <a class="btn btn-sm bg-gradient-secondary" href="index.php?com=product&act=man&type=san-pham&p=1"
-                    title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                <a class="btn btn-sm bg-gradient-secondary" href="" title="Thoát"><i
+                        class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
             </div>
         </section>
     </div>

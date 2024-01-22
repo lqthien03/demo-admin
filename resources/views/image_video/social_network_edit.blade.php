@@ -366,8 +366,8 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="/image-video/social_network"
-                                title="Mạng xã hội">Quản lý Mạng xã hội</a></li>
+                        <li class="breadcrumb-item"><a href="/image-video/social_network" title="Mạng xã hội">Quản lý
+                                Mạng xã hội</a></li>
                         <li class="breadcrumb-item active">Cập nhật Mạng xã hội</li>
                     </ol>
                 </div>
@@ -450,6 +450,28 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('file');
+            var imgUpload = document.querySelector('.img-upload');
+            var textSplit = document.querySelector('.text-split');
+
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Hiển thị hình ảnh trên trang web
+                        imgUpload.src = e.target.result;
+                        imgUpload.style.display = 'block'; // Hiển thị ảnh
+                        textSplit.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

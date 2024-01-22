@@ -743,6 +743,28 @@
             });
         });
     </script>
+    {{-- Tạo seo --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy reference đến nút "Tạo SEO"
+            var createSeoButton = document.querySelector('.create-seo');
+
+            // Gắn sự kiện click cho nút "Tạo SEO"
+            createSeoButton.addEventListener('click', function() {
+                // Lấy giá trị từ form Tiếng Việt
+                var titleVi = document.getElementById('tenvi').value;
+                var describeVi = document.getElementById('motavi').value;
+                var contentVi = document.getElementById('noidungvi').value;
+
+                // Gán giá trị vào form SEO
+                document.getElementById('titlevi').value = titleVi; // Gán titleVi vào seo_tittle
+                document.getElementById('keywordsvi').value = titleVi; // Gán titleVi vào seo_keywords
+                document.getElementById('descriptionvi').value =
+                    describeVi; // Gán describeVi vào seo_description
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -480,19 +480,24 @@
     </div>
     {{-- Hình ảnh --}}
     <script>
-        document.getElementById('file-zone').addEventListener('change', function(e) {
-            var fileInput = e.target;
-            var file = fileInput.files[0];
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('file');
+            var imgUpload = document.querySelector('.img-upload');
+            var textSplit = document.querySelector('.text-split');
 
-            if (file) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    document.getElementById('uploaded-image').src = e.target.result;
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Hiển thị hình ảnh trên trang web
+                        imgUpload.src = e.target.result;
+                        imgUpload.style.display = 'block'; // Hiển thị ảnh
+                        textSplit.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
                 }
-
-                reader.readAsDataURL(file);
-            }
+            });
         });
     </script>
 </body>

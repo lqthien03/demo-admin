@@ -65,11 +65,14 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/real_estate/product/edit/{product}', 'edit')->name('edit.product');
     Route::put('/real_estate/product/edit/{product}', 'update')->name('update.product');
     Route::delete('/real_estate/product/{id}', 'destroy')->name('delete.product');
+    Route::get('/real_estate/product/gallery/{gallery}', 'show_gallery')->name('show_gallery.product');
+    Route::get('/real_estate/product/gallery/create/{gallery}', 'create_gallery')->name('create_gallery.product');
+    Route::post('/real_estate/product/gallery/create/{gallery}', 'store_gallery')->name('store_gallery.product');
+    Route::get('/real_estate/product/gallery/edit/{gallery}', 'edit_gallery')->name('edit_gallery.product');
+    Route::put('/real_estate/product/gallery/edit/{gallery}', 'update_gallery')->name('update_gallery.product');
+    // Route::delete('/real_estate/product/gallery/{id}', 'destroy_gallery')->name('delete_gallery.product');
 });
 
-Route::get('/real_estate/product/gallery', function () {
-    return view('real_estate.gallery');
-});
 /////end
 
 ///Quản lý bài viết

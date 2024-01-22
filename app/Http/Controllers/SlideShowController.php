@@ -23,6 +23,9 @@ class SlideShowController extends Controller
             'tittle' => 'required',
             'number' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'link.required' => 'Ô này không được bỏ trống',
+            'tittle.required' => 'Ô này không được bỏ trống',
         ]);
 
         if ($request->hasFile('image')) {

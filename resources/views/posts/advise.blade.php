@@ -509,7 +509,7 @@
                                                             data-id="63" data-table="news"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Sao
                                                             chép ngay</a></li>
-                                                    <li><a href="index.php?com=news&act=copy&type=tin-tuc&p=1&id=63"
+                                                    <li><a href="/posts/advise/edit/{{ $item->id }}"
                                                             class="dropdown-item"><i
                                                                 class="far fa-caret-square-right text-secondary mr-2"></i>Chỉnh
                                                             sửa thông tin</a></li>

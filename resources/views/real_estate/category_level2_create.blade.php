@@ -563,7 +563,7 @@
                                                 </div>
                                                 <input type="text" class="form-control check-seo title-seo"
                                                     name="seo_tittle" id="titlevi" placeholder="SEO Title (vi)"
-                                                    value="" data-max-characters="70">
+                                                    value="">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -572,8 +572,7 @@
                                                 </div>
                                                 <input type="text" class="form-control check-seo keywords-seo"
                                                     name="seo_keyword" id="keywordsvi"
-                                                    placeholder="SEO Keywords (vi)" value=""
-                                                    data-max-characters="70">
+                                                    placeholder="SEO Keywords (vi)" value="">
                                             </div>
                                             <div class="form-group">
                                                 <div class="label-seo">
@@ -582,7 +581,7 @@
                                                         tự</strong>
                                                 </div>
                                                 <textarea class="form-control check-seo description-seo" name="seo_description" id="descriptionvi" rows="5"
-                                                    placeholder="SEO Description (vi)"data-max-characters="160"></textarea>
+                                                    placeholder="SEO Description (vi)"></textarea>
                                             </div>
 
                                         </div>
@@ -713,6 +712,29 @@
                 // Hiển thị giá trị đã nối trong phần xem trước
                 slugPreview.textContent = inputValue;
             });
+        });
+    </script>
+
+    {{-- Tạo seo --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy reference đến nút "Tạo SEO"
+            var createSeoButton = document.querySelector('.create-seo');
+
+            // Gắn sự kiện click cho nút "Tạo SEO"
+            createSeoButton.addEventListener('click', generateSEO);
+
+            function generateSEO() {
+                // Lấy giá trị từ form Tiếng Việt
+                var titleVi = document.getElementById('tenvi').value;
+                var describeVi = document.getElementById('noidungvi').value;
+
+                // Gán giá trị vào form SEO
+                document.getElementById('titlevi').value = titleVi; // Gán titleVi vào seo_tittle
+                document.getElementById('keywordsvi').value = titleVi; // Gán titleVi vào seo_keywords
+                document.getElementById('descriptionvi').value = describeVi; // Gán describeVi vào seo_description
+
+            }
         });
     </script>
 </body>

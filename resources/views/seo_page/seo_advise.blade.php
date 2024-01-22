@@ -393,7 +393,7 @@
                             <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload"
+                                    <img class="rounded img-upload" id="uploaded-image"
                                         src="{{ URL::asset('products/' . $seo_advise->image) }}" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
@@ -471,6 +471,28 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('file');
+            var imgUpload = document.querySelector('.img-upload');
+            var textSplit = document.querySelector('.text-split');
+
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Hiển thị hình ảnh trên trang web
+                        imgUpload.src = e.target.result;
+                        imgUpload.style.display = 'block'; // Hiển thị ảnh
+                        textSplit.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

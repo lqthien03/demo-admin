@@ -511,10 +511,9 @@
                                     <select id="id_list" name="level1_product_id" data-level="0"
                                         data-type="san-pham" data-table="#_product_cat" data-child="id_cat"
                                         class="form-control select2 select-category">
-                                        <option value="0">Chọn danh mục</option>
                                         @foreach ($category_level1 as $item)
                                             <option value="{{ $item->id }}"
-                                                {{ $item->id == $item->level1_product_id ? 'selected' : '' }}>
+                                                {{ $item->id == $category_level2->level1_product_id ? 'selected' : '' }}>
                                                 {{ $item->tittle }}
                                             </option>
                                         @endforeach

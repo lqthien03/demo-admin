@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category_level1;
 use App\Models\Category_level2;
+use App\Models\Gallery;
 use App\Models\Mail;
 use App\Models\Product;
 use App\Models\Seo;
@@ -151,6 +152,33 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
+        return back();
+    }
+    // Hình ảnh
+    public function show_gallery($id)
+    {
+        $galleryImage = Product::with('gallery', 'seo', 'level1_product', 'level2_product')->find($id);
+        // dd($galleryImage);
+        return view('real_estate.gallery', compact('galleryImage'));
+    }
+    public function create_gallery($id)
+    {
+        $gallery = Gallery::find($id);
+        return view('real_estate.gallery_create');
+    }
+    public function store_gallery(Request $request, $id)
+    {
+    }
+    public function edit_gallery(Request $request, $id)
+    {
+        $gallery = Gallery::find($id);
+        return view('real_estate.gallery_edit');
+    }
+    public function update_gallery()
+    {
+    }
+    public function destroy_gallery($id)
+    {
         return back();
     }
 }

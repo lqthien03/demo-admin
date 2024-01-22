@@ -393,20 +393,19 @@
                             <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload" src="{{ asset('products/' . $logo->image) }}"
-                                        alt="Alt Photo" />
+                                    <img class="rounded img-upload" id="uploaded-image"
+                                        src="{{ asset('products/' . $logo->image) }}" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i
                                                 class="fas fa-camera mr-2"></i>Chọn hình</span>
                                     </strong>
+                                    <input type="file" class="custom-file-input" name="image" id="file">
                                 </div>
                             </label>
                             <strong class="d-block mt-2 mb-2 text-sm">Width: 100 px - Height: 100 px
                                 (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
                             <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="image" id="file">
-                                <label class="custom-file-label" for="file">Chọn file</label>
                             </div>
                         </div>
                         <div class="row">
@@ -435,6 +434,27 @@
         </section>
     </div>
     {{-- Hình ảnh --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('file');
+            var imgUpload = document.querySelector('.img-upload');
+            var textSplit = document.querySelector('.text-split');
+
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Hiển thị hình ảnh trên trang web
+                        imgUpload.src = e.target.result;
+                        imgUpload.style.display = 'block'; // Hiển thị ảnh
+                        textSplit.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 
 </body>
 

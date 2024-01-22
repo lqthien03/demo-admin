@@ -366,8 +366,8 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="/image-video/social_network"
-                                title="Mạng xã hội">Quản lý Mạng xã hội</a></li>
+                        <li class="breadcrumb-item"><a href="/image-video/social_network" title="Mạng xã hội">Quản lý
+                                Mạng xã hội</a></li>
                         <li class="breadcrumb-item active">Thêm mới Mạng xã hội</li>
                     </ol>
                 </div>
@@ -396,7 +396,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label class="change-photo" for="file0">
+                            <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
                                     <img class="rounded img-upload" src="" alt="Alt Photo" />
@@ -410,8 +410,8 @@
                             <strong class="d-block mt-2 mb-2 text-sm">Width: 30 px - Height: 30 px
                                 (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
                             <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="image" id="file0">
-                                <label class="custom-file-label" for="file0">Chọn file</label>
+                                <input type="file" class="custom-file-input" name="image" id="file">
+                                <label class="custom-file-label" for="file">Chọn file</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -441,56 +441,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="card card-primary card-outline text-sm">
-                    <div class="card-header">
-                        <h3 class="card-title">Mạng xã hội: 2</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                    class="fas fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label class="change-photo" for="file1">
-                                <p>Upload hình ảnh:</p>
-                                <div class="rounded">
-                                    <img class="rounded img-upload" src=""
-                                        onerror="src='assets/images/noimage.png'" alt="Alt Photo" />
-                                    <strong>
-                                        <b class="text-sm text-split"></b>
-                                        <span class="btn btn-sm bg-gradient-success"><i
-                                                class="fas fa-camera mr-2"></i>Chọn hình</span>
-                                    </strong>
-                                </div>
-                            </label>
-                            <strong class="d-block mt-2 mb-2 text-sm">Width: 30 px - Height: 30 px
-                                (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</strong>
-                            <div class="custom-file my-custom-file d-none">
-                                <input type="file" class="custom-file-input" name="file1" id="file1">
-                                <label class="custom-file-label" for="file1">Chọn file</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="link1">Link:</label>
-                            <input type="text" class="form-control" name="dataMulti[1][link]" id="link1"
-                                placeholder="Link">
-                        </div>
-                        <div class="form-group">
-                            <label for="hienthi1" class="d-inline-block align-middle mb-0 mr-2">Hiển thị:</label>
-                            <div class="custom-control custom-checkbox d-inline-block align-middle">
-                                <input type="checkbox" class="custom-control-input hienthi-checkbox"
-                                    name="dataMulti[1][hienthi]" id="hienthi-checkbox1" checked>
-                                <label for="hienthi-checkbox1" class="custom-control-label"></label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="stt1" class="d-inline-block align-middle mb-0 mr-2">Số thứ tự:</label>
-                            <input type="number" class="form-control form-control-mini d-inline-block align-middle"
-                                min="0" name="dataMulti[1][stt]" id="stt1" placeholder="Số thứ tự"
-                                value="1">
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="card-footer text-sm">
                     <button type="submit" class="btn btn-sm bg-gradient-primary"><i
                             class="far fa-save mr-2"></i>Lưu</button>
@@ -502,6 +452,29 @@
             </form>
         </section>
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('file');
+            var imgUpload = document.querySelector('.img-upload');
+            var textSplit = document.querySelector('.text-split');
+
+            fileInput.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Hiển thị hình ảnh trên trang web
+                        imgUpload.src = e.target.result;
+                        imgUpload.style.display = 'block'; // Hiển thị ảnh
+                        textSplit.textContent = file.name;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -19,6 +19,7 @@ class Product extends Model
         'display',
         'product_code',
         'price',
+        'gallery_id',
         'seo_id',
         'level1_product_id',
         'level2_product_id',
@@ -37,5 +38,9 @@ class Product extends Model
     public function level2_product()
     {
         return $this->belongsTo(Category_level2::class, 'level2_product_id', 'id');
+    }
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
     }
 }

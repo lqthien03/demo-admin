@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2024 lúc 09:58 AM
+-- Thời gian đã tạo: Th1 22, 2024 lúc 03:13 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -45,8 +45,7 @@ CREATE TABLE `advises` (
 --
 
 INSERT INTO `advises` (`id`, `link`, `tittle`, `describe`, `content`, `image`, `display`, `outstand`, `number`, `seo_id`) VALUES
-(1, 'fsager', 'adgerg', 'dagerg', 'gaergdf', 'eragdfgad', 1, NULL, 1, 1),
-(2, 'https://youtu.be/PZp', 'Thiết bị âm Thanh-Loa VI TÍNH', 'wqef', 'eqrg', 'images (2).jpeg', 1, NULL, 1, 92);
+(3, 'tybsdrt', 'ntd', 'ryt', 'rbd', 'images (3).jpeg', 1, NULL, 1, 99);
 
 -- --------------------------------------------------------
 
@@ -67,7 +66,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image`, `tittle`, `link`, `display`) VALUES
-(1, 'images (1).jpeg', 'banner1', '', 1),
+(1, 'z4917504915707_c96830289c31704f282531369167eec6.jpg', 'banner1', '', 1),
 (2, 'banner2.jpg', 'banner2', '', 1),
 (3, 'banner3.jpg', 'banner3', '', 1),
 (4, 'banner4.jpg', 'banner4', '', 1);
@@ -115,7 +114,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `content`, `image`, `display`, `seo_id`) VALUES
-(1, 'wagwfwqrt34et', 'images (5).jpeg', 1, 19);
+(1, 'wagwfwqrt34et', 'images (4).jpeg', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -218,34 +217,31 @@ CREATE TABLE `detail_products` (
 --
 
 INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `content`, `describe`, `outstand`, `discount`, `display`, `new`, `product_code`, `price`, `address`, `size`, `acreage`, `contact`, `direction`, `location`, `new_price`, `level2_product_id`, `seo_id`, `level3_product_id`, `level1_product_id`, `tag_product_id`) VALUES
-(475, 1, 'images (3).jpeg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', 'aege', 'veag', 1, '', 1, 0, 'aerg', 'earg', 'eg', 'erg', 'dfg', 'dfg', 'erg', 'dfg', '', 42, 1, 86, 5, 1),
-(476, 1, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 29, NULL, 85, 1, 1),
-(534, 1, '2872913156861378590-5985.png', 'DDR4-TEAMGROUP Elite Plus 4GB', 'ddr4-teamgroup-elite-plus-4gb', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 35, 1, 105, 2, 1),
-(535, 2, '8ba249a3ab67321494cf6123e9670fdd-2677.jpg', 'CPU-I3 6100', 'cpu-i3-6100', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, NULL, 102, 2, 1),
-(536, 3, '21712intelg4560-5946.jpg', 'CPU-G4560', 'cpu-g4560', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, NULL, 101, 2, 1),
-(537, 4, '0557ce8cb6a616ab15f01ba8b583670djpg800x800q100-4900.jpg', 'CPU G4400', 'cpu-g4400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, NULL, 101, 2, 1),
-(538, 0, '43691giant117307-5590.jpg', 'MAIN ASUS H110M-K CŨ', 'main-asus-h110m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(539, 0, '500-2-2628.png', 'MAIN GIGABYTE H110M - DS2 CŨ', 'main-gigabyte-h110m-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 96, 2, 1),
-(540, 0, 'unnamed-3350.jpg', 'MAIN ASUS H110M-E CŨ', 'main-asus-h110m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(541, 0, '3576-p2-1557217394-1016.jpg', 'MAIN ASUS H110M-D CŨ', 'main-asus-h110m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(543, 0, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 29, NULL, 97, 2, 1),
-(544, 0, 'line-1771.jpg', 'MAIN ASUS H81M-K CŨ', 'main-asus-h81m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 96, 2, 1),
-(545, 0, 'unnamed-7992.jpg', 'MAIN GIGABYTE-H61 DS2 CŨ', 'main-gigabyte-h61-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 96, 2, 1),
-(546, 0, 'a97e412a8eb00f798df1b62b06296233-6199.jpg', 'MAIN ASUS H81M-D CŨ', 'main-asus-h81m-d-cu', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(547, 0, 'b8931518b7694c6980651c129f32b807-9837.jpg', 'MAIN ASUS H81M-E CŨ', 'main-asus-h81m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(548, 0, '12938145490h61mk-1886.jpg', 'MAIN ASUS H61M-K CŨ', 'main-asus-h61m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(549, 0, 'palit1050tidualfan-7536.jpg', 'VGA Palit GTX 1050Ti 4G DUAL (2 Fan)', 'vga-palit-gtx-1050ti-4g-dual-2fan', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 36, NULL, 92, 2, 1),
-(550, 0, 'htb18tqkxpluk1rjy0fhq6xpdfxap-9568.jpg', 'MAIN ASUS H61M-D CŨ', 'main-asus-h61m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, NULL, 97, 2, 1),
-(551, 0, '6fe4382b7be81732a1300a1585429f391-1-5201.jpg', 'VISION GAMING VM01', 'vision-gaming-vm01', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1),
-(552, 0, 'e1b61f2ef53d3f63662c-3714.jpg', 'Thanh Lý Phòng Net A- Z', 'thanh-ly-phong-net-a-z', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 3, 1),
-(553, 0, 'aoc-27inch-2970.jpg', 'LCD 27” AOC I2769V Full HD IPS', 'lcd-27-aoc-i2769v-full-hd-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(554, 0, 'vsp-19-9843.jpg', 'LCD 19 VSP VE19(LE1902) Chính Hãng', 'lcd-19-vsp-le1902-chinh-hang', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(555, 0, '424be9b53ea6f4f8adb7-7989.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao', 'thanh-ly-phong-net-a-z-gia-cao', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 3, 1),
-(556, 0, '7bdb691854a9b9aa809c32502ed3fec2-8809.jpg', 'Nguồn Jetek Q9800-Gaming (80 Plus Gold)', 'nguon-jetek-q9800-gaming-80-plus-gold', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(557, 0, 'vsp-20-5179.png', 'LCD 20 VSP VS20', 'vsp-20-5179', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(558, 0, 'e2210h01-7272.jpg', 'LCD VSP 22 Inch LED Monitor E2210H', 'lcd-vsp-22-inch-led-monitor-e2210h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(559, 0, '16-7627.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Bình Dương', 'thanh-ly-phong-net-a-z-gia-cao-binh-duong', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 3, 1),
-(560, 0, 'v2205h03-3230.jpg', 'Màn Hình LED Monitor VSP 22inch V2205H', 'man-hinh-led-monitor-vsp-22-inch-v2205h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
+(535, 2, '8ba249a3ab67321494cf6123e9670fdd-2677.jpg', 'CPU-I3 6100', 'cpu-i3-6100', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 1, 102, 2, 1),
+(536, 3, '21712intelg4560-5946.jpg', 'CPU-G4560', 'cpu-g4560', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 2, 101, 2, 1),
+(537, 4, '0557ce8cb6a616ab15f01ba8b583670djpg800x800q100-4900.jpg', 'CPU G4400', 'cpu-g4400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 3, 101, 2, 1),
+(538, 0, '43691giant117307-5590.jpg', 'MAIN ASUS H110M-K CŨ', 'main-asus-h110m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 4, 97, 2, 1),
+(539, 0, '500-2-2628.png', 'MAIN GIGABYTE H110M - DS2 CŨ', 'main-gigabyte-h110m-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 5, 96, 2, 1),
+(540, 0, 'unnamed-3350.jpg', 'MAIN ASUS H110M-E CŨ', 'main-asus-h110m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 6, 97, 2, 1),
+(541, 0, '3576-p2-1557217394-1016.jpg', 'MAIN ASUS H110M-D CŨ', 'main-asus-h110m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 7, 97, 2, 1),
+(543, 0, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 29, 8, 97, 2, 1),
+(544, 0, 'line-1771.jpg', 'MAIN ASUS H81M-K CŨ', 'main-asus-h81m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 9, 96, 2, 1),
+(545, 0, 'unnamed-7992.jpg', 'MAIN GIGABYTE-H61 DS2 CŨ', 'main-gigabyte-h61-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 10, 96, 2, 1),
+(546, 0, 'a97e412a8eb00f798df1b62b06296233-6199.jpg', 'MAIN ASUS H81M-D CŨ', 'main-asus-h81m-d-cu', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 11, 97, 2, 1),
+(547, 0, 'b8931518b7694c6980651c129f32b807-9837.jpg', 'MAIN ASUS H81M-E CŨ', 'main-asus-h81m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 12, 97, 2, 1),
+(548, 0, '12938145490h61mk-1886.jpg', 'MAIN ASUS H61M-K CŨ', 'main-asus-h61m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 13, 97, 2, 1),
+(549, 0, 'palit1050tidualfan-7536.jpg', 'VGA Palit GTX 1050Ti 4G DUAL (2 Fan)', 'vga-palit-gtx-1050ti-4g-dual-2fan', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 36, 14, 92, 2, 1),
+(550, 0, 'htb18tqkxpluk1rjy0fhq6xpdfxap-9568.jpg', 'MAIN ASUS H61M-D CŨ', 'main-asus-h61m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 15, 97, 2, 1),
+(551, 0, '6fe4382b7be81732a1300a1585429f391-1-5201.jpg', 'VISION GAMING VM01', 'vision-gaming-vm01', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 16, NULL, 1, 1),
+(552, 0, 'e1b61f2ef53d3f63662c-3714.jpg', 'Thanh Lý Phòng Net A- Z', 'thanh-ly-phong-net-a-z', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 17, NULL, 3, 1),
+(553, 0, 'aoc-27inch-2970.jpg', 'LCD 27” AOC I2769V Full HD IPS', 'lcd-27-aoc-i2769v-full-hd-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 18, NULL, 2, 1),
+(554, 0, 'vsp-19-9843.jpg', 'LCD 19 VSP VE19(LE1902) Chính Hãng', 'lcd-19-vsp-le1902-chinh-hang', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 19, NULL, 4, 1),
+(555, 0, 'default_image.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao', 'thanh-ly-phong-net-a-z-gia-cao', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 20, NULL, 3, 1),
+(556, 0, 'default_image.jpg', 'Nguồn Jetek Q9800-Gaming (80 Plus Gold)', 'nguon-jetek-q9800-gaming-80-plus-gold', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 21, NULL, 2, 1),
+(557, 0, 'default_image.jpg', 'LCD 20 VSP VS20', 'vsp-20-5179', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 22, NULL, 4, 1),
+(558, 0, 'e2210h01-7272.jpg', 'LCD VSP 22 Inch LED Monitor E2210H', 'lcd-vsp-22-inch-led-monitor-e2210h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 23, NULL, 4, 1),
+(559, 0, '16-7627.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Bình Dương', 'thanh-ly-phong-net-a-z-gia-cao-binh-duong', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 24, NULL, 3, 1),
+(560, 0, 'v2205h03-3230.jpg', 'Màn Hình LED Monitor VSP 22inch V2205H', 'man-hinh-led-monitor-vsp-22-inch-v2205h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 25, NULL, 4, 1),
 (561, 0, 'aeed8f8c5c9f96c1cf8e-4736.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Khu Vực Miền Nam', 'thanh-ly-phong-net-a-z-gia-cao-khu-vuc-mien-nam', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 3, 1),
 (562, 0, 'v2408s02-7749.jpg', 'Màn Hình Phẳng LED Tràn Viền Slim Bezel VSP V2408S', 'man-hinh-phang-led-tran-vien-slim-bezel-vsp-v24085', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
 (563, 0, 'aaaa-2490.jpg', 'Màn Hình ViewSonic VA2408-H 24\" IPS 75Hz', 'man-hinh-view-sonic-va2408-h-24-ips-75hz', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
@@ -259,10 +255,7 @@ INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `conte
 (571, 0, 'g5400v-6520.jpg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, NULL, NULL, 5, 1),
 (572, 0, 'linh-kien-laptop-hcm-hienlaptop-01-7371.png', 'CHUYÊN NÂNG CẤP LAPTOP, THAY THẾ LINH KIỆN. GIÁ TỐT NHẤT BÌNH DƯƠNG', 'chuyen-nang-cap-laptop-thay-the-linh-kien-gia-tot-nhat-binh-duong', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 40, NULL, NULL, 6, 1),
 (573, 0, 'heaphone-run-mus-k804-1-2320.jpg', 'PHONE RUN MUS K8 LED GAMING', 'phone-run-mus-k8-led-gaming', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, NULL, NULL, 5, 1),
-(574, 0, '6fe4382b7be81732a1300a1585429f391-1-5201 (1).jpg', 'Phát Wifi PIX-LINK LV-WR08', 'phat-wifi-pix-link-lv-wr08', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1),
-(579, 3, 'images (5).jpeg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrgG', 'iii', 'iiiiwagwr', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 29, 91, NULL, 2, NULL),
-(584, 3, 'default_image.jpg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'iii', 'iiii', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 30, 91, NULL, 2, NULL),
-(585, 3, 'default_image.jpg', 'iii', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 'iii', 'iiii', NULL, NULL, 1, NULL, 'iiii', 'iiii', 'iiii', 'iiiityjte', 'iiii', 'iiii', 'iiii', 'iiii', NULL, 29, 91, NULL, 3, NULL);
+(574, 0, '6fe4382b7be81732a1300a1585429f391-1-5201 (1).jpg', 'Phát Wifi PIX-LINK LV-WR08', 'phat-wifi-pix-link-lv-wr08', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -712,7 +705,7 @@ CREATE TABLE `favicons` (
 --
 
 INSERT INTO `favicons` (`id`, `image`, `display`) VALUES
-(1, 'z4917504915707_c96830289c31704f282531369167eec6.jpg', 1);
+(1, 'images (2).jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -815,16 +808,15 @@ CREATE TABLE `level1_products` (
 --
 
 INSERT INTO `level1_products` (`id`, `number`, `image`, `link`, `tittle`, `describe`, `outstand`, `new`, `display`, `seo_id`) VALUES
-(1, 1, 'images (5).jpeg', 'link-mau4444', 'LINH KIỆN MỚI', 'fwefw', 1, 1, 1, 1),
+(1, 1, 'default_image.jpg', 'link-mau4444', 'LINH KIỆN MỚI', 'fwefw', 1, 1, 1, 1),
 (2, 2, 'img_20200617093732.jpg', 'fwefwq', 'LINH KIỆN CŨ', 'werferg', 1, 1, 0, 4),
-(3, 3, 'thanhlyphongnet.png', '', 'THANH LÝ PHÒNG NET', '', 1, 1, 0, 5),
-(4, 4, 'manhinhmaytinh.png', '', 'MÀN HÌNH MÁY TÍNH', '', 1, 1, 1, 6),
-(5, 5, 'thietbiamthanh.png', '', 'THIẾT BỊ ÂM THANH', '', 1, 1, 1, 7),
-(6, 6, 'laptop.png', '', 'LAPTOP', '', 1, 1, 1, 8),
-(7, 7, 'ocung.png', '', 'Ổ CỨNG PC', '', 1, 1, 1, 9),
-(8, 8, 'chuotbanphim.png', '', 'CHUỘT, BÀN PHÍM', '', 1, 1, 1, 10),
-(18, 1, 'img_20200617093732.jpg', 'mmmmmmmmmmmmmm', 'earg', 'ẻagedrg', NULL, NULL, 0, 64),
-(21, 1, 'default_image.jpg', 'wfqwe', 'ưefwefw', 'ưefwe', NULL, NULL, 1, 67);
+(3, 3, 'default_image.jpg', '', 'THANH LÝ PHÒNG NET', '', 1, 1, 0, 5),
+(4, 4, 'default_image.jpg', '', 'MÀN HÌNH MÁY TÍNH', '', 1, 1, 1, 6),
+(5, 5, 'default_image.jpg', '', 'THIẾT BỊ ÂM THANH', '', 1, 1, 1, 7),
+(6, 6, 'default_image.jpg', '', 'LAPTOP', '', 1, 1, 1, 8),
+(7, 7, 'default_image.jpg', '', 'Ổ CỨNG PC', '', 1, 1, 1, 9),
+(8, 4, 'default_image.jpg', 'tỵttjtyj', 'CHUỘT, BÀN PHÍM', 'tỵytuj', 1, 1, 1, 10),
+(18, 1, 'img_20200617093732.jpg', 'mmmmmmmmmmmmmm', 'earg', 'ẻagedrg', NULL, NULL, 0, 64);
 
 -- --------------------------------------------------------
 
@@ -1012,7 +1004,7 @@ CREATE TABLE `logos` (
 --
 
 INSERT INTO `logos` (`id`, `image`, `display`) VALUES
-(1, 'images (2).jpeg', 0);
+(1, 'images (3).jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -1039,8 +1031,8 @@ CREATE TABLE `mails` (
 --
 
 INSERT INTO `mails` (`id`, `name`, `phone`, `email`, `topic`, `address`, `status`, `content`, `note`, `number`, `created_at`) VALUES
-(1, 'thienbodoi', '0363008204', 'quocthien0404@gmail.com', 'erg', 'Thienes Avenue', 1, 'eargea', 'aeg', 1, '2024-01-18 02:38:11'),
-(2, 'lê quốc thiện@', '0363008204', 'quocthien@gmail.com', 'mua nè', '1', 2, '...', '....', 1, '2024-01-18 07:48:20');
+(1, 'thienbodoi', '0363008204', 'quocthien0404@gmail.com', 'erg', '1', 2, 'eargea', 'aeg', 1, '2024-01-20 01:58:38'),
+(3, 'quingu234', '0363008204', 'thienlqps21640@fpt.edu.vn', 'mua nè', 'Thienes Avenue', 0, '..', '...', 2, '2024-01-19 21:13:28');
 
 -- --------------------------------------------------------
 
@@ -1119,8 +1111,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `image`, `link`, `tittle`, `describe`, `content`, `outstand`, `display`, `number`, `seo_id`) VALUES
-(2, 'images (2).jpeg', 'https://youtu.be/PZ', 'eqrgq2', 'yeh2', 'etyj2', NULL, 0, '1', 69),
-(3, 'images.jpeg', 'rshrth', 'rthsrt', 'hrtfh', 'rths', NULL, 1, '1', 70);
+(2, 'images (2).jpeg', 'https://youtu.be/PZ', 'eqrgq2', 'yeh2', 'etyj2', NULL, 0, '1', 69);
 
 -- --------------------------------------------------------
 
@@ -1204,8 +1195,7 @@ CREATE TABLE `procedures` (
 --
 
 INSERT INTO `procedures` (`id`, `link`, `tittle`, `describe`, `content`, `image`, `display`, `outstand`, `number`, `seo_id`) VALUES
-(1, 'qger', 'gerg', 'ergwe', 'brthgw', 'img_20200617093732.jpg', 1, 1, 3, 1),
-(2, 'https://youtu.be/PZ', 'wegtr2354', 'hrytjh24', 'tyedfgh24', 'images (5).jpeg', 0, NULL, 3, 95);
+(1, 'qger', 'gerg', 'ergwe', 'brthgw', 'img_20200617093732.jpg', 1, 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -1224,7 +1214,7 @@ CREATE TABLE `register_advise` (
 --
 
 INSERT INTO `register_advise` (`id`, `content`, `display`) VALUES
-(1, 'wagwfwww243534', 0);
+(1, 'wagwfwww243534ẻga', 1);
 
 -- --------------------------------------------------------
 
@@ -1244,16 +1234,16 @@ CREATE TABLE `seos` (
 --
 
 INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
-(1, 'VI TÍNH PHÁT NĂNG | Vi Tính Bình Dương', 'ưefwefwetyj', 'VI TÍNH PHÁT NĂNG | Vi Tính Bình Dương chuyên cung cấp các linh kiện máy tính... khu vực bình dương. Lắp đặt phòng net, thanh lý phòng net khu vực bình dương'),
+(1, 'VI TÍNH PHÁT NĂNG | Vi Tính', 'ưefwefwetyj', 'VI TÍNH PHÁT NĂNG | Vi Tính Bình Dương chuyên cung cấp các linh kiện máy tính... khu vực bình dương. Lắp đặt phòng net, thanh lý phòng net khu vực bình dương'),
 (2, 'CPU-BỘ XỬ LÝ', 'cpu-bo-xu-ly', 'Danh mục cấp 2 của Linh kiện mới - CPU - Bộ xử lý'),
 (3, 'Intel Pentium22', 'intel-pentium', 'intel-pentium'),
 (4, 'Linh kiện cũ', 'linh-kien-cu', 'linh-kien-cu'),
-(5, 'THANH LÝ PHÒNG NET', 'thanh-ly-phong-net', NULL),
-(6, 'MÀN HÌNH MÁY TÍNH', 'man-hinh-may-tinh', ''),
-(7, 'THIẾT BỊ ÂM THANH', 'thiet-bi-am-thanh', ''),
-(8, 'LAPTOP', 'laptop, máy tính xách tay', ''),
-(9, 'Ổ CỨNG PC', 'ổ cứng pc', ''),
-(10, 'CHUỘT, BÀN PHÍM', 'chuột bàn phím', ''),
+(5, 'THANH LÝ PHÒNG NET', 'thanh-ly-phong-net', '.'),
+(6, 'MÀN HÌNH MÁY TÍNH', 'man-hinh-may-tinh', '.'),
+(7, 'THIẾT BỊ ÂM THANH', 'thiet-bi-am-thanh', '.'),
+(8, 'LAPTOP', 'laptop, máy tính xách tay', '.'),
+(9, 'Ổ CỨNG PC', 'ổ cứng pc', '.'),
+(10, 'CHUỘT, BÀN PHÍM', 'chuột bàn phím', '.'),
 (11, 'Intel Core i3', 'intel core i3', ''),
 (12, 'Intel Core i5', 'intel', ''),
 (13, 'Intel Core i7', 'intel core i7', ''),
@@ -1262,7 +1252,7 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (16, 'MAIN MSI CŨ', 'main msi cũ', ''),
 (17, 'MAIN COLOFULL CŨ', 'main colofull cũ', ''),
 (18, 'BỘ NHỚ RAM', 'bộ nhớ ram', 'ram'),
-(19, 'Vi Tính Phát Năng3', 'Vi Tính Phát Năng3', 'Vi Tính Phát Năng3'),
+(19, 'wfwefwưqef', 'Vi Tính Phát Năng3', 'Vi Tính Phát Năng3'),
 (20, 'DDR3 PC', 'ddr3 pc', NULL),
 (21, 'DDR4 Serve', 'ddr4 serve', NULL),
 (22, 'VGA CARD MÀN HÌNH', 'vga card màn hình', ''),
@@ -1338,7 +1328,11 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (92, 'mmmm222', 'mm', 'mm'),
 (93, 'er', 'ter', 'tert'),
 (94, 'er', 'ter', 'tert'),
-(95, 'er3', 'ter3', 'tert3');
+(95, 'er3', 'ter3', 'tert3'),
+(96, 'ge', 'ẻg', 'eg'),
+(97, 'ẻg', 'ádg', 'hrth'),
+(98, 'ytut7u', 'tyeuty', 'etyjyt'),
+(99, 'qryth', 'rthr', 'rth');
 
 -- --------------------------------------------------------
 
@@ -1521,11 +1515,21 @@ INSERT INTO `settings` (`id`, `tittle`, `address`, `name`, `email`, `hotline`, `
 
 CREATE TABLE `slideshows` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `number` int(11) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tittle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `slideshows`
+--
+
+INSERT INTO `slideshows` (`id`, `number`, `image`, `tittle`, `link`, `display`) VALUES
+(1, 1, 'images (2).jpeg', 'rhrth', 'rhtrth', 1),
+(2, 1, 'images (4).jpeg', 'wfqgqwer2', 'https://youtu.be/PZpO-ObhAfQ?si=IA', 1),
+(4, 1, 'z4917500526845_22953af5ecf68ce2975313c76788c7c5.jpg', 'ưef', 'ưef', 1);
 
 -- --------------------------------------------------------
 
@@ -1554,10 +1558,19 @@ INSERT INTO `slogans` (`id`, `tittle`, `display`) VALUES
 
 CREATE TABLE `social_networks` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `number` int(11) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `display` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `social_networks`
+--
+
+INSERT INTO `social_networks` (`id`, `number`, `image`, `link`, `display`) VALUES
+(2, 1, 'jrtyj', 'rhrst', 0),
+(3, 1, 'images (2).jpeg', 'ừ ywf', 1);
 
 -- --------------------------------------------------------
 
@@ -1608,7 +1621,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `role`, `address`, `email`, `sex`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `date`) VALUES
-(1, 'admin', '0363008204', 'admin', '276/77 thống nhất gò vấp', 'admin@gmail.com', 1, NULL, '$2y$12$Ylt6EgKlbBsG2y4JGGsUiusgvUeWjASfYewQ6p0E3Ll7OQteKRhtm', 'dSZXRmrCOHiBxk1W1crcF1ojI2wFjtPkQ8GeczOpSJmXn0CGkI8tKpgsc4tw', '2023-12-11 01:06:48', '2024-01-15 19:00:08', '2024-01-12'),
+(1, 'admin', '0363008204', 'admin', '276/77 thống nhất gò vấp', 'admin@gmail.com', 1, NULL, '$2y$12$Ylt6EgKlbBsG2y4JGGsUiusgvUeWjASfYewQ6p0E3Ll7OQteKRhtm', 'cFnUAbao4rljJStVjK8oUHGRFVEAvTS9kmfHOIJaVG8X88H1oavmo0iAwNlC', '2023-12-11 01:06:48', '2024-01-15 19:00:08', '2024-01-12'),
 (2, 'admin', '', '', '', 'tri@gmail.com', 2, NULL, '$2y$12$tGjvKY8VPzWi7t8uNWmsKejDEryaMUTpIhbou0Pml/tslPiXyo4Wq', 'yq7EQvdjBe3fMYm1Yufdos7ArwSoyPu6PypWeLAU2AICWGH09yjxBzGTGb4x', '2023-12-14 21:32:30', '2023-12-14 21:32:30', '0000-00-00'),
 (3, 'thienbodoi', NULL, NULL, NULL, 'admin', 1, NULL, '$2y$12$1frGErL6/vG2XkpnBkMNleRupNf7P.0JyTJhwjAZQ0C2P9OepNmia', NULL, '2023-12-26 18:45:21', '2023-12-26 18:45:21', NULL),
 (4, 'admin', NULL, NULL, NULL, 'admin@gmail', 2, NULL, '$2y$12$wf1pnl.BR5YbMYhAasLK0eJF79sKp7pYu0MBMHVLujnBV8jfH8AKi', NULL, '2023-12-27 05:34:38', '2023-12-27 05:34:38', NULL);
@@ -1938,7 +1951,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT cho bảng `advises`
 --
 ALTER TABLE `advises`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `banners`
@@ -2028,7 +2041,7 @@ ALTER TABLE `introduces`
 -- AUTO_INCREMENT cho bảng `level1_products`
 --
 ALTER TABLE `level1_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `level1_quotations`
@@ -2040,7 +2053,7 @@ ALTER TABLE `level1_quotations`
 -- AUTO_INCREMENT cho bảng `level2_products`
 --
 ALTER TABLE `level2_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT cho bảng `level3_products`
@@ -2064,7 +2077,7 @@ ALTER TABLE `logos`
 -- AUTO_INCREMENT cho bảng `mails`
 --
 ALTER TABLE `mails`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -2076,7 +2089,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -2106,7 +2119,7 @@ ALTER TABLE `register_advise`
 -- AUTO_INCREMENT cho bảng `seos`
 --
 ALTER TABLE `seos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT cho bảng `seo_advise`
@@ -2160,7 +2173,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT cho bảng `slideshows`
 --
 ALTER TABLE `slideshows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `slogans`
@@ -2172,7 +2185,7 @@ ALTER TABLE `slogans`
 -- AUTO_INCREMENT cho bảng `social_networks`
 --
 ALTER TABLE `social_networks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tag_products`

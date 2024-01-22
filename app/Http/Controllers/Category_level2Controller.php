@@ -59,6 +59,8 @@ class Category_level2Controller extends Controller
     {
         $category_level2 = Category_level2::find($id);
         $category_level1 = Category_level1::all();
+        // dd($category_level2);
+        // dd($category_level1);
         return view('real_estate.category_level2_edit', compact('category_level2', 'category_level1'));
     }
     public function update(Request $request, $id)

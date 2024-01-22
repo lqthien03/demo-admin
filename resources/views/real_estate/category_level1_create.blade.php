@@ -593,8 +593,7 @@
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm
                         lại</button>
-                    <a class="btn btn-sm bg-gradient-danger"
-                        href="/real_estate/category-level1" title="Thoát"><i
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/category-level1" title="Thoát"><i
                             class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>
@@ -715,38 +714,29 @@
         });
     </script>
 
-    {{-- tạo seo --}}
+    {{-- Tạo seo --}}
     <script>
-        function generateSEO() {
-            // Lấy giá trị từ tiêu đề và nội dung
-            var titleValue = document.getElementById('tenvi').value;
-            var descriptionValue = document.getElementById('noidungvi').value;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy reference đến nút "Tạo SEO"
+            var createSeoButton = document.querySelector('.create-seo');
 
-            // Tạo SEO Title
-            var seoTitleInput = document.getElementById('titlevi');
-            seoTitleInput.value = titleValue;
-            updateCharacterCount(seoTitleInput);
+            // Gắn sự kiện click cho nút "Tạo SEO"
+            createSeoButton.addEventListener('click', generateSEO);
 
-            // Tạo SEO Keywords
-            var seoKeywordsInput = document.getElementById('keywordsvi');
-            seoKeywordsInput.value = titleValue;
-            updateCharacterCount(seoKeywordsInput);
+            function generateSEO() {
+                // Lấy giá trị từ form Tiếng Việt
+                var titleVi = document.getElementById('tenvi').value;
+                var describeVi = document.getElementById('noidungvi').value;
 
-            // Tạo SEO Description
-            var seoDescriptionInput = document.getElementById('descriptionvi');
-            seoDescriptionInput.value = descriptionValue;
-            updateCharacterCount(seoDescriptionInput);
-        }
+                // Gán giá trị vào form SEO
+                document.getElementById('titlevi').value = titleVi; // Gán titleVi vào seo_tittle
+                document.getElementById('keywordsvi').value = titleVi; // Gán titleVi vào seo_keywords
+                document.getElementById('descriptionvi').value = describeVi; // Gán describeVi vào seo_description
 
-        function updateCharacterCount(inputElement) {
-            // Cập nhật độ dài ký tự
-            var maxLength = inputElement.getAttribute('data-max-characters');
-            var currentLength = inputElement.value.length;
-
-            var countElement = inputElement.parentNode.querySelector('.count-seo-' + inputElement.name);
-            countElement.innerHTML = '<span>' + currentLength + '</span>/' + maxLength + ' ký tự';
-        }
+            }
+        });
     </script>
+
 
 
 </body>
