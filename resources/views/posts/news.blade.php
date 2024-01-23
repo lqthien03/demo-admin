@@ -532,12 +532,10 @@
                 </div>
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=news&act=add&type=tin-tuc&p=1" title="Thêm mới"><i
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/posts/news/create" title="Thêm mới"><i
                         class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=news&act=delete&type=tin-tuc&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
     </div>

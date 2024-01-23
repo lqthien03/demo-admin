@@ -658,6 +658,44 @@
             });
         });
     </script>
+    {{-- kéo thả --}}
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('uploaded-image');
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        var photoUploadZone = document.getElementById('photoUploadZone');
+
+        photoUploadZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.add('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+
+            var fileInput = document.getElementById('file-zone');
+            var files = e.dataTransfer.files;
+
+            fileInput.files = files;
+
+            previewImage(fileInput);
+        });
+    </script>
 </body>
 
 </html>

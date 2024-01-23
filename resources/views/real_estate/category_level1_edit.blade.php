@@ -498,8 +498,6 @@
                         </div>
                     </div>
                     <div class="col-xl-4">
-
-
                         <div class="card card-primary card-outline text-sm">
                             <div class="card-header">
                                 <h3 class="card-title">Hình ảnh Sản phẩm cấp 1</h3>
@@ -509,13 +507,15 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="photoUpload-zone">
-                                    <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            id="uploaded-image"
+                                <div class="photoUpload-zone" id="photoUploadZone">
+                                    <div class="photoUpload-detail" id="photoUpload-preview">
+                                        <img class="rounded" id="uploaded-image"
                                             src="{{ asset('products/' . $category_level1->image) }}"
-                                            alt="Alt Photo" /></div>
+                                            alt="Alt Photo" />
+                                    </div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="image" id="file-zone">
+                                        <input type="file" name="image" id="file-zone"
+                                            onchange="previewImage(this)">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -526,7 +526,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="card card-primary card-outline text-sm">
@@ -693,6 +692,44 @@
                 // Hiển thị số ký tự và giới hạn nó trong khoảng 0 - 70
                 countElement.textContent = inputLength;
             });
+        });
+    </script>
+    {{-- kéo thả --}}
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('uploaded-image');
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        var photoUploadZone = document.getElementById('photoUploadZone');
+
+        photoUploadZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.add('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+
+            var fileInput = document.getElementById('file-zone');
+            var files = e.dataTransfer.files;
+
+            fileInput.files = files;
+
+            previewImage(fileInput);
         });
     </script>
 </body>

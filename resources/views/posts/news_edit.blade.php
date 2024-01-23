@@ -503,11 +503,12 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="photoUpload-zone">
+                                <div class="photoUpload-zone" id="photoUploadZone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
                                             src="{{ asset('products/' . $news->image) }}" alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="image" id="file-zone">
+                                        <input type="file" name="image"
+                                            id="file-zone"onchange="previewImage(this)">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -646,7 +647,44 @@
             });
         });
     </script>
-    {{-- Đếm kí tự --}}
+    {{-- kéo thả --}}
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('uploaded-image');
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        var photoUploadZone = document.getElementById('photoUploadZone');
+
+        photoUploadZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.add('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+        });
+
+        photoUploadZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            photoUploadZone.classList.remove('photoUpload-zone-dragover');
+
+            var fileInput = document.getElementById('file-zone');
+            var files = e.dataTransfer.files;
+
+            fileInput.files = files;
+
+            previewImage(fileInput);
+        });
+    </script>
 
 
 
