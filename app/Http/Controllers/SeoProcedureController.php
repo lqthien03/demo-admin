@@ -22,11 +22,9 @@ class SeoProcedureController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $seo_procedure->image = $file_name;
         }
-        $seo_procedure->image = $file_name;
+
         $seo_procedure->seo_id = $request->input('seo_id');
         $seo_procedure->save();
         $seo->seo_tittle = $request->input('seo_tittle');

@@ -26,7 +26,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -380,11 +380,10 @@
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
-                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value=""
-                            onkeypress="doEnter(event,'keyword','index.php?com=product&act=man_cat&type=san-pham&p=1')">
+                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value="" name="search">
                         <div class="input-group-append bg-primary rounded-right">
-                            <button class="btn btn-navbar text-white" type="button"
-                                onclick="onSearch('keyword','index.php?com=product&act=man_cat&type=san-pham&p=1')">
+                            <button class="btn btn-navbar text-white" type="button"onclick="searchProducts()"
+                                id="searchBtn">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -399,7 +398,8 @@
                             <option value="{{ $item->id }}">{{ $item->level1_product->tittle }}</option>
                         @endforeach
 
-                    </select></div>
+                    </select>
+                </div>
             </div>
             <div class="card card-primary card-outline text-sm mb-0">
                 <div class="card-header">
@@ -481,6 +481,28 @@
             </div>
         </section>
     </div>
+    <script>
+        function searchProducts() {
+            // Lấy giá trị từ ô nhập
+            var keyword = document.getElementById('keyword').value.toLowerCase();
+
+            // Lấy danh sách các dòng trong bảng
+            var rows = document.querySelectorAll('.table tbody tr');
+
+            // Lặp qua từng dòng để kiểm tra và ẩn/hiển thị
+            rows.forEach(function(row) {
+                // Lấy nội dung cần tìm kiếm từ cột Tiêu đề
+                var title = row.querySelector('.align-middle a.text-dark').innerText.toLowerCase();
+
+                // Ẩn/hiển thị dựa trên việc có tìm kiếm được hay không
+                if (title.includes(keyword)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

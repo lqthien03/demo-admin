@@ -27,7 +27,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -507,10 +507,11 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
+                                            id="uploaded-image"
                                             src="{{ asset('products/' . $category_level1->image) }}"
                                             alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
-                                        <input type="file" name="image" id="file-zone" class="dropzone">
+                                        <input type="file" name="image" id="file-zone">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <p class="photoUpload-drop">Kéo và thả hình vào đây</p>
                                         <p class="photoUpload-or">hoặc</p>
@@ -589,8 +590,7 @@
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm
                         lại</button>
-                    <a class="btn btn-sm bg-gradient-danger"
-                        href="/real_estate/category-level1" title="Thoát"><i
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/category-level1" title="Thoát"><i
                             class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>
@@ -598,23 +598,24 @@
         </section>
     </div>
     {{-- Hình ảnh --}}
-    <script>
-        function previewImage(input) {
-            var preview = document.getElementById('preview-image');
-            var file = input.files[0];
-            var reader = new FileReader();
 
-            reader.onloadend = function() {
-                preview.src = reader.result;
-            }
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
 
             if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
                 reader.readAsDataURL(file);
-            } else {
-                preview.src = "{{ asset('products/' . $category_level1->image) }}";
             }
-        }
+        });
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Lấy phần tử input

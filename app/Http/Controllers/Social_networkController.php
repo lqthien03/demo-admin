@@ -59,11 +59,8 @@ class Social_networkController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $social_network->image = $file_name;
         }
-        $social_network->image = $file_name;
         $social_network->link = $request->input('link');
         $social_network->number = $request->input('number');
         $social_network->display = $request->has('display');

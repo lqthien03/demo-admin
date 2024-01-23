@@ -23,11 +23,9 @@ class SeoNewsController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $seo_news->image = $file_name;
         }
-        $seo_news->image = $file_name;
+
         $seo_news->seo_id = $request->input('seo_id');
         $seo_news->save();
         $seo->seo_tittle = $request->input('seo_tittle');

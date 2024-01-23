@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 22, 2024 lúc 03:13 AM
+-- Thời gian đã tạo: Th1 22, 2024 lúc 09:21 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -66,7 +66,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `image`, `tittle`, `link`, `display`) VALUES
-(1, 'z4917504915707_c96830289c31704f282531369167eec6.jpg', 'banner1', '', 1),
+(1, 'images (1).jpeg', 'banner1', '', 1),
 (2, 'banner2.jpg', 'banner2', '', 1),
 (3, 'banner3.jpg', 'banner3', '', 1),
 (4, 'banner4.jpg', 'banner4', '', 1);
@@ -114,7 +114,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `content`, `image`, `display`, `seo_id`) VALUES
-(1, 'wagwfwqrt34et', 'images (4).jpeg', 1, 19);
+(1, 'wagwfwqrt34et', 'images.jpeg', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -188,16 +188,16 @@ CREATE TABLE `detail_products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `number` int(20) NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `describe` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `outstand` tinyint(4) DEFAULT NULL,
   `discount` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display` tinyint(4) NOT NULL,
   `new` tinyint(4) DEFAULT NULL,
-  `product_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `size` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `acreage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -205,6 +205,7 @@ CREATE TABLE `detail_products` (
   `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `new_price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gallery_id` bigint(20) UNSIGNED DEFAULT NULL,
   `level2_product_id` bigint(20) UNSIGNED DEFAULT NULL,
   `seo_id` bigint(20) UNSIGNED DEFAULT NULL,
   `level3_product_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -216,46 +217,46 @@ CREATE TABLE `detail_products` (
 -- Đang đổ dữ liệu cho bảng `detail_products`
 --
 
-INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `content`, `describe`, `outstand`, `discount`, `display`, `new`, `product_code`, `price`, `address`, `size`, `acreage`, `contact`, `direction`, `location`, `new_price`, `level2_product_id`, `seo_id`, `level3_product_id`, `level1_product_id`, `tag_product_id`) VALUES
-(535, 2, '8ba249a3ab67321494cf6123e9670fdd-2677.jpg', 'CPU-I3 6100', 'cpu-i3-6100', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 1, 102, 2, 1),
-(536, 3, '21712intelg4560-5946.jpg', 'CPU-G4560', 'cpu-g4560', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 2, 101, 2, 1),
-(537, 4, '0557ce8cb6a616ab15f01ba8b583670djpg800x800q100-4900.jpg', 'CPU G4400', 'cpu-g4400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 30, 3, 101, 2, 1),
-(538, 0, '43691giant117307-5590.jpg', 'MAIN ASUS H110M-K CŨ', 'main-asus-h110m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 4, 97, 2, 1),
-(539, 0, '500-2-2628.png', 'MAIN GIGABYTE H110M - DS2 CŨ', 'main-gigabyte-h110m-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 5, 96, 2, 1),
-(540, 0, 'unnamed-3350.jpg', 'MAIN ASUS H110M-E CŨ', 'main-asus-h110m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 6, 97, 2, 1),
-(541, 0, '3576-p2-1557217394-1016.jpg', 'MAIN ASUS H110M-D CŨ', 'main-asus-h110m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 7, 97, 2, 1),
-(543, 0, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 29, 8, 97, 2, 1),
-(544, 0, 'line-1771.jpg', 'MAIN ASUS H81M-K CŨ', 'main-asus-h81m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 9, 96, 2, 1),
-(545, 0, 'unnamed-7992.jpg', 'MAIN GIGABYTE-H61 DS2 CŨ', 'main-gigabyte-h61-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 10, 96, 2, 1),
-(546, 0, 'a97e412a8eb00f798df1b62b06296233-6199.jpg', 'MAIN ASUS H81M-D CŨ', 'main-asus-h81m-d-cu', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 11, 97, 2, 1),
-(547, 0, 'b8931518b7694c6980651c129f32b807-9837.jpg', 'MAIN ASUS H81M-E CŨ', 'main-asus-h81m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 12, 97, 2, 1),
-(548, 0, '12938145490h61mk-1886.jpg', 'MAIN ASUS H61M-K CŨ', 'main-asus-h61m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 13, 97, 2, 1),
-(549, 0, 'palit1050tidualfan-7536.jpg', 'VGA Palit GTX 1050Ti 4G DUAL (2 Fan)', 'vga-palit-gtx-1050ti-4g-dual-2fan', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 36, 14, 92, 2, 1),
-(550, 0, 'htb18tqkxpluk1rjy0fhq6xpdfxap-9568.jpg', 'MAIN ASUS H61M-D CŨ', 'main-asus-h61m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 31, 15, 97, 2, 1),
-(551, 0, '6fe4382b7be81732a1300a1585429f391-1-5201.jpg', 'VISION GAMING VM01', 'vision-gaming-vm01', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 16, NULL, 1, 1),
-(552, 0, 'e1b61f2ef53d3f63662c-3714.jpg', 'Thanh Lý Phòng Net A- Z', 'thanh-ly-phong-net-a-z', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 17, NULL, 3, 1),
-(553, 0, 'aoc-27inch-2970.jpg', 'LCD 27” AOC I2769V Full HD IPS', 'lcd-27-aoc-i2769v-full-hd-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 18, NULL, 2, 1),
-(554, 0, 'vsp-19-9843.jpg', 'LCD 19 VSP VE19(LE1902) Chính Hãng', 'lcd-19-vsp-le1902-chinh-hang', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 19, NULL, 4, 1),
-(555, 0, 'default_image.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao', 'thanh-ly-phong-net-a-z-gia-cao', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 20, NULL, 3, 1),
-(556, 0, 'default_image.jpg', 'Nguồn Jetek Q9800-Gaming (80 Plus Gold)', 'nguon-jetek-q9800-gaming-80-plus-gold', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 21, NULL, 2, 1),
-(557, 0, 'default_image.jpg', 'LCD 20 VSP VS20', 'vsp-20-5179', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 22, NULL, 4, 1),
-(558, 0, 'e2210h01-7272.jpg', 'LCD VSP 22 Inch LED Monitor E2210H', 'lcd-vsp-22-inch-led-monitor-e2210h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 23, NULL, 4, 1),
-(559, 0, '16-7627.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Bình Dương', 'thanh-ly-phong-net-a-z-gia-cao-binh-duong', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 24, NULL, 3, 1),
-(560, 0, 'v2205h03-3230.jpg', 'Màn Hình LED Monitor VSP 22inch V2205H', 'man-hinh-led-monitor-vsp-22-inch-v2205h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, 25, NULL, 4, 1),
-(561, 0, 'aeed8f8c5c9f96c1cf8e-4736.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Khu Vực Miền Nam', 'thanh-ly-phong-net-a-z-gia-cao-khu-vuc-mien-nam', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 3, 1),
-(562, 0, 'v2408s02-7749.jpg', 'Màn Hình Phẳng LED Tràn Viền Slim Bezel VSP V2408S', 'man-hinh-phang-led-tran-vien-slim-bezel-vsp-v24085', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(563, 0, 'aaaa-2490.jpg', 'Màn Hình ViewSonic VA2408-H 24\" IPS 75Hz', 'man-hinh-view-sonic-va2408-h-24-ips-75hz', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(564, 0, '24-benq-6169.jpg', 'Màn Hình BenQ GL2760H LED Full HD - 27 Inch', 'man-hinh-benq-gl2760h-led-full-hd-27-inch', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 4, 1),
-(565, 0, 'lcd-lg-24m47-7267.jpg', 'Màn Hình LED LG 24 Inch 24M47VQ-P', 'man-hinh-led-lg-24-inch-24m47vq-p', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(566, 0, 'man-hinh-aoc-22-6580.jpg', 'LCD 22AOC 2270SW', 'lcd-22aoc-2270sw', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(567, 0, '22-philip-ips-8145.jpg', 'Màn Hình Máy Tính Philips 224E5QHSB', 'man-hinh-may-tinh-philips-224E5QHSB', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(568, 0, '23-aoc-1908.jpg', 'Màn Hình Máy Tính AOC E2360SD 23 Inch LED', 'man-hinh-may-tinh-aoc-e52369sd-23-inch-led', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(569, 0, '31136nguonfsphydroseries700wmodelhd70000001-8749.jpg', 'Nguồn FSP Power Supply HYDRO Series Model HD700 Active PFC (80 Plus Bronze/Màu Đen)', 'nguon-fps-power-supply-hudro-series-model-hd-700-active', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1),
-(570, 0, 'man-hinh-lcd-27-lg-27ea33va-ips-cu-black30201-6868.jpg', 'Màn Hình LCD 27” LG 27EA33VA IPS', 'man-hinh-lcd-27-lg-27ea33va-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 2, 1),
-(571, 0, 'g5400v-6520.jpg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, NULL, NULL, 5, 1),
-(572, 0, 'linh-kien-laptop-hcm-hienlaptop-01-7371.png', 'CHUYÊN NÂNG CẤP LAPTOP, THAY THẾ LINH KIỆN. GIÁ TỐT NHẤT BÌNH DƯƠNG', 'chuyen-nang-cap-laptop-thay-the-linh-kien-gia-tot-nhat-binh-duong', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 40, NULL, NULL, 6, 1),
-(573, 0, 'heaphone-run-mus-k804-1-2320.jpg', 'PHONE RUN MUS K8 LED GAMING', 'phone-run-mus-k8-led-gaming', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 42, NULL, NULL, 5, 1),
-(574, 0, '6fe4382b7be81732a1300a1585429f391-1-5201 (1).jpg', 'Phát Wifi PIX-LINK LV-WR08', 'phat-wifi-pix-link-lv-wr08', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', NULL, NULL, NULL, 1, 1);
+INSERT INTO `detail_products` (`id`, `number`, `image`, `tittle`, `link`, `content`, `describe`, `outstand`, `discount`, `display`, `new`, `product_code`, `price`, `address`, `size`, `acreage`, `contact`, `direction`, `location`, `new_price`, `gallery_id`, `level2_product_id`, `seo_id`, `level3_product_id`, `level1_product_id`, `tag_product_id`) VALUES
+(535, 2, 'default_image.jpg', 'CPU-I3 6100', 'cpu-i3-6100', NULL, NULL, 1, '', 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, 32, 1, 102, 4, 1),
+(536, 3, '21712intelg4560-5946.jpg', 'CPU-G4560', 'cpu-g4560', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 30, 2, 101, 2, 1),
+(537, 4, '0557ce8cb6a616ab15f01ba8b583670djpg800x800q100-4900.jpg', 'CPU G4400', 'cpu-g4400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 30, 3, 101, 2, 1),
+(538, 0, '43691giant117307-5590.jpg', 'MAIN ASUS H110M-K CŨ', 'main-asus-h110m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 4, 97, 2, 1),
+(539, 0, '500-2-2628.png', 'MAIN GIGABYTE H110M - DS2 CŨ', 'main-gigabyte-h110m-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 5, 96, 2, 1),
+(540, 0, 'unnamed-3350.jpg', 'MAIN ASUS H110M-E CŨ', 'main-asus-h110m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 6, 97, 2, 1),
+(541, 0, '3576-p2-1557217394-1016.jpg', 'MAIN ASUS H110M-D CŨ', 'main-asus-h110m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 7, 97, 2, 1),
+(543, 0, '400vm0105-7197.jpg', 'CPU G5400', 'cpu-g5400', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 29, 8, 97, 2, 1),
+(544, 0, 'line-1771.jpg', 'MAIN ASUS H81M-K CŨ', 'main-asus-h81m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 9, 96, 2, 1),
+(545, 0, 'unnamed-7992.jpg', 'MAIN GIGABYTE-H61 DS2 CŨ', 'main-gigabyte-h61-ds2-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 10, 96, 2, 1),
+(546, 0, 'a97e412a8eb00f798df1b62b06296233-6199.jpg', 'MAIN ASUS H81M-D CŨ', 'main-asus-h81m-d-cu', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 11, 97, 2, 1),
+(547, 0, 'b8931518b7694c6980651c129f32b807-9837.jpg', 'MAIN ASUS H81M-E CŨ', 'main-asus-h81m-e-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 12, 97, 2, 1),
+(548, 0, '12938145490h61mk-1886.jpg', 'MAIN ASUS H61M-K CŨ', 'main-asus-h61m-k-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 13, 97, 2, 1),
+(549, 0, 'palit1050tidualfan-7536.jpg', 'VGA Palit GTX 1050Ti 4G DUAL (2 Fan)', 'vga-palit-gtx-1050ti-4g-dual-2fan', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 36, 14, 92, 2, 1),
+(550, 0, 'htb18tqkxpluk1rjy0fhq6xpdfxap-9568.jpg', 'MAIN ASUS H61M-D CŨ', 'main-asus-h61m-d-cu', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 31, 15, 97, 2, 1),
+(551, 0, '6fe4382b7be81732a1300a1585429f391-1-5201.jpg', 'VISION GAMING VM01', 'vision-gaming-vm01', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 16, NULL, 1, 1),
+(552, 0, 'e1b61f2ef53d3f63662c-3714.jpg', 'Thanh Lý Phòng Net A- Z', 'thanh-ly-phong-net-a-z', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 17, NULL, 3, 1),
+(553, 0, 'aoc-27inch-2970.jpg', 'LCD 27” AOC I2769V Full HD IPS', 'lcd-27-aoc-i2769v-full-hd-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 18, NULL, 2, 1),
+(554, 0, 'vsp-19-9843.jpg', 'LCD 19 VSP VE19(LE1902) Chính Hãng', 'lcd-19-vsp-le1902-chinh-hang', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 19, NULL, 4, 1),
+(555, 0, 'default_image.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao', 'thanh-ly-phong-net-a-z-gia-cao', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 20, NULL, 3, 1),
+(556, 0, 'default_image.jpg', 'Nguồn Jetek Q9800-Gaming (80 Plus Gold)', 'nguon-jetek-q9800-gaming-80-plus-gold', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 21, NULL, 2, 1),
+(557, 0, 'default_image.jpg', 'LCD 20 VSP VS20', 'vsp-20-5179', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 22, NULL, 4, 1),
+(558, 0, 'e2210h01-7272.jpg', 'LCD VSP 22 Inch LED Monitor E2210H', 'lcd-vsp-22-inch-led-monitor-e2210h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 23, NULL, 4, 1),
+(559, 0, '16-7627.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Bình Dương', 'thanh-ly-phong-net-a-z-gia-cao-binh-duong', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 24, NULL, 3, 1),
+(560, 0, 'v2205h03-3230.jpg', 'Màn Hình LED Monitor VSP 22inch V2205H', 'man-hinh-led-monitor-vsp-22-inch-v2205h', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, 25, NULL, 4, 1),
+(561, 0, 'aeed8f8c5c9f96c1cf8e-4736.jpg', 'Thanh Lý Phòng Net A- Z Giá Cao Khu Vực Miền Nam', 'thanh-ly-phong-net-a-z-gia-cao-khu-vuc-mien-nam', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 3, 1),
+(562, 0, 'v2408s02-7749.jpg', 'Màn Hình Phẳng LED Tràn Viền Slim Bezel VSP V2408S', 'man-hinh-phang-led-tran-vien-slim-bezel-vsp-v24085', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 4, 1),
+(563, 0, 'aaaa-2490.jpg', 'Màn Hình ViewSonic VA2408-H 24\" IPS 75Hz', 'man-hinh-view-sonic-va2408-h-24-ips-75hz', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 4, 1),
+(564, 0, '24-benq-6169.jpg', 'Màn Hình BenQ GL2760H LED Full HD - 27 Inch', 'man-hinh-benq-gl2760h-led-full-hd-27-inch', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 4, 1),
+(565, 0, 'lcd-lg-24m47-7267.jpg', 'Màn Hình LED LG 24 Inch 24M47VQ-P', 'man-hinh-led-lg-24-inch-24m47vq-p', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 2, 1),
+(566, 0, 'man-hinh-aoc-22-6580.jpg', 'LCD 22AOC 2270SW', 'lcd-22aoc-2270sw', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 2, 1),
+(567, 0, '22-philip-ips-8145.jpg', 'Màn Hình Máy Tính Philips 224E5QHSB', 'man-hinh-may-tinh-philips-224E5QHSB', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 2, 1),
+(568, 0, '23-aoc-1908.jpg', 'Màn Hình Máy Tính AOC E2360SD 23 Inch LED', 'man-hinh-may-tinh-aoc-e52369sd-23-inch-led', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 2, 1),
+(569, 0, '31136nguonfsphydroseries700wmodelhd70000001-8749.jpg', 'Nguồn FSP Power Supply HYDRO Series Model HD700 Active PFC (80 Plus Bronze/Màu Đen)', 'nguon-fps-power-supply-hudro-series-model-hd-700-active', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 1, 1),
+(570, 0, 'man-hinh-lcd-27-lg-27ea33va-ips-cu-black30201-6868.jpg', 'Màn Hình LCD 27” LG 27EA33VA IPS', 'man-hinh-lcd-27-lg-27ea33va-ips', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 2, 1),
+(571, 0, 'g5400v-6520.jpg', 'GAMING HEADSET H120G HP', 'gaming-headset-h120g-hp', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 42, NULL, NULL, 5, 1),
+(572, 0, 'linh-kien-laptop-hcm-hienlaptop-01-7371.png', 'CHUYÊN NÂNG CẤP LAPTOP, THAY THẾ LINH KIỆN. GIÁ TỐT NHẤT BÌNH DƯƠNG', 'chuyen-nang-cap-laptop-thay-the-linh-kien-gia-tot-nhat-binh-duong', NULL, NULL, 0, '', 0, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 40, NULL, NULL, 6, 1),
+(573, 0, 'heaphone-run-mus-k804-1-2320.jpg', 'PHONE RUN MUS K8 LED GAMING', 'phone-run-mus-k8-led-gaming', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, 42, NULL, NULL, 5, 1),
+(574, 0, '6fe4382b7be81732a1300a1585429f391-1-5201 (1).jpg', 'Phát Wifi PIX-LINK LV-WR08', 'phat-wifi-pix-link-lv-wr08', NULL, NULL, 1, '', 1, 0, '', '', '', NULL, '', NULL, NULL, NULL, '', 1, NULL, NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -705,7 +706,7 @@ CREATE TABLE `favicons` (
 --
 
 INSERT INTO `favicons` (`id`, `image`, `display`) VALUES
-(1, 'images (2).jpeg', 1);
+(1, 'images.jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -725,7 +726,28 @@ CREATE TABLE `footers` (
 --
 
 INSERT INTO `footers` (`id`, `tittle`, `content`, `display`) VALUES
-(1, 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG', 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG 325', 1);
+(1, 'VI TÍNH PHÁT NĂNG BÌNH DƯƠNG', 'VI TÍNH PHÁT NĂNvẻygter', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image3` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `image1`, `image2`, `image3`) VALUES
+(1, 'j67tuj', 'fghfg', 'fghfgh'),
+(2, 'uykj', 'rsthrytu', 'srthryj');
 
 -- --------------------------------------------------------
 
@@ -782,7 +804,7 @@ CREATE TABLE `introduces` (
 --
 
 INSERT INTO `introduces` (`id`, `tittle`, `describe`, `content`, `image`, `display`, `seo_id`) VALUES
-(1, 'Giới thiệu Vi tính Phát Năng 4', 'hay3', 'Vi Tính Phát Năng chuyên cung cấp máy bộ vi tính, pc, laptop, pc gaming, all in one, máy bộ xeon, máy AMD, linh kiện giá sỉ lẻ cực rẻ', 'img_20200617093732.jpg', 1, 19);
+(1, 'Giới thiệu Vi tính Phát Năng 4', 'hay3', 'Vi Tính Phát Năng chuyên cung cấp máy bộ vi tính, pc, laptop, pc gaming, all in one, máy bộ xeon, máy AMD, linh kiện giá sỉ lẻ cực rẻ', 'default_image.jpg', 1, 19);
 
 -- --------------------------------------------------------
 
@@ -873,10 +895,10 @@ INSERT INTO `level1_quotations` (`id`, `tittle`, `display`, `seo_id`) VALUES
 
 CREATE TABLE `level2_products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `number` int(20) NOT NULL,
-  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `describe` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tittle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `describe` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `display` tinyint(4) NOT NULL,
   `level1_product_id` bigint(20) UNSIGNED NOT NULL,
   `seo_id` bigint(20) UNSIGNED NOT NULL
@@ -890,7 +912,7 @@ INSERT INTO `level2_products` (`id`, `link`, `number`, `tittle`, `describe`, `di
 (29, '', 1, 'CPU-BỘ XỬ LÝ', 'agergaerr', 1, 1, 1),
 (30, 'awerg', 3, 'CPU-BỘ XỬ LÝ', 'aewrgaer', 1, 1, 2),
 (31, '', 2, 'MAINBOARD-BO MẠCH CHỦ CŨ', '', 1, 2, 2),
-(32, '', 1, 'BỘ NHỚ RAM', '', 1, 1, 18),
+(32, 'fcwerf', 1, 'BỘ NHỚ RAM', NULL, 1, 7, 18),
 (33, '', 1, 'VGA-CARD MÀN HÌNH', '', 1, 1, 22),
 (34, '', 1, 'MAINBOARD - BO MẠCH CHỦ', '', 1, 1, 14),
 (35, '', 1, 'BỘ NHỚ RAM CŨ', '', 1, 2, 18),
@@ -1004,7 +1026,7 @@ CREATE TABLE `logos` (
 --
 
 INSERT INTO `logos` (`id`, `image`, `display`) VALUES
-(1, 'images (3).jpeg', 1);
+(1, 'images (5).jpeg', 1);
 
 -- --------------------------------------------------------
 
@@ -1111,7 +1133,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `image`, `link`, `tittle`, `describe`, `content`, `outstand`, `display`, `number`, `seo_id`) VALUES
-(2, 'images (2).jpeg', 'https://youtu.be/PZ', 'eqrgq2', 'yeh2', 'etyj2', NULL, 0, '1', 69);
+(2, 'default_image.jpg', 'https://youtu.be/PZ', 'eqrgq2', 'yeh2', 'etyj2', NULL, 0, '1', 69);
 
 -- --------------------------------------------------------
 
@@ -1214,7 +1236,7 @@ CREATE TABLE `register_advise` (
 --
 
 INSERT INTO `register_advise` (`id`, `content`, `display`) VALUES
-(1, 'wagwfwww243534ẻga', 1);
+(1, 'wafery', 1);
 
 -- --------------------------------------------------------
 
@@ -1252,7 +1274,7 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (16, 'MAIN MSI CŨ', 'main msi cũ', ''),
 (17, 'MAIN COLOFULL CŨ', 'main colofull cũ', ''),
 (18, 'BỘ NHỚ RAM', 'bộ nhớ ram', 'ram'),
-(19, 'wfwefwưqef', 'Vi Tính Phát Năng3', 'Vi Tính Phát Năng3'),
+(19, 'Giới thiệu Vi tính Phát Năng 4', 'Giới thiệu Vi tính Phát Năng 4', 'hay3'),
 (20, 'DDR3 PC', 'ddr3 pc', NULL),
 (21, 'DDR4 Serve', 'ddr4 serve', NULL),
 (22, 'VGA CARD MÀN HÌNH', 'vga card màn hình', ''),
@@ -1302,7 +1324,7 @@ INSERT INTO `seos` (`id`, `seo_tittle`, `seo_keyword`, `seo_description`) VALUES
 (66, 'ẻtgewrtye', 'ẺG', 'HT'),
 (67, 'ưef', 'ưef', 'ưefw'),
 (68, NULL, NULL, NULL),
-(69, 'qưerg2', 'qẻg2', 'geg2'),
+(69, NULL, NULL, NULL),
 (70, 'srhrsth', 'rthfg', 'rthr'),
 (71, 'egdf', 'ẻg', NULL),
 (72, 'ưthrt', 'reth', NULL),
@@ -1370,7 +1392,7 @@ CREATE TABLE `seo_estate` (
 --
 
 INSERT INTO `seo_estate` (`id`, `image`, `seo_id`) VALUES
-(1, 'images.jpeg', 46);
+(1, 'images (3).jpeg', 46);
 
 -- --------------------------------------------------------
 
@@ -1529,7 +1551,8 @@ CREATE TABLE `slideshows` (
 INSERT INTO `slideshows` (`id`, `number`, `image`, `tittle`, `link`, `display`) VALUES
 (1, 1, 'images (2).jpeg', 'rhrth', 'rhtrth', 1),
 (2, 1, 'images (4).jpeg', 'wfqgqwer2', 'https://youtu.be/PZpO-ObhAfQ?si=IA', 1),
-(4, 1, 'z4917500526845_22953af5ecf68ce2975313c76788c7c5.jpg', 'ưef', 'ưef', 1);
+(4, 1, 'z4917500526845_22953af5ecf68ce2975313c76788c7c5.jpg', 'ưef', 'ưef', 1),
+(6, 2, 'default_image.jpg', 'eg', 'hrt', 1);
 
 -- --------------------------------------------------------
 
@@ -1570,7 +1593,9 @@ CREATE TABLE `social_networks` (
 
 INSERT INTO `social_networks` (`id`, `number`, `image`, `link`, `display`) VALUES
 (2, 1, 'jrtyj', 'rhrst', 0),
-(3, 1, 'images (2).jpeg', 'ừ ywf', 1);
+(3, 1, 'images (2).jpeg', 'ừ ywf', 1),
+(4, 1, 'default_image.jpg', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 1),
+(6, 1, 'images (3).jpeg', 'https://youtu.be/PZpO-ObhAfQ?si=IAIqPScTCBrg5urG', 1);
 
 -- --------------------------------------------------------
 
@@ -1697,7 +1722,8 @@ ALTER TABLE `detail_products`
   ADD KEY `detail_products_seo_id_foreign` (`seo_id`),
   ADD KEY `detail_products_level3_products_id_foreign` (`level3_product_id`),
   ADD KEY `detail_products_level1_products_id_foreign` (`level1_product_id`),
-  ADD KEY `tag_products_detail_product_foreign` (`tag_product_id`);
+  ADD KEY `tag_products_detail_product_foreign` (`tag_product_id`),
+  ADD KEY `gallery_image_id` (`gallery_id`);
 
 --
 -- Chỉ mục cho bảng `detail_quotations`
@@ -1724,6 +1750,12 @@ ALTER TABLE `favicons`
 -- Chỉ mục cho bảng `footers`
 --
 ALTER TABLE `footers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2020,6 +2052,12 @@ ALTER TABLE `footers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT cho bảng `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `home_images`
 --
 ALTER TABLE `home_images`
@@ -2173,7 +2211,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT cho bảng `slideshows`
 --
 ALTER TABLE `slideshows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `slogans`
@@ -2185,7 +2223,7 @@ ALTER TABLE `slogans`
 -- AUTO_INCREMENT cho bảng `social_networks`
 --
 ALTER TABLE `social_networks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tag_products`
@@ -2229,6 +2267,7 @@ ALTER TABLE `detail_products`
   ADD CONSTRAINT `detail_products_level2_product_id_foreign` FOREIGN KEY (`level2_product_id`) REFERENCES `level2_products` (`id`),
   ADD CONSTRAINT `detail_products_level3_products_id_foreign` FOREIGN KEY (`level3_product_id`) REFERENCES `level3_products` (`id`),
   ADD CONSTRAINT `detail_products_seo_id_foreign` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`),
+  ADD CONSTRAINT `gallery_image_id` FOREIGN KEY (`gallery_id`) REFERENCES `gallery` (`id`),
   ADD CONSTRAINT `tag_products_detail_product_foreign` FOREIGN KEY (`tag_product_id`) REFERENCES `tag_products` (`id`);
 
 --

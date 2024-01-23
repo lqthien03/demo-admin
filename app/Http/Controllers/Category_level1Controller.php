@@ -16,6 +16,17 @@ class Category_level1Controller extends Controller
         $category_level1 = Category_level1::all();
         return view('real_estate.category_level1', compact('category_level1'));
     }
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        // Thêm dấu ngoặc đóng ở đây để đảm bảo kết thúc truy vấn
+        $catehory_level1 = Category_level1::where(function ($query) use ($search) {
+            $query->where('tittle', 'like', "%$search%")
+                ->orWhere('describe', 'like', "%$search%");
+        })->get(); // Hoặc có thể sử dụng paginate() thay vì get() nếu bạn muốn phân trang kết quả
+        return view('real_estate.category_level1', compact('catehory_level1', 'search'));
+    }
     public function create()
     {
         return view('real_estate.category_level1_create');
@@ -88,11 +99,9 @@ class Category_level1Controller extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $category_level1->image = $file_name;
         }
-        $category_level1->image = $file_name;
+
         $category_level1->tittle = $request->input('tittle');
         $category_level1->describe = $request->input('describe');
         $category_level1->link = $request->input('link');

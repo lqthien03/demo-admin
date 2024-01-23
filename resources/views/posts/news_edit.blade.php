@@ -26,7 +26,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -386,8 +386,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tin-tuc&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/posts/news" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">
                     <div class="col-xl-8">
@@ -614,13 +614,40 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="index.php?com=news&act=man&type=tin-tuc&p=1"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/posts/news" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                     <input type="hidden" name="id" value="">
                 </div>
             </form>
         </section>
     </div>
+    {{-- Tạo seo --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy reference đến nút "Tạo SEO"
+            var createSeoButton = document.querySelector('.create-seo');
+
+            // Gắn sự kiện click cho nút "Tạo SEO"
+            createSeoButton.addEventListener('click', function() {
+                // Lấy giá trị từ form Tiếng Việt
+                var titleVi = document.getElementById('tenvi').value;
+                var describeVi = document.getElementById('motavi').value;
+                var contentVi = document.getElementById('noidungvi').value;
+
+                // Gán giá trị vào form SEO
+                document.getElementById('titlevi').value = titleVi; // Gán titleVi vào seo_tittle
+                document.getElementById('keywordsvi').value = titleVi; // Gán titleVi vào seo_keywords
+                document.getElementById('descriptionvi').value =
+                    describeVi; // Gán describeVi vào seo_description
+            });
+        });
+    </script>
+    {{-- Đếm kí tự --}}
+
+
+
+
+
 </body>
 
 </html>

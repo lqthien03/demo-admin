@@ -12,6 +12,25 @@ class logoController extends Controller
         $logo = Logo::find($id);
         return view('image_video.logo', compact('logo'));
     }
+    // public function update(Request $request, $id)
+    // {
+    //     $logo = Logo::findOrFail($id);
+
+    //     if ($request->hasFile('image')) {
+    //         $file = $request->file('image');
+    //         $file_name = $file->getClientOriginalName();
+
+    //         // Di chuyển hình ảnh đến thư mục lưu trữ
+    //         $file->move(public_path('products'), $file_name);
+    //     } else {
+    //         // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
+    //         $file_name = 'default_image.jpg';
+    //     }
+    //     $logo->image = $file_name;
+    //     $logo->display = $request->has('display');
+    //     $logo->save();
+    //     return back();
+    // }
     public function update(Request $request, $id)
     {
         $logo = Logo::findOrFail($id);
@@ -22,13 +41,17 @@ class logoController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+
+            // Cập nhật đường dẫn hình ảnh mới
+            $logo->image = $file_name;
         }
-        $logo->image = $file_name;
+
+        // Kiểm tra xem có checkbox "display" được chọn hay không
         $logo->display = $request->has('display');
+
+        // Lưu thông tin Logo
         $logo->save();
+
         return back();
     }
 }

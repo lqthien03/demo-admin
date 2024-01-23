@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url('./css/adminlte.css') }}">
     <link rel="stylesheet" href="{{ url('./css/adminlte-style.css') }}">
+    <link rel="stylesheet" href="{{ url('./css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ url('./css/all-admin.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,7 +29,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -383,11 +385,10 @@
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
-                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value=""
-                            onkeypress="doEnter(event,'keyword','index.php?com=product&act=man&type=san-pham&p=1')">
+                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value="" name="search">
                         <div class="input-group-append bg-primary rounded-right">
-                            <button class="btn btn-navbar text-white" type="button"
-                                onclick="onSearch('keyword','index.php?com=product&act=man&type=san-pham&p=1')">
+                            <button class="btn btn-navbar text-white" type="button" onclick="searchProducts()"
+                                id="searchBtn">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -453,8 +454,8 @@
                                             data-table="product">
                                     </td>
                                     <td class="align-middle">
-                                        <a href="" title="{{ $item->tittle }}"><img
-                                                class="rounded img-preview"
+                                        <a href="/real_estate/product/edit/{{ $item->id }}"
+                                            title="{{ $item->tittle }}"><img class="rounded img-preview"
                                                 src="{{ URL::asset('products/' . $item->image) }}"
                                                 alt=""></a>
                                     </td>
@@ -583,49 +584,40 @@
             </div>
             <div class="card-footer text-sm pb-0">
                 <ul class='pagination justify-content-center mb-0'>
-                    <li class='page-item'><a class='page-link'
-                            href='https://nhadatminhphat.com.vn/admin/index.php?com=product&act=man&type=san-pham'><i
-                                class="fas fa-caret-left"></i></a></li>
-                    <li class='page-item active'><a class='page-link'>1</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=2'>2</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=3'>3</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=4'>4</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=5'>5</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=6'>6</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=7'>7</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=8'>8</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=9'>9</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=10'>10</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=11'>11</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=12'>12</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=13'>13</a></li>
-                    <li class='page-item'><a class='page-link'
-                            href='index.php?com=product&act=man&type=san-pham&p=13'><i
-                                class="fas fa-caret-right"></i></a></li>
+                    {!! $product->links() !!}
                 </ul>
+
             </div>
             <div class="card-footer text-sm">
-                <a class="btn btn-sm bg-gradient-primary text-white"
-                    href="index.php?com=product&act=add&type=san-pham&p=1" title="Thêm mới"><i
-                        class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="index.php?com=product&act=delete&type=san-pham&p=1" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/product/create"
+                    title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
     </div>
+    <script>
+        function searchProducts() {
+            // Lấy giá trị từ ô nhập
+            var keyword = document.getElementById('keyword').value.toLowerCase();
+
+            // Lấy danh sách các dòng trong bảng
+            var rows = document.querySelectorAll('.table tbody tr');
+
+            // Lặp qua từng dòng để kiểm tra và ẩn/hiển thị
+            rows.forEach(function(row) {
+                // Lấy nội dung cần tìm kiếm từ cột Tiêu đề
+                var title = row.querySelector('.align-middle a.text-dark').innerText.toLowerCase();
+
+                // Ẩn/hiển thị dựa trên việc có tìm kiếm được hay không
+                if (title.includes(keyword)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

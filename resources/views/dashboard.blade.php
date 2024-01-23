@@ -44,7 +44,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -431,8 +431,8 @@
                         <h5 class="mb-0">Thống kê truy cập tháng 01/2024</h5>
                     </div>
                     <div class="card-body">
-                        <form class="form-filter-charts row align-items-center mb-1" action=""
-                            method="get" name="form-thongke" accept-charset="utf-8">
+                        <form class="form-filter-charts row align-items-center mb-1" action="" method="get"
+                            name="form-thongke" accept-charset="utf-8">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <select class="form-control select2" name="month" id="month">

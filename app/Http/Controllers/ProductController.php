@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function show()
     {
-        $product = Product::all();
+        $product = Product::paginate(10);
         $category_level2 = Category_level2::all();
         $category_level1 = Category_level1::all();
         return view('real_estate.product', compact('product', 'category_level2', 'category_level1'));
@@ -116,13 +116,11 @@ class ProductController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $product->image = $file_name;
         }
 
 
-        $product->image = $file_name;
+
         $product->link = $request->input('link');
         $product->tittle = $request->input('tittle');
         $product->describe = $request->input('describe');

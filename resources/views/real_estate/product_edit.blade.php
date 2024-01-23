@@ -26,7 +26,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -386,8 +386,8 @@
                             class="far fa-save mr-2"></i>Lưu tại trang</button>
                     <button type="reset" class="btn btn-sm bg-gradient-secondary"><i
                             class="fas fa-redo mr-2"></i>Làm lại</button>
-                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/product"
-                        title="Thoát"><i class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
+                    <a class="btn btn-sm bg-gradient-danger" href="/real_estate/product" title="Thoát"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Thoát</a>
                 </div>
                 <div class="row">
                     <div class="col-xl-8">
@@ -551,7 +551,7 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            id="uploaded-image"src="{{ asset('products/' . $product->image) }}"
+                                            id="uploaded-image" src="{{ asset('products/' . $product->image) }}"
                                             alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="image" id="file-zone">
@@ -647,90 +647,9 @@
                                 <input type="text" class="form-control" name="location" id="vitri"
                                     placeholder="Vị trí" value="{{ old('location') ?? $product->location }}">
                             </div>
-
-
-
-
-
                         </div>
                     </div>
                 </div>
-                {{-- <div class="card card-primary card-outline text-sm">
-                    <div class="card-header">
-                        <h3 class="card-title">Bộ sưu tập Nhà đất</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                    class="fas fa-minus"></i></button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="filer-gallery" class="label-filer-gallery mb-3">Album hình:
-                                (.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF)</label>
-                            <input type="file" name="files[]" id="filer-gallery" multiple="multiple">
-                            <input type="hidden" class="col-filer"
-                                value="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6">
-                            <input type="hidden" class="act-filer" value="man">
-                            <input type="hidden" class="folder-filer" value="product">
-                        </div>
-                        <div class="form-group form-group-gallery">
-                            <label class="label-filer">Album hiện tại:</label>
-                            <div class="action-filer mb-3">
-                                <a class="btn btn-sm bg-gradient-primary text-white check-all-filer mr-1"><i
-                                        class="far fa-square mr-2"></i>Chọn tất cả</a>
-                                <button type="button"
-                                    class="btn btn-sm bg-gradient-success text-white sort-filer mr-1"><i
-                                        class="fas fa-random mr-2"></i>Sắp xếp</button>
-                                <a class="btn btn-sm bg-gradient-danger text-white delete-all-filer"><i
-                                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
-                            </div>
-                            <div
-                                class="alert my-alert alert-sort-filer alert-info text-sm text-white bg-gradient-info">
-                                <i class="fas fa-info-circle mr-2"></i>Có thể chọn nhiều hình để di chuyển
-                            </div>
-                            <div class="jFiler-items my-jFiler-items jFiler-row">
-                                <ul class="jFiler-items-list jFiler-items-grid row scroll-bar" id="jFilerSortable">
-                                    <li class="jFiler-item my-jFiler-item my-jFiler-item-1602 col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6"
-                                        data-id="1602">
-                                        <div class="jFiler-item-container">
-                                            <div class="jFiler-item-inner">
-                                                <div class="jFiler-item-thumb">
-                                                    <div class="jFiler-item-thumb-image"><img
-                                                            src="../upload/product/img8112-1997-9359.jpg"
-                                                            alt=""><i class="fas fa-arrows-alt"></i></div>
-                                                </div>
-                                                <div class="jFiler-item-assets jFiler-row">
-                                                    <ul
-                                                        class="list-inline pull-right d-flex align-items-center justify-content-between">
-                                                        <li class="ml-1"><a
-                                                                class="icon-jfi-trash jFiler-item-trash-action my-jFiler-item-trash"
-                                                                data-id="1602" data-folder="product"></a></li>
-                                                        <li class="mr-1">
-                                                            <div
-                                                                class="custom-control custom-checkbox d-inline-block align-middle text-md">
-                                                                <input type="checkbox"
-                                                                    class="custom-control-input filer-checkbox"
-                                                                    id="filer-checkbox-1602" value="1602"><label
-                                                                    for="filer-checkbox-1602"
-                                                                    class="custom-control-label font-weight-normal">Chọn</label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div><input type="number"
-                                                    class="form-control form-control-sm my-jFiler-item-info rounded mb-1"
-                                                    value="7" placeholder="Số thứ tự" data-info="stt"
-                                                    data-id="1602" /><input type="text"
-                                                    class="form-control form-control-sm my-jFiler-item-info rounded"
-                                                    value="" placeholder="Tiêu đề" data-info="tieude"
-                                                    data-id="1602" />
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="card card-primary card-outline text-sm">
                     <div class="card-header">
                         <h3 class="card-title">Nội dung SEO</h3>
@@ -807,21 +726,20 @@
     </div>
     {{-- Hình ảnh --}}
     <script>
-        function previewImage(input) {
-            var preview = document.getElementById('preview-image');
-            var file = input.files[0];
-            var reader = new FileReader();
-
-            reader.onloadend = function() {
-                preview.src = reader.result;
-            }
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
 
             if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
                 reader.readAsDataURL(file);
-            } else {
-                preview.src = "{{ asset('products/' . $product->image) }}";
             }
-        }
+        });
     </script>
 </body>
 

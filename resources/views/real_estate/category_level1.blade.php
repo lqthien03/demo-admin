@@ -26,7 +26,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item nav-item-hello d-sm-inline-block">
-                <a class="nav-link"><span class="text-split">Xin chào, admin!</span></a>
+                <a class="nav-link"><span class="text-split">Xin chào, {{ Auth::user()->name }}!</span></a>
             </li>
         </ul>
 
@@ -381,11 +381,10 @@
                 <div class="form-inline form-search d-inline-block align-middle ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar text-sm" type="search" id="keyword"
-                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value="">
-
-
+                            placeholder="Tìm kiếm" aria-label="Tìm kiếm" value="" name="search">
                         <div class="input-group-append bg-primary rounded-right">
-                            <button class="btn btn-navbar text-white" type="button" id="searchBtn">
+                            <button class="btn btn-navbar text-white" type="button" onclick="searchProducts()"
+                                id="searchBtn">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -429,15 +428,15 @@
                                             data-table="">
                                     </td>
                                     <td class="align-middle">
-                                        <a href="#" title="{{ $item->tittle }}"><img
-                                                class="rounded img-preview"
+                                        <a href="/real_estate/category-level1/edit/{{ $item->id }}"
+                                            title="{{ $item->tittle }}"><img class="rounded img-preview"
                                                 src="{{ URL::asset('products/' . $item->image) }}"
                                                 alt="{{ $item->tittle }}"></a>
                                     </td>
                                     <td class="align-middle">
                                         <a class="text-dark"
                                             href="/real_estate/category-level1/edit/{{ $item->id }}"
-                                            title="Nhà 72m2 một lầu đúc cần tiền bán gấp ">{{ $item->tittle }}</a>
+                                            title="{{ $item->tittle }}">{{ $item->tittle }}</a>
                                     </td>
                                     <td class="align-middle text-center">
                                         <div class="custom-control custom-checkbox my-checkbox">
@@ -473,12 +472,33 @@
             <div class="card-footer text-sm">
                 <a class="btn btn-sm bg-gradient-primary text-white" href="/real_estate/category-level1/create"
                     title="Thêm mới"><i class="fas fa-plus mr-2"></i>Thêm mới</a>
-                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all"
-                    data-url="#" title="Xóa tất cả"><i
-                        class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
+                <a class="btn btn-sm bg-gradient-danger text-white" id="delete-all" data-url="#"
+                    title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
     </div>
+    <script>
+        function searchProducts() {
+            // Lấy giá trị từ ô nhập
+            var keyword = document.getElementById('keyword').value.toLowerCase();
+
+            // Lấy danh sách các dòng trong bảng
+            var rows = document.querySelectorAll('.table tbody tr');
+
+            // Lặp qua từng dòng để kiểm tra và ẩn/hiển thị
+            rows.forEach(function(row) {
+                // Lấy nội dung cần tìm kiếm từ cột Tiêu đề
+                var title = row.querySelector('.align-middle a.text-dark').innerText.toLowerCase();
+
+                // Ẩn/hiển thị dựa trên việc có tìm kiếm được hay không
+                if (title.includes(keyword)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

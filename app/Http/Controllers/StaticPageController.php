@@ -27,11 +27,9 @@ class StaticPageController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $introduce->image = $file_name;
         }
-        $introduce->image = $file_name;
+
         $introduce->tittle = $request->input('tittle');
         $introduce->describe = $request->input('describe');
         $introduce->content = $request->input('content');
@@ -61,11 +59,9 @@ class StaticPageController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $contact->image = $file_name;
         }
-        $contact->image = $file_name;
+
         $contact->content = $request->input('content');
         $contact->display = $request->has('display');
         $contact->seo_id = $request->input('seo_id');

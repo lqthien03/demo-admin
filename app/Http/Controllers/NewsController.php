@@ -19,7 +19,7 @@ class NewsController extends Controller
     }
     public function store(Request $request)
     {
-        // dd($request);
+        
         $request->validate([
             'link' => 'required',
             'tittle' => 'required',

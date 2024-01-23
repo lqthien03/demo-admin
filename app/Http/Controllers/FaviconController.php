@@ -22,11 +22,11 @@ class FaviconController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+
+            // Cập nhật đường dẫn hình ảnh mới
+            $favicon->image = $file_name;
         }
-        $favicon->image = $file_name;
+        
         $favicon->display = $request->has('display');
         $favicon->save();
         return back();
