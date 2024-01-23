@@ -17,6 +17,7 @@
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
 </head>
 
 <body>
@@ -485,6 +486,9 @@
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('describe') ?? $category_level1->describe }}</textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('noidungvi');
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>

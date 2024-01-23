@@ -17,6 +17,7 @@
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('filer/jquery.filer.js') }}"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
 </head>
 
 <body>
@@ -482,6 +483,9 @@
                                                     <label for="motavi">Mô tả (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="motavi" rows="5"
                                                         placeholder="Mô tả (vi)"></textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('motavi');
+                                                    </script>
                                                     @error('describe')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -491,6 +495,9 @@
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)"></textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('noidungvi');
+                                                    </script>
                                                     @error('content')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -877,7 +884,7 @@
                 document.getElementById('titlevi').value = titleVi; // Gán titleVi vào seo_tittle
                 document.getElementById('keywordsvi').value = titleVi; // Gán titleVi vào seo_keywords
                 document.getElementById('descriptionvi').value =
-                describeVi; // Gán describeVi vào seo_description
+                    describeVi; // Gán describeVi vào seo_description
             });
         });
     </script>

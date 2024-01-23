@@ -16,6 +16,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
 </head>
 
 <body>
@@ -487,11 +488,17 @@
                                                     <label for="motavi">Mô tả (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="motavi" rows="5"
                                                         placeholder="Mô tả (vi)">{{ old('describe') ?? $product->describe }}</textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('motavi');
+                                                    </script>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $product->content }}</textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('noidungvi');
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>

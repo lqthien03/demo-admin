@@ -16,6 +16,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
 </head>
 
 <body>
@@ -438,6 +439,9 @@
                     </div>
                 </div>
 
+                <script>
+                    CKEDITOR.replace('noidungvi');
+                </script>
 
                 <div class="card-footer text-sm">
                     <button type="submit" class="btn btn-sm bg-gradient-primary submit-check"><i
