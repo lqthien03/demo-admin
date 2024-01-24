@@ -12,6 +12,8 @@ class MailController extends Controller
     public function show()
     {
         $contact = Mail::all();
+        // $total = Mail::where('id')->sum();
+        $total = Mail::where('id', 1)->count();
         return view('mail.contact', compact('contact'));
     }
 
@@ -54,7 +56,7 @@ class MailController extends Controller
         $contact->number = $request->input('number');
         $contact->created_at = Carbon::now();
         $contact->save();
-        return redirect()->route('show.mail.contact');
+        return redirect()->route('show.mail.contact')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -76,7 +78,7 @@ class MailController extends Controller
         $contact->number = $request->input('number');
         // dd($contact);
         $contact->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 
     public function show_register_advise()
@@ -88,6 +90,6 @@ class MailController extends Controller
     {
         $contact = Mail::find($id);
         $contact->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

@@ -44,6 +44,6 @@ class SettingController extends Controller
 
         $seo->save();
 
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 }

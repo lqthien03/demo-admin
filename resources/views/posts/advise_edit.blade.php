@@ -17,6 +17,7 @@
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -515,7 +516,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="photoUpload-zone" id="photoUploadZone">
-                                    <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
+                                    <div class="photoUpload-detail" id="photoUpload-preview"><img
+                                            class="rounded"id="uploaded-image"
                                             src="{{ asset('products/' . $advise->image) }}" alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="image"
@@ -637,6 +639,29 @@
             </form>
         </section>
     </div>
+    @if (Session::has('messageSucces'))
+        <script>
+            swal("Thành công", "{{ Session::get('messageSucces') }}", "success");
+        </script>
+    @endif
+    {{-- Hình ảnh --}}
+
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
     {{-- kéo thả --}}
     <script>
         function previewImage(input) {

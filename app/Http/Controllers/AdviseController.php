@@ -63,7 +63,7 @@ class AdviseController extends Controller
         $advise->seo()->associate($seo);
         $advise->save();
         // Chuyển hướng hoặc trả về phản hồi theo cần thiết
-        return redirect()->route('show.advise');
+        return redirect()->route('show.advise')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -81,11 +81,9 @@ class AdviseController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $advise->image = $file_name;
         }
-        $advise->image = $file_name;
+
         $advise->tittle = $request->input('tittle');
         $advise->describe = $request->input('describe');
         $advise->content = $request->input('content');
@@ -98,12 +96,12 @@ class AdviseController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $advise = Advise::find($id);
         $advise->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

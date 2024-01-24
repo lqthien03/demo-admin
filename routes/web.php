@@ -46,7 +46,6 @@ Route::controller(Category_level1Controller::class)->group(function () {
     Route::get('/real_estate/category-level1/edit/{category_level1}', 'edit')->name('edit.category1');
     Route::put('/real_estate/category-level1/edit/{category_level1}', 'update')->name('update.category1');
     Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
-    Route::get('/search', 'search')->name('search.category1');
 });
 
 Route::controller(Category_level2Controller::class)->group(function () {

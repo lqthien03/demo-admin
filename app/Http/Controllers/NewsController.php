@@ -19,7 +19,7 @@ class NewsController extends Controller
     }
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'link' => 'required',
             'tittle' => 'required',
@@ -66,7 +66,7 @@ class NewsController extends Controller
         $news->seo()->associate($seo);
         $news->save();
         // Chuyển hướng hoặc trả về phản hồi theo cần thiết
-        return redirect()->route('show.news');
+        return redirect()->route('show.news')->with('messageSucces', 'Tạo thành công');
     }
     public function edit($id)
     {
@@ -83,11 +83,9 @@ class NewsController extends Controller
 
             // Di chuyển hình ảnh đến thư mục lưu trữ
             $file->move(public_path('products'), $file_name);
-        } else {
-            // Đặt giá trị mặc định nếu không có hình ảnh được tải lên
-            $file_name = 'default_image.jpg';
+            $news->image = $file_name;
         }
-        $news->image = $file_name;
+
         $news->tittle = $request->input('tittle');
         $news->describe = $request->input('describe');
         $news->content = $request->input('content');
@@ -100,12 +98,12 @@ class NewsController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $new = News::find($id);
         $new->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

@@ -95,7 +95,7 @@ class ProductController extends Controller
 
         $product->seo()->associate($seo);
         $product->save();
-        return redirect()->route('show.product');
+        return redirect()->route('show.product')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -144,13 +144,13 @@ class ProductController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $product = Product::find($id);
         $product->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
     // Hình ảnh
     public function show_gallery($id)

@@ -40,7 +40,7 @@ class StaticPageController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 
     public function edit_contact($id)
@@ -70,7 +70,7 @@ class StaticPageController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 
     public function edit_register_advise($id)
@@ -84,7 +84,7 @@ class StaticPageController extends Controller
         $register_advise->content = $request->input('content');
         $register_advise->display = $request->has('display');
         $register_advise->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function edit_customer_support($id)
     {
@@ -97,7 +97,7 @@ class StaticPageController extends Controller
         $customer_support->content = $request->input('content');
         $customer_support->display = $request->has('display');
         $customer_support->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function edit_footer($id)
     {
@@ -110,6 +110,6 @@ class StaticPageController extends Controller
         $footer->content = $request->input('content');
         $footer->display = $request->has('display');
         $footer->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 }

@@ -46,7 +46,7 @@ class SlideShowController extends Controller
         $slideshow->display = $request->has('display') ? 1 : 0;
         $slideshow->number = $request->input('number');
         $slideshow->save();
-        return redirect()->route('show.slideshow');
+        return redirect()->route('show.slideshow')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -71,13 +71,13 @@ class SlideShowController extends Controller
         $slideshow->number = $request->input('number');
         $slideshow->display = $request->has('display');
         $slideshow->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
 
         $slideshow = Slideshow::findOrFail($id);
         $slideshow->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

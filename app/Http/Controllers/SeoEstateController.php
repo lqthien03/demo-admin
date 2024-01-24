@@ -31,6 +31,6 @@ class SeoEstateController extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

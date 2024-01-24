@@ -33429,3 +33429,11 @@ a.text-muted:hover {
 [class*="accent-"] a.btn-dark {
     color: #fff;
 }
+
+/* Tùy chỉnh màu sắc của nút xác nhận */
+.custom-btn-class {
+    background-color: #1a48e0;
+    /* Màu đỏ */
+    color: #fff;
+    /* Màu chữ trắng */
+}

@@ -16,6 +16,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -366,8 +367,8 @@
                     <ol class="breadcrumb float-sm-left">
                         <li class="breadcrumb-item"><a href="/dashboard" title="Bảng điều khiển">Bảng điều khiển</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="/mail/contact"
-                                title="Quản lý Thư liên hệ">Quản lý Thư liên hệ</a></li>
+                        <li class="breadcrumb-item"><a href="/mail/contact" title="Quản lý Thư liên hệ">Quản lý Thư
+                                liên hệ</a></li>
                         <li class="breadcrumb-item active">Thêm mới Thư liên hệ</li>
                     </ol>
                 </div>
@@ -467,6 +468,18 @@
                 </div>
             </form>
         </section>
+        @if (Session::has('messageSucces'))
+            <script>
+              swal({
+                    title: 'Thành công',
+                    text: "{{ Session::get('messageSucces') }}",
+                    icon: 'success',
+                    button: {
+                        className: 'custom-btn-class'
+                    }
+                });
+            </script>
+        @endif
     </div>
 </body>
 

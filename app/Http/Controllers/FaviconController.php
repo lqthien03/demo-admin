@@ -26,9 +26,9 @@ class FaviconController extends Controller
             // Cập nhật đường dẫn hình ảnh mới
             $favicon->image = $file_name;
         }
-        
+
         $favicon->display = $request->has('display');
         $favicon->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 }

@@ -24,7 +24,7 @@ class UserController extends Controller
         $user->date = $request->input('date');
         $user->address = $request->input('address');
         $user->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function edit_password($id)
     {

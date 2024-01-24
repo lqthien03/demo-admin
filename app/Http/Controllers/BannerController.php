@@ -28,6 +28,6 @@ class BannerController extends Controller
 
         $banner->display = $request->has('display');
         $banner->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
 }

@@ -399,7 +399,7 @@
                             <label class="change-photo" for="file">
                                 <p>Upload hình ảnh:</p>
                                 <div class="rounded">
-                                    <img class="rounded img-upload" src="" alt="Alt Photo" />
+                                    <img class="rounded img-upload" src="{{ asset('products/default_image.jpg') }}" alt="Alt Photo" />
                                     <strong>
                                         <b class="text-sm text-split"></b>
                                         <span class="btn btn-sm bg-gradient-success"><i

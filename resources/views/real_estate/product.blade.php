@@ -595,6 +595,18 @@
                     title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
+        @if (Session::has('messageSucces'))
+            <script>
+               swal({
+                    title: 'Thành công',
+                    text: "{{ Session::get('messageSucces') }}",
+                    icon: 'success',
+                    button: {
+                        className: 'custom-btn-class'
+                    }
+                });
+            </script>
+        @endif
     </div>
     <script>
         function searchProducts() {

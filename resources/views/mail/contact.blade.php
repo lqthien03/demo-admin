@@ -16,6 +16,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -73,7 +74,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Thư
+                            class="badge badge-danger mr-1"></span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
@@ -486,6 +487,18 @@
                     title="Xóa tất cả"><i class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
+        @if (Session::has('messageSucces'))
+            <script>
+               swal({
+                    title: 'Thành công',
+                    text: "{{ Session::get('messageSucces') }}",
+                    icon: 'success',
+                    button: {
+                        className: 'custom-btn-class'
+                    }
+                });
+            </script>
+        @endif
     </div>
     <script>
         function searchProducts() {

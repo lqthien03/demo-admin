@@ -16,6 +16,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -544,6 +545,11 @@
                         class="far fa-trash-alt mr-2"></i>Xóa tất cả</a>
             </div>
         </section>
+        @if (Session::has('messageSucces'))
+            <script>
+                swal("Thành công", "{{ Session::get('messageSucces') }}", "success");
+            </script>
+        @endif
     </div>
     <script>
         function searchProducts() {

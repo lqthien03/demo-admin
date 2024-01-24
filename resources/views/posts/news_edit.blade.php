@@ -17,6 +17,7 @@
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -505,7 +506,8 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone" id="photoUploadZone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            src="{{ asset('products/' . $news->image) }}" alt="Alt Photo" /></div>
+                                            id="uploaded-image" src="{{ asset('products/' . $news->image) }}"
+                                            alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="image"
                                             id="file-zone"onchange="previewImage(this)">
@@ -625,7 +627,36 @@
                 </div>
             </form>
         </section>
+        @if (Session::has('messageSucces'))
+            <script>
+               swal({
+                    title: 'Thành công',
+                    text: "{{ Session::get('messageSucces') }}",
+                    icon: 'success',
+                    button: {
+                        className: 'custom-btn-class'
+                    }
+                });
+            </script>
+        @endif
     </div>
+    {{-- Hình ảnh --}}
+    <script>
+        document.getElementById('file-zone').addEventListener('change', function(e) {
+            var fileInput = e.target;
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('uploaded-image').src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
     {{-- Tạo seo --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {

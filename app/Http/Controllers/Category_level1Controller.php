@@ -16,17 +16,6 @@ class Category_level1Controller extends Controller
         $category_level1 = Category_level1::all();
         return view('real_estate.category_level1', compact('category_level1'));
     }
-    public function search(Request $request)
-    {
-        $search = $request->search;
-
-        // Thêm dấu ngoặc đóng ở đây để đảm bảo kết thúc truy vấn
-        $catehory_level1 = Category_level1::where(function ($query) use ($search) {
-            $query->where('tittle', 'like', "%$search%")
-                ->orWhere('describe', 'like', "%$search%");
-        })->get(); // Hoặc có thể sử dụng paginate() thay vì get() nếu bạn muốn phân trang kết quả
-        return view('real_estate.category_level1', compact('catehory_level1', 'search'));
-    }
     public function create()
     {
         return view('real_estate.category_level1_create');
@@ -79,7 +68,7 @@ class Category_level1Controller extends Controller
         $category_level1->seo()->associate($seo);
         $category_level1->save();
         // Chuyển hướng hoặc trả về phản hồi theo cần thiết
-        return redirect()->route('show.category1');
+        return redirect()->route('show.category1')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -113,26 +102,12 @@ class Category_level1Controller extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $category_level1 = Category_level1::find($id);
         $category_level1->delete();
-        return back();
-    }
-
-    public function searchProduct(Request $request)
-    {
-        // Lấy từ khóa tìm kiếm từ request
-        $keyword = $request->input('keyword');
-
-        // Thực hiện truy vấn để tìm kiếm sản phẩm theo tiêu đề
-        $products = DB::table('level1_products')
-            ->where('tittle', 'like', '%' . $keyword . '%')
-            ->get();
-
-        // Trả về view hiển thị kết quả tìm kiếm
-        return view('real_estate.category_level1', compact('products'));
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

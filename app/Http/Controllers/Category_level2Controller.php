@@ -53,7 +53,7 @@ class Category_level2Controller extends Controller
         $category_level2->seo()->associate($seo);
         $category_level2->save();
 
-        return redirect()->route('show.category2');
+        return redirect()->route('show.category2')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -80,12 +80,12 @@ class Category_level2Controller extends Controller
         $seo->seo_keyword = $request->input('seo_keyword');
         $seo->seo_description = $request->input('seo_description');
         $seo->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $category_level2 = Category_level2::find($id);
         $category_level2->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

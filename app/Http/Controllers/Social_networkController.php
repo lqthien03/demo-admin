@@ -43,7 +43,7 @@ class Social_networkController extends Controller
         $social_network->display = $request->has('display') ? 1 : 0;
         $social_network->number = $request->input('number');
         $social_network->save();
-        return redirect()->route('show.social_network');
+        return redirect()->route('show.social_network')->with('messageSucces', 'tạo thành công');
     }
     public function edit($id)
     {
@@ -65,12 +65,12 @@ class Social_networkController extends Controller
         $social_network->number = $request->input('number');
         $social_network->display = $request->has('display');
         $social_network->save();
-        return back();
+        return back()->with('messageSucces', 'Cập nhật thành công');
     }
     public function destroy($id)
     {
         $social_network = social_network::find($id);
         $social_network->delete();
-        return back();
+        return back()->with('messageSucces', 'Xóa thành công');
     }
 }

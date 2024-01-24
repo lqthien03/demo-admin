@@ -17,6 +17,7 @@
     <script src="{{ asset('js/priceFormat.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -515,7 +516,7 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone" id="photoUploadZone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            id="uploaded-image"src="" alt="Alt Photo" /></div>
+                                            id="uploaded-image"src="{{ asset('products/default_image.jpg') }}" alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone">
                                         <input type="file" name="image" id="file-zone"
                                             onchange="previewImage(this)">
