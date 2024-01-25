@@ -436,8 +436,7 @@
                                                     <input type="text" class="form-control slug-input no-validate"
                                                         name="link" id="slugvi" placeholder="Đường dẫn (vi)"
                                                         value="{{ old('link') ?? $product->link }}">
-                                                    <input type="hidden" id="slug-defaultvi"
-                                                        value="ban-nha-hem-5m-2-sec-le-dinh-can-p-tan-tao-quan-binh-tan-tphcm">
+                                                    <input type="hidden" id="slug-defaultvi" value="">
                                                     <p class="alert-slugvi text-danger d-none mt-2 mb-0"
                                                         id="alert-slug-dangervi">
                                                         <i class="fas fa-exclamation-triangle mr-1"></i>
@@ -490,7 +489,10 @@
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="motavi" rows="5"
                                                         placeholder="Mô tả (vi)">{{ old('describe') ?? $product->describe }}</textarea>
                                                     <script>
-                                                        CKEDITOR.replace('motavi');
+                                                        CKEDITOR.replace('motavi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
                                                     </script>
                                                 </div>
                                                 <div class="form-group">
@@ -498,7 +500,10 @@
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $product->content }}</textarea>
                                                     <script>
-                                                        CKEDITOR.replace('noidungvi');
+                                                        CKEDITOR.replace('noidungvi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
                                                     </script>
                                                 </div>
                                             </div>
@@ -734,7 +739,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-               swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',
@@ -798,6 +803,119 @@
             fileInput.files = files;
 
             previewImage(fileInput);
+        });
+    </script>
+    {{-- tạo link --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lắng nghe sự kiện khi người dùng nhập liệu vào trường tiêu đề
+            document.getElementById('tenvi').addEventListener('input', function() {
+                // Lấy giá trị của trường tiêu đề
+                var titleValue = this.value;
+
+                // Chuyển đổi tất cả các từ trong tiêu đề thành chữ thường và bỏ dấu
+                var slug = convertToSlug(titleValue);
+
+                // Cập nhật giá trị của trường đường dẫn
+                document.getElementById('slugvi').value = slug;
+
+                // Cập nhật giá trị của thẻ strong có id là slugPreview
+                document.getElementById('slugPreview').innerText = slug;
+
+                // Cập nhật xem đường dẫn có hợp lệ hay không
+                checkSlugValidity(slug);
+            });
+
+            // Hàm chuyển đổi từ có dấu thành không dấu và thành chữ thường
+            function convertToSlug(text) {
+                return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')
+                    .replace(/[^a-z0-9-]/g, '');
+            }
+
+            // Hàm kiểm tra tính hợp lệ của đường dẫn
+            function checkSlugValidity(slug) {
+                // Gửi yêu cầu kiểm tra đường dẫn đã tồn tại hay chưa (có thể sử dụng Ajax để kiểm tra phía server)
+                // Ở đây tôi chỉ mô phỏng việc kiểm tra đường dẫn đã tồn tại bằng cách kiểm tra độ dài của đường dẫn
+                var isSlugValid = slug.length > 0;
+
+                // Hiển thị thông báo tương ứng
+                if (isSlugValid) {
+                    document.getElementById('alert-slug-successvi').classList.remove('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.add('d-none');
+                } else {
+                    document.getElementById('alert-slug-successvi').classList.add('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.remove('d-none');
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy phần tử URL xem trước
+            var previewURL = document.getElementById("slugurlpreviewvi").getElementsByTagName("strong")[0];
+
+            // Lấy trường đầu vào
+            var inputField = document.getElementById("slugvi");
+
+            // Hàm cập nhật URL xem trước
+            function updatePreviewURL() {
+                var inputVal = inputField.value; // Lấy giá trị đầu vào
+                previewURL.textContent = inputVal; // Cập nhật URL xem trước
+            }
+
+            // Gắn hàm vào sự kiện input của trường đầu vào
+            inputField.addEventListener("input", updatePreviewURL);
+
+            // Kích hoạt cập nhật khi trang tải
+            updatePreviewURL();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lắng nghe sự kiện khi người dùng nhập liệu vào trường tiêu đề
+            document.getElementById('tenvi').addEventListener('input', function() {
+                // Lấy giá trị của trường tiêu đề
+                var titleValue = this.value;
+
+                // Chuyển đổi tất cả các từ trong tiêu đề thành chữ thường và bỏ dấu
+                var slug = convertToSlug(titleValue);
+
+                // Tự động nối vào "https://nhadatminhphat.com.vn/" và cập nhật giá trị của trường đường dẫn
+                document.getElementById('slugvi').value = " " + slug;
+
+                // Cập nhật giá trị của thẻ strong có id là slugurlpreviewvi
+                document.getElementById('slugurlpreviewvi').innerText = "https://nhadatminhphat.com.vn/" +
+                    slug;
+
+                // Cập nhật giá trị của thẻ strong có id là slugPreview
+                document.getElementById('slugPreview').innerText = slug;
+
+                // Cập nhật xem đường dẫn có hợp lệ hay không
+                checkSlugValidity(slug);
+            });
+
+            // Hàm chuyển đổi từ có dấu thành không dấu và thành chữ thường
+            function convertToSlug(text) {
+                return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')
+                    .replace(/[^a-z0-9-]/g, '');
+            }
+
+            // Hàm kiểm tra tính hợp lệ của đường dẫn
+            function checkSlugValidity(slug) {
+                // Gửi yêu cầu kiểm tra đường dẫn đã tồn tại hay chưa (có thể sử dụng Ajax để kiểm tra phía server)
+                // Ở đây tôi chỉ mô phỏng việc kiểm tra đường dẫn đã tồn tại bằng cách kiểm tra độ dài của đường dẫn
+                var isSlugValid = slug.length > 0;
+
+                // Hiển thị thông báo tương ứng
+                if (isSlugValid) {
+                    document.getElementById('alert-slug-successvi').classList.remove('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.add('d-none');
+                } else {
+                    document.getElementById('alert-slug-successvi').classList.add('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.remove('d-none');
+                }
+            }
         });
     </script>
 </body>

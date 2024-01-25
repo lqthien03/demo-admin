@@ -429,7 +429,10 @@
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $register_advise->content }}</textarea>
                                                     <script>
-                                                        CKEDITOR.replace('noidungvi');
+                                                        CKEDITOR.replace('noidungvi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
                                                     </script>
                                                 </div>
                                             </div>
@@ -454,7 +457,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-              swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',

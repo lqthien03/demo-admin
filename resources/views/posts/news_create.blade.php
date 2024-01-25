@@ -518,7 +518,8 @@
                             <div class="card-body">
                                 <div class="photoUpload-zone" id="photoUploadZone">
                                     <div class="photoUpload-detail" id="photoUpload-preview"><img class="rounded"
-                                            id="uploaded-image" src="{{ asset('products/default_image.jpg') }}" alt="Alt Photo" /></div>
+                                            id="uploaded-image" src="{{ asset('products/default_image.jpg') }}"
+                                            alt="Alt Photo" /></div>
                                     <label class="photoUpload-file" id="photo-zone" for="file-zone"
                                         onchange="previewImage(this)">
                                         <input type="file" name="image" id="file-zone">
@@ -805,6 +806,50 @@
             fileInput.files = files;
 
             previewImage(fileInput);
+        });
+    </script>
+    {{-- tạo link --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lắng nghe sự kiện khi người dùng nhập liệu vào trường tiêu đề
+            document.getElementById('tenvi').addEventListener('input', function() {
+                // Lấy giá trị của trường tiêu đề
+                var titleValue = this.value;
+
+                // Chuyển đổi tất cả các từ trong tiêu đề thành chữ thường và bỏ dấu
+                var slug = convertToSlug(titleValue);
+
+                // Cập nhật giá trị của trường đường dẫn
+                document.getElementById('slugvi').value = slug;
+
+                // Cập nhật giá trị của thẻ strong có id là slugPreview
+                document.getElementById('slugPreview').innerText = slug;
+
+                // Cập nhật xem đường dẫn có hợp lệ hay không
+                checkSlugValidity(slug);
+            });
+
+            // Hàm chuyển đổi từ có dấu thành không dấu và thành chữ thường
+            function convertToSlug(text) {
+                return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')
+                    .replace(/[^a-z0-9-]/g, '');
+            }
+
+            // Hàm kiểm tra tính hợp lệ của đường dẫn
+            function checkSlugValidity(slug) {
+                // Gửi yêu cầu kiểm tra đường dẫn đã tồn tại hay chưa (có thể sử dụng Ajax để kiểm tra phía server)
+                // Ở đây tôi chỉ mô phỏng việc kiểm tra đường dẫn đã tồn tại bằng cách kiểm tra độ dài của đường dẫn
+                var isSlugValid = slug.length > 0;
+
+                // Hiển thị thông báo tương ứng
+                if (isSlugValid) {
+                    document.getElementById('alert-slug-successvi').classList.remove('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.add('d-none');
+                } else {
+                    document.getElementById('alert-slug-successvi').classList.add('d-none');
+                    document.getElementById('alert-slug-dangervi').classList.remove('d-none');
+                }
+            }
         });
     </script>
 </body>

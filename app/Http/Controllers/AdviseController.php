@@ -23,7 +23,7 @@ class AdviseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'link' => 'required',
+            'link' => 'required|url',
             'tittle' => 'required',
             'describe' => 'required',
             'content' => 'required',
@@ -31,6 +31,7 @@ class AdviseController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'link.required' => 'Ô này không được bỏ trống',
+            'link.url' => 'Đường dẫn không đúng định dạng URL.',
             'tittle.required' => 'Ô này không được bỏ trống',
             'describe.required' => 'Ô này không được bỏ trống',
             'content.required' => 'Ô này không được bỏ trống',
@@ -72,7 +73,7 @@ class AdviseController extends Controller
     {
         $advise = Advise::find($id);
         $total = Mail::count();
-        return view('posts.advise_edit', compact('advise','total'));
+        return view('posts.advise_edit', compact('advise', 'total'));
     }
     public function update(Request $request, $id)
     {

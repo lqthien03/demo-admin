@@ -437,7 +437,10 @@
                                                         placeholder="Mô tả (vi)">{{ old('describe') ?? $introduce->describe }}</textarea>
                                                 </div>
                                                 <script>
-                                                    CKEDITOR.replace('motavi');
+                                                    CKEDITOR.replace('motavi', {
+                                                        filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                        filebrowserUploadMethod: 'form'
+                                                    });
                                                 </script>
                                                 <div class="form-group">
                                                     <label for="noidungvi">Nội dung (vi):</label>
@@ -445,7 +448,10 @@
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $introduce->content }}</textarea>
                                                 </div>
                                                 <script>
-                                                    CKEDITOR.replace('noidungvi');
+                                                    CKEDITOR.replace('noidungvi', {
+                                                        filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                        filebrowserUploadMethod: 'form'
+                                                    });
                                                 </script>
                                             </div>
                                         </div>
@@ -557,7 +563,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-               swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',

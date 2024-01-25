@@ -40,7 +40,7 @@ class ProductController extends Controller
     {
         // dd($request);
         $request->validate([
-            'link' => 'required',
+            'link' => 'required|url',
             'tittle' => 'required',
             'describe' => 'required',
             'content' => 'required',
@@ -56,6 +56,7 @@ class ProductController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'link.required' => 'Ô này không được bỏ trống',
+            'link.url' => 'Đường dẫn không đúng định dạng URL.',
             'tittle.required' => 'Ô này không được bỏ trống',
             'describe.required' => 'Ô này không được bỏ trống',
             'content.required' => 'Ô này không được bỏ trống',

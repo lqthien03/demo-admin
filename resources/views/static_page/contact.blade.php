@@ -430,7 +430,10 @@
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $contact->content }}</textarea>
                                                     <script>
-                                                        CKEDITOR.replace('noidungvi');
+                                                        CKEDITOR.replace('noidungvi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
                                                     </script>
                                                 </div>
                                             </div>

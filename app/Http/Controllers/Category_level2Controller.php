@@ -26,13 +26,14 @@ class Category_level2Controller extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'link' => 'required',
+            'link' => 'required|url',
             'tittle' => 'required',
             'describe' => 'required',
             'number' => 'required',
             'level1_product_id' => 'required',
         ], [
             'link.required' => 'Ô này không được bỏ trống',
+            'link.url' => 'Đường dẫn không đúng định dạng URL.',
             'tittle.required' => 'Ô này không được bỏ trống',
             'describe.required' => 'Ô này không được bỏ trống',
             'number.required' => 'Ô này không được bỏ trống',

@@ -24,7 +24,8 @@ class NewsController extends Controller
     {
 
         $request->validate([
-            'link' => 'required',
+            'link' => 'required|url',
+            'link.url' => 'Đường dẫn không đúng định dạng URL.',
             'tittle' => 'required',
             'describe' => 'required',
             'content' => 'required',
@@ -74,7 +75,8 @@ class NewsController extends Controller
     public function edit($id)
     {
         $news = News::with(['seo'])->find($id);
-        return view('posts.news_edit', compact('news'));
+        $total = Mail::count();
+        return view('posts.news_edit', compact('news', 'total'));
     }
     public function update(Request $request, $id)
     {
