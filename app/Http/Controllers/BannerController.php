@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Mail;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -10,7 +11,8 @@ class BannerController extends Controller
     public function edit($id)
     {
         $banner = Banner::find($id);
-        return view('image_video.banner', compact('banner'));
+        $total = Mail::count();
+        return view('image_video.banner', compact('banner','total'));
     }
     public function update(Request $request, $id)
     {

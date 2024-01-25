@@ -12,18 +12,29 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function show()
+    public function show(Request $request)
     {
-        $product = Product::paginate(10);
+        $query = Product::query();
+
+        if ($request->has('id_list') && $request->id_list != 0) {
+            $query->where('category_level1_id', $request->id_list);
+        }
+        // dd($request->id_list);
+        if ($request->has('id_cat') && $request->id_cat != 0) {
+            $query->where('category_level2_id', $request->id_cat);
+        }
+        $product = $query->paginate(10);
         $category_level2 = Category_level2::all();
         $category_level1 = Category_level1::all();
-        return view('real_estate.product', compact('product', 'category_level2', 'category_level1'));
+        $total = Mail::count();
+        return view('real_estate.product', compact('product', 'category_level2', 'category_level1', 'total'));
     }
     public function create()
     {
         $category_level2 = Category_level2::all();
         $category_level1 = Category_level1::all();
-        return view('real_estate.product_create', compact('category_level2', 'category_level1'));
+        $total = Mail::count();
+        return view('real_estate.product_create', compact('category_level2', 'category_level1', 'total'));
     }
     public function store(Request $request)
     {
@@ -102,7 +113,8 @@ class ProductController extends Controller
         $product = Product::with(['seo', 'level1_product', 'level2_product'])->find($id);
         $category_level1 = Category_level1::all();
         $category_level2 = Category_level2::all();
-        return view('real_estate.product_edit', compact('product', 'category_level1', 'category_level2'));
+        $total = Mail::count();
+        return view('real_estate.product_edit', compact('product', 'category_level1', 'category_level2', 'total'));
     }
     public function update(Request $request, $id)
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Social_network;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,13 @@ class Social_networkController extends Controller
     public function show()
     {
         $social_network = Social_network::all();
-        return view('image_video.social_network', compact('social_network'));
+        $total = Mail::count();
+        return view('image_video.social_network', compact('social_network', 'total'));
     }
     public function create()
     {
-        return view('image_video.social_network_create');
+        $total = Mail::count();
+        return view('image_video.social_network_create', compact('total'));
     }
     public function store(Request $request)
     {
@@ -48,7 +51,8 @@ class Social_networkController extends Controller
     public function edit($id)
     {
         $social_network = social_network::find($id);
-        return view('image_video.social_network_edit', compact('social_network'));
+        $total = Mail::count();
+        return view('image_video.social_network_edit', compact('social_network', 'total'));
     }
     public function update(Request $request, $id)
     {

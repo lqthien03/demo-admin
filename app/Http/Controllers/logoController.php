@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Logo;
+use App\Models\Mail;
 use Illuminate\Http\Request;
 
 class logoController extends Controller
@@ -10,7 +11,8 @@ class logoController extends Controller
     public function edit($id)
     {
         $logo = Logo::find($id);
-        return view('image_video.logo', compact('logo'));
+        $total = Mail::count();
+        return view('image_video.logo', compact('logo','total'));
     }
     public function update(Request $request, $id)
     {

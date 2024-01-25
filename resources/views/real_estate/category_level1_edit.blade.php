@@ -76,7 +76,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Thư
+                            class="badge badge-danger mr-1">{{ $total }}</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
@@ -488,7 +488,10 @@
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="describe" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('describe') ?? $category_level1->describe }}</textarea>
                                                     <script>
-                                                        CKEDITOR.replace('noidungvi');
+                                                        CKEDITOR.replace('noidungvi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
                                                     </script>
                                                 </div>
                                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Seo_Procedure;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class SeoProcedureController extends Controller
     public function edit($id)
     {
         $seo_procedure = Seo_Procedure::find($id);
-        return view('seo_page.seo_procedure', compact('seo_procedure'));
+        $total = Mail::count();
+        return view('seo_page.seo_procedure', compact('seo_procedure', 'total'));
     }
     public function update(Request $request, $id)
     {

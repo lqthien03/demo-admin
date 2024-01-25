@@ -76,7 +76,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Thư
+                            class="badge badge-danger mr-1">{{ $total }}</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
@@ -395,25 +395,27 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer form-group-category text-sm bg-light row">
-                <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_list"
-                        name="id_list" onchange="onchange_category($(this))"
-                        class="form-control filer-category select2">
-                        <option value="0">Chọn danh mục</option>
-                        @foreach ($category_level1 as $item)
-                            <option value="{{ $item->id }}">{{ $item->tittle }}</option>
-                        @endforeach
-                    </select></div>
-                <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_cat"
-                        name="id_cat" onchange="onchange_category($(this))"
-                        class="form-control filer-category select2">
-                        <option value="0">Chọn danh mục</option>
+            <form action="{{ route('show.category1') }}" method="get">
+                <div class="card-footer form-group-category text-sm bg-light row">
+                    <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_list"
+                            name="id_list" onchange="onchange_category($(this))"
+                            class="form-control filer-category select2">
+                            <option value="0">Chọn danh mục</option>
+                            @foreach ($category_level1 as $item)
+                                <option value="{{ $item->id }}">{{ $item->tittle }}</option>
+                            @endforeach
+                        </select></div>
+                    <div class="form-group col-xl-2 col-lg-3 col-md-4 col-sm-4 mb-2"><select id="id_cat"
+                            name="id_cat" onchange="onchange_category($(this))"
+                            class="form-control filer-category select2">
+                            <option value="0">Chọn danh mục</option>
+                            @foreach ($category_level2 as $item)
+                                <option value="{{ $item->id }}">{{ $item->tittle }}</option>
+                            @endforeach
+                        </select></div>
+                </div>
+            </form>
 
-                        @foreach ($category_level2 as $item)
-                            <option value="{{ $item->id }}">{{ $item->tittle }}</option>
-                        @endforeach
-                    </select></div>
-            </div>
             <div class="card card-primary card-outline text-sm mb-0">
                 <div class="card-header">
                     <h3 class="card-title">Danh sách Nhà đất</h3>
@@ -597,7 +599,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-               swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\News;
 use App\Models\Seo;
 use Illuminate\Http\Request;
@@ -11,11 +12,13 @@ class NewsController extends Controller
     public function show()
     {
         $news = News::all();
-        return view('posts.news', compact('news'));
+        $total = Mail::count();
+        return view('posts.news', compact('news', 'total'));
     }
     public function create()
     {
-        return view('posts.news_create');
+        $total = Mail::count();
+        return view('posts.news_create', compact('total'));
     }
     public function store(Request $request)
     {

@@ -74,7 +74,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1"></span> Thư
+                            class="badge badge-danger mr-1">{{ $total }}</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
@@ -489,7 +489,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-               swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',

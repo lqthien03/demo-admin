@@ -12,14 +12,14 @@ class MailController extends Controller
     public function show()
     {
         $contact = Mail::all();
-        // $total = Mail::where('id')->sum();
-        $total = Mail::where('id', 1)->count();
-        return view('mail.contact', compact('contact'));
+        $total = Mail::count();
+        return view('mail.contact', compact('contact', 'total'));
     }
 
     public function create()
     {
-        return view('mail.contact_create');
+        $total = Mail::count();
+        return view('mail.contact_create', compact('total'));
     }
     public function store(Request $request)
     {
@@ -61,7 +61,8 @@ class MailController extends Controller
     public function edit($id)
     {
         $contact = Mail::find($id);
-        return view('mail.contact_edit', compact('contact'));
+        $total = Mail::count();
+        return view('mail.contact_edit', compact('contact', 'total'));
     }
     public function update(Request $request, $id)
     {

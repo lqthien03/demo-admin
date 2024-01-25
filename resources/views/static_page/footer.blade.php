@@ -75,7 +75,7 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Thư
+                            class="badge badge-danger mr-1">{{ $total }}</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
@@ -428,6 +428,12 @@
                                                     <label for="noidungvi">Nội dung (vi):</label>
                                                     <textarea class="form-control for-seo form-control-ckeditor" name="content" id="noidungvi" rows="5"
                                                         placeholder="Nội dung (vi)">{{ old('content') ?? $footer->content }}</textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('noidungvi', {
+                                                            filebrowserUploadUrl: "{{ route('upload', ['_token' => csrf_token()]) }}",
+                                                            filebrowserUploadMethod: 'form'
+                                                        });
+                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
@@ -454,7 +460,7 @@
         </section>
         @if (Session::has('messageSucces'))
             <script>
-               swal({
+                swal({
                     title: 'Thành công',
                     text: "{{ Session::get('messageSucces') }}",
                     icon: 'success',

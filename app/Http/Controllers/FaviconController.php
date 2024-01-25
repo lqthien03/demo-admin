@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favicon;
+use App\Models\Mail;
 use Illuminate\Http\Request;
 
 class FaviconController extends Controller
@@ -10,7 +11,8 @@ class FaviconController extends Controller
     public function edit($id)
     {
         $favicon = Favicon::find($id);
-        return view('image_video.favicon', compact('favicon'));
+        $total = Mail::count();
+        return view('image_video.favicon', compact('favicon', 'total'));
     }
     public function update(Request $request, $id)
     {

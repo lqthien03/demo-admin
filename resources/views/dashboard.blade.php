@@ -83,7 +83,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="fas fa-bell"></i>
-                    <span class="badge badge-danger">0</span>
+                    <span class="badge badge-danger">{{ $total }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow">
                     <span class="dropdown-item dropdown-header p-0">Thông báo</span>
@@ -91,11 +91,11 @@
 
                     <div class="dropdown-divider"></div>
                     <a href="/mail/contact" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Thư
+                            class="badge badge-danger mr-1">{{ $total }}</span> Thư
                         liên hệ</a>
                     <div class="dropdown-divider"></div>
                     <a href="/mail/register-advise" class="dropdown-item"><i class="fas fa-mail-bulk mr-2"></i></i><span
-                            class="badge badge-danger mr-1">0</span> Đăng ký
+                            class="badge badge-danger mr-1"></span> Đăng ký
                         tư vấn</a>
                     <div class="dropdown-divider"></div>
 

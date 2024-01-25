@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Seo_Advise;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class SeoAdviseController extends Controller
     public function edit($id)
     {
         $seo_advise = Seo_Advise::find($id);
-        return view('seo_page.seo_advise', compact('seo_advise'));
+        $total = Mail::count();
+        return view('seo_page.seo_advise', compact('seo_advise', 'total'));
     }
     public function update(Request $request, $id)
     {

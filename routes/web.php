@@ -4,6 +4,7 @@ use App\Http\Controllers\AdviseController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\Category_level1Controller;
 use App\Http\Controllers\Category_level2Controller;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaviconController;
 use App\Http\Controllers\logoController;
 use App\Http\Controllers\MailController;
@@ -46,6 +47,7 @@ Route::controller(Category_level1Controller::class)->group(function () {
     Route::get('/real_estate/category-level1/edit/{category_level1}', 'edit')->name('edit.category1');
     Route::put('/real_estate/category-level1/edit/{category_level1}', 'update')->name('update.category1');
     Route::delete('/real_estate/category-level1/{id}', 'destroy')->name('delete.category1');
+    Route::post('upload_image', 'uploadImage')->name('upload');
 });
 
 Route::controller(Category_level2Controller::class)->group(function () {
@@ -210,10 +212,12 @@ Route::controller(SettingController::class)->group(function () {
 });
 // Route::get('/search', 'Category_level1Controller@searchProduct');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::controller(DashboardController::class)->group(function () {
+    Route::get('/dashboard', 'show')->name('show.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

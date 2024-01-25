@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Customer_support;
 use App\Models\Footer;
 use App\Models\Introduce;
+use App\Models\Mail;
 use App\Models\Register_advise;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class StaticPageController extends Controller
     public function edit_introduce($id)
     {
         $introduce = Introduce::find($id);
-        return view('static_page.introduce', compact('introduce'));
+        $total = Mail::count();
+        return view('static_page.introduce', compact('introduce', 'total'));
     }
     public function update_introduce(Request $request, $id)
     {
@@ -46,7 +48,8 @@ class StaticPageController extends Controller
     public function edit_contact($id)
     {
         $contact = Contact::find($id);
-        return view('static_page.contact', compact('contact'));
+        $total = Mail::count();
+        return view('static_page.contact', compact('contact', 'total'));
     }
     public function update_contact(Request $request, $id)
     {
@@ -76,7 +79,8 @@ class StaticPageController extends Controller
     public function edit_register_advise($id)
     {
         $register_advise = Register_advise::find($id);
-        return view('static_page.register_advise', compact('register_advise'));
+        $total = Mail::count();
+        return view('static_page.register_advise', compact('register_advise', 'total'));
     }
     public function update_register_advise(Request $request, $id)
     {
@@ -89,7 +93,8 @@ class StaticPageController extends Controller
     public function edit_customer_support($id)
     {
         $customer_support = Customer_support::find($id);
-        return view('static_page.customer_support', compact('customer_support'));
+        $total = Mail::count();
+        return view('static_page.customer_support', compact('customer_support', 'total'));
     }
     public function update_customer_support(Request $request, $id)
     {
@@ -102,7 +107,8 @@ class StaticPageController extends Controller
     public function edit_footer($id)
     {
         $footer = Footer::find($id);
-        return view('static_page.footer', compact('footer'));
+        $total = Mail::count();
+        return view('static_page.footer', compact('footer', 'total'));
     }
     public function update_footer(Request $request, $id)
     {
@@ -111,5 +117,22 @@ class StaticPageController extends Controller
         $footer->display = $request->has('display');
         $footer->save();
         return back()->with('messageSucces', 'Cập nhật thành công');
+    }
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('products'), $fileName);
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('products/' . $fileName);
+            $smg = 'tải ảnh thành công';
+            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$smg')</script>";
+            @header('Content-type: text/html; charset=utf-8');
+            echo $response;
+        }
     }
 }

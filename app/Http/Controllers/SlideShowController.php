@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Slideshow;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,13 @@ class SlideShowController extends Controller
     public function show()
     {
         $slideshow = Slideshow::all();
-        return view('image_video.slideshow', compact('slideshow'));
+        $total = Mail::count();
+        return view('image_video.slideshow', compact('slideshow', 'total'));
     }
     public function create()
     {
-        return view('image_video.slideshow_create');
+        $total = Mail::count();
+        return view('image_video.slideshow_create', compact('total'));
     }
     public function store(Request $request)
     {
@@ -51,7 +54,8 @@ class SlideShowController extends Controller
     public function edit($id)
     {
         $slideshow = Slideshow::find($id);
-        return view('image_video.slideshow_edit', compact('slideshow'));
+        $total = Mail::count();
+        return view('image_video.slideshow_edit', compact('slideshow', 'total'));
     }
     public function update(Request $request, $id)
     {

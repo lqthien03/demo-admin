@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Procedure;
 use App\Models\Seo;
 use Illuminate\Http\Request;
@@ -11,11 +12,13 @@ class ProcedureController extends Controller
     public function show()
     {
         $procedure = Procedure::all();
-        return view('posts.procedure', compact('procedure'));
+        $total = Mail::count();
+        return view('posts.procedure', compact('procedure', 'total'));
     }
     public function create()
     {
-        return view('posts.procedure_create');
+        $total = Mail::count();
+        return view('posts.procedure_create', compact('total'));
     }
     public function store(Request $request)
     {
@@ -68,7 +71,8 @@ class ProcedureController extends Controller
     public function edit($id)
     {
         $procedure = Procedure::find($id);
-        return view('posts.procedure_edit', compact('procedure'));
+        $total = Mail::count();
+        return view('posts.procedure_edit', compact('procedure', 'total'));
     }
     public function update(Request $request, $id)
     {

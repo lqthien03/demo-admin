@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Seo_Estate;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class SeoEstateController extends Controller
     public function edit($id)
     {
         $seo_estate = Seo_Estate::find($id);
-        return view('seo_page.seo_estate', compact('seo_estate'));
+        $total = Mail::count();
+        return view('seo_page.seo_estate', compact('seo_estate','total'));
     }
     public function update(Request $request, $id)
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\Seo_News;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class SeoNewsController extends Controller
     public function edit($id)
     {
         $seo_news = Seo_News::find($id);
-        return view('seo_page.seo_news', compact('seo_news'));
+        $total = Mail::count();
+        return view('seo_page.seo_news', compact('seo_news', 'total'));
     }
     public function update(Request $request, $id)
     {

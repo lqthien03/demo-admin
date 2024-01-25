@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Category1Request;
 use App\Models\Category_level1;
+use App\Models\Mail;
 use App\Models\Seo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,11 +15,13 @@ class Category_level1Controller extends Controller
     public function show()
     {
         $category_level1 = Category_level1::all();
-        return view('real_estate.category_level1', compact('category_level1'));
+        $total = Mail::count();
+        return view('real_estate.category_level1', compact('category_level1', 'total'));
     }
     public function create()
     {
-        return view('real_estate.category_level1_create');
+        $total = Mail::count();
+        return view('real_estate.category_level1_create', compact('total'));
     }
 
     public function store(Request $request)
@@ -73,9 +76,8 @@ class Category_level1Controller extends Controller
     public function edit($id)
     {
         $category_level1 = Category_level1::with(['seo'])->find($id);
-        // dd($category_level1);
-        // dd($category_level1->display);
-        return view('real_estate.category_level1_edit', compact('category_level1'));
+        $total = Mail::count();
+        return view('real_estate.category_level1_edit', compact('category_level1', 'total'));
     }
     public function update(Request $request, $id)
     {
@@ -109,5 +111,22 @@ class Category_level1Controller extends Controller
         $category_level1 = Category_level1::find($id);
         $category_level1->delete();
         return back()->with('messageSucces', 'Xóa thành công');
+    }
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
+
+            $request->file('upload')->move(public_path('products'), $fileName);
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('products/' . $fileName);
+            $smg = 'tải ảnh thành công';
+            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$smg')</script>";
+            @header('Content-type: text/html; charset=utf-8');
+            echo $response;
+        }
     }
 }

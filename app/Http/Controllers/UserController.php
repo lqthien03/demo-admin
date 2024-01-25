@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +12,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('users.information', compact('user'));
+        $total = Mail::count();
+        return view('users.information', compact('user', 'total'));
     }
     public function update(Request $request, $id)
     {

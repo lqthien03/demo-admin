@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Advise;
+use App\Models\Mail;
 use App\Models\Seo;
 use Illuminate\Http\Request;
 
@@ -11,11 +12,13 @@ class AdviseController extends Controller
     public function show()
     {
         $advise = Advise::all();
-        return view('posts.advise', compact('advise'));
+        $total = Mail::count();
+        return view('posts.advise', compact('advise', 'total'));
     }
     public function create()
     {
-        return view('posts.advise_create');
+        $total = Mail::count();
+        return view('posts.advise_create', compact('total'));
     }
     public function store(Request $request)
     {
@@ -68,7 +71,8 @@ class AdviseController extends Controller
     public function edit($id)
     {
         $advise = Advise::find($id);
-        return view('posts.advise_edit', compact('advise'));
+        $total = Mail::count();
+        return view('posts.advise_edit', compact('advise','total'));
     }
     public function update(Request $request, $id)
     {

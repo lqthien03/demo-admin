@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category_level1;
 use App\Models\Category_level2;
+use App\Models\Mail;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class SettingController extends Controller
         $setting = Setting::find($id);
         $category_level1 = Category_level1::all();
         $category_level2 = Category_level2::all();
-        return view('setting', compact('setting', 'category_level1', 'category_level2'));
+        $total = Mail::count();
+        return view('setting', compact('setting', 'category_level1', 'category_level2', 'total'));
     }
     public function update(Request $request, $id)
     {
